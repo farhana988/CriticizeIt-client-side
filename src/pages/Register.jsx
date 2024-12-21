@@ -88,7 +88,7 @@ const Registration = () => {
       <h2  className='text-3xl md:text-5xl lg:text-7xl font-bold mb-14
        text-primary active text-center'>
       Registration Form</h2>
-      <div className="hero flex justify-center">
+      <div className="hero flex flex-col md:flex-row lg:flex-row justify-center">
       <div className="w-96">
         <Lottie animationData={reg}></Lottie>
         </div>

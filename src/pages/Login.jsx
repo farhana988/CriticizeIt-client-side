@@ -75,7 +75,7 @@ const Login = () => {
             Login Form
           </h2>
        
-      <div className="hero flex justify-center">
+      <div className="hero flex flex-col md:flex-row lg:flex-row justify-center">
       <div className="w-80">
         <Lottie animationData={log}></Lottie>
         </div>
