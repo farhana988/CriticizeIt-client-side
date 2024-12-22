@@ -33,7 +33,7 @@ const Banner = () => {
           <div className="text-center ">
             <h2 className="text-white text-2xl md:text-5xl font-extrabold mb-6 
             drop-shadow-xl">
-              <span className="text-yellow-500 active text-4xl md:text-7xl lg:text-9xl">
+              <span className="text-red-500 active text-4xl md:text-7xl lg:text-9xl">
                 Discover {' '}</span> Amazing Services
             </h2>
             <p className="text-gray-200 text-sm md:text-xl lg:text-2xl font-medium  
@@ -57,7 +57,7 @@ const Banner = () => {
           <div className="text-center ">
             <h2 className="text-white text-2xl md:text-5xl font-extrabold mb-6
              drop-shadow-xl">
-              <span className="text-pink-500 active text-4xl md:text-7xl lg:text-9xl">
+              <span className="text-orange-500 active text-4xl md:text-7xl lg:text-9xl">
                 Share {' '}</span> Your Experiences
             </h2>
             <p className="text-gray-200 text-sm md:text-xl lg:text-2xl font-medium 
