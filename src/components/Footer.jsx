@@ -4,7 +4,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-[#006a67cb] mt-20 py-10">
+    <div className=" mt-20 py-10">
       <footer className="footer  text-base-content p-10  container mx-auto">
         <nav>
           <div className=" w-full md:w-60 lg:w-96 space-y-2">

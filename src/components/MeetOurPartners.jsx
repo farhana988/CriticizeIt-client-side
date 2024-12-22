@@ -54,8 +54,7 @@ const MeetOurPartners = () => {
 
   return (
     <section
-      className="relative py-16 bg-gradient-to-r from-indigo-200
-         via-transparent to-indigo-100"
+      className="relative pt-14"
     >
       <div className="container mx-auto px-6 text-center">
         {/*  Title */}
@@ -71,33 +70,33 @@ const MeetOurPartners = () => {
           {partners.slice(0, visibleCards).map((partner, index) => (
             <div
               key={index}
-              className="relative
+              className="relative rounded-2xl 
               overflow-hidden transform transition-all hover:scale-125 "
             >
               <div className="pt-16 ">
                 {/*  Logo */}
                 <div
-                  className="w-36 h-36 mx-auto bg-gradient-to-r
+                  className="w-36 h-36 z-10 mx-auto bg-gradient-to-r
                  from-indigo-500 to-purple-500 rounded-full p-1
                  absolute top-2 left-28 md:left-24 lg:left-32 animate-pulse"
                 >
                   <img
                     src={partner.logo}
                     alt={`${partner.name} Logo`}
-                    className="w-full h-full object-contain rounded-full bg-white"
+                    className="w-full h-full object-contain rounded-full"
                   />
                 </div>
 
                 {/* Details */}
-                <div className="pt-24 pb-14  px-3 bg-white rounded-2xl
-                ">
+                <div className="card pt-24 pb-14 px-3 rounded-2xl bg-[#ffffffb4]
+               ">
                   <h3
                     className="text-2xl font-semibold text-gray-700 mt-4
                 "
                   >
                     {partner.name}
                   </h3>
-                  <p className="text-gray-600 mt-2 px-3 lg:px-10">{partner.description}</p>
+                  <p className="text-gray-600 mt-2 px-3 lg:px-8">{partner.description}</p>
                 </div>
               </div>
 
