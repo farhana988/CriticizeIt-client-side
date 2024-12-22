@@ -9,9 +9,8 @@ const PageLayout = () => {
     <div className="min-h-screen">
       <Navbar></Navbar>
 
-      <div className="pt-20 container mx-auto">
         <Outlet></Outlet>
-      </div>
+     
 
       <Footer></Footer>
     </div>
