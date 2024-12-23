@@ -50,6 +50,7 @@ const ReviewForm = () => {
 
     try {
       const reviewData = {
+        userEmail:user.email,
         userName: user.displayName,
         userPhoto: user.photoURL,
         reviewText: newReview,
