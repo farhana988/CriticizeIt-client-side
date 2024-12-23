@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const FeaturedServicesCard = ({service}) => {
     const { serviceImage,
         serviceTitle,
-      
+        _id,
         description,
         category,
         price,
@@ -36,15 +36,13 @@ const FeaturedServicesCard = ({service}) => {
   
           {/* "See Details" Button */}
           <Link
-            to={`/services/${service.id}`} // assuming each service has a unique ID
+            to={`/serviceDetails/${_id}`} 
             className="text-blue-500 font-semibold hover:text-blue-600 transition-colors"
           >
             See Details
           </Link>
         </div>
   
-        {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-25 transition-opacity"></div>
       </div>
     );
 };

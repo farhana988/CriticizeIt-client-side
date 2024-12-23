@@ -72,12 +72,13 @@ const AddService = () => {
                 {/* Service Image */}
             <div className="">
                 <label className="text-gray-900 md:text-xl font-semibold block mb-1" >
-                Service Image URL
+                Service Image
                 </label>
                 <input
                 type="url"
                 id="service_image"
                 name="service_image"
+                defaultValue={"service image URL"}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -94,6 +95,7 @@ const AddService = () => {
                 type="text"
                 id="service_title"
                 name="service_title"
+                defaultValue={"service title"}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -112,6 +114,7 @@ const AddService = () => {
                 type="text"
                 id="company_name"
                 name="company_name"
+                defaultValue={'Company Name'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -128,6 +131,7 @@ const AddService = () => {
                 type="text"
                 id="website"
                 name="website"
+                defaultValue={'Website Name'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -149,14 +153,14 @@ const AddService = () => {
                 >
                 <option value="" disabled selected>Pick a category </option>
                 <option value="Home Services">Home Services</option>
-                <option value="Health & Wellness">Health & Wellness</option>
-                <option value="Education & Tutoring">Education & Tutoring</option>
-                <option value="Business & Marketing">Business & Marketing</option>
+                <option value="Health and Wellness">Health and Wellness</option>
+                <option value="Education and Tutoring">Education and Tutoring</option>
+                <option value="Business and Marketing">Business and Marketing</option>
                 <option value="Technology Services">Technology Services</option>
-                <option value="Travel & Transportation">Travel & Transportation</option>
+                <option value="Travel and Transportation">Travel and Transportation</option>
                 <option value="Pet Cares">Pet Cares</option>
                 <option value="Event Planning">Event Planning</option>
-                <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+                <option value="Beauty and Personal Care">Beauty and Personal Care</option>
                 <option value="Eco-Friendly Services">Eco-Friendly Services</option>
                 <option value="Emergency Services">Emergency Services</option>
 
@@ -172,6 +176,7 @@ const AddService = () => {
                 type="number"
                 id="price"
                 name="price"
+                defaultValue={'price'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -224,6 +229,7 @@ const AddService = () => {
             <textarea
               id="description"
               name="description"
+              defaultValue={'Short Description of the service'}
               rows="4"
               className="w-full px-4 py-2 text-gray-700 bg-white border
                border-gray-200 rounded-md focus:outline-none focus:ring
@@ -233,9 +239,6 @@ const AddService = () => {
           </div>
 
          
-
-          
-
           {/*  Button */}
           <div className="flex justify-end mt-4">
             <button
