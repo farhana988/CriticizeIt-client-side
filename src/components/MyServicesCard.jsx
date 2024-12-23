@@ -1,41 +1,68 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-const MyServicesCard = ({service}) => {
-    const { serviceImage,
-        serviceTitle,
-        
-        description,
-        category,
-        price,
-        } =
-    service || {}
-    return (
-        <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
-        {/* Image */}
-        <div className="relative w-full h-48">
-          <img
-            src={ serviceImage}
-            alt={serviceTitle}
-            className="object-cover w-full h-full transition-transform transform group-hover:scale-110"
-          />
+import axios from "axios";
+import Swal from "sweetalert2";
+
+const MyServicesCard = ({ service, setServices }) => {
+  const {
+    serviceTitle,
+    _id,
+
+    category,
+    price,
+  } = service || {};
+
+  // Delete function
+  const handleDelete = async (id) => {
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (result.isConfirmed) {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/service/${id}`);
+
+        setServices((prevServices) =>
+          prevServices.filter((service) => service._id !== id)
+        );
+
+        Swal.fire("Deleted!", "Your service has been deleted.", "success");
+      }
+    } catch {
+      Swal.fire(
+        "Error",
+        "An error occurred while deleting the service.",
+        "error"
+      );
+    }
+  };
+
+  return (
+    <tr className=" border-b hover:bg-gray-100 transition-colors duration-200">
+      <td className="px-6 py-4">{serviceTitle ? serviceTitle : "N/A"}</td>
+      <td className="px-6 py-4">{category}</td>
+
+      <td className="px-6 py-4">${price}</td>
+      <td className="px-6 py-4 flex flex-col lg:flex-row gap-4 text-white justify-center">
+        {/* delete btn */}
+        <div
+          onClick={() => handleDelete(_id)}
+          className="bg-primary px-3 py-1 rounded-full text-lg"
+        >
+          delete
         </div>
-  
-        {/* Card Content */}
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">{serviceTitle}</h3>
-          <p className="text-gray-600 text-sm mb-4">
-            { description.substring(0,100)}</p>
-  
-          {/* Category and Price */}
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-sm text-gray-500">{category}</span>
-            <span className="text-lg font-bold text-gray-800">${price}</span>
-          </div>
-        </div>
-  
-      </div>
-    );
+        {/* update btn */}
+        <div className="bg-primary px-3 py-1 rounded-full text-lg">update</div>
+      </td>
+    </tr>
+  );
 };
 
 export default MyServicesCard;
