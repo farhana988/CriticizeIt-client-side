@@ -31,11 +31,11 @@ const MyServices = () => {
     fetchAllServices();
   }, [searchQuery, user]);
   return (
-    <div className="pt-10  container mx-auto min-h-screen">
+    <div className="pt-10  min-h-screen">
       <Heading title={"My Services"}></Heading>
 
        {/* Search Input Field */}
-       <div className="mb-5 flex justify-center relative
+       <div className="mb-5 lg:mb-10 flex justify-center relative
         items-center ">
         <input
           type="text"
@@ -45,8 +45,8 @@ const MyServices = () => {
           className="w-11/12 md:w-6/12 lg:w-5/12 px-4 py-2 border border-gray-300
            rounded-lg pl-10"
         />
-        <FaSearch className="absolute left-8 md:left-52 lg:left-96  top-1/2 transform -translate-y-1/2
-         text-gray-400" /> 
+        <FaSearch className="absolute left-8 md:left-52 lg:left-[435px]  
+        top-1/2 transform -translate-y-1/2 text-gray-400" /> 
       </div>
 
       
@@ -61,19 +61,37 @@ const MyServices = () => {
           <p className="opacity-50">Start adding some services to your list!</p>
         </div>
       ) : (
-        <div className="group relative bg-[#ffffffb4] rounded-xl shadow-xl shadow-primary
-         overflow-hidden hover:shadow-2xl mx-5">
+        <div className="group relative bg-[#ffffffb4] rounded-xl shadow-xl
+         shadow-primary
+         overflow-hidden hover:shadow-2xl mx-5 lg:mx-10">
           {/* Table */}
-          <div className="overflow-x-auto ">
-            <table className="min-w-full divide-y divide-gray-300 divide-dashed border-collapse 
-            text-sm table-fixed">
-              <thead className="text-xl text-gray-800">
+          <div className="overflow-x-auto py-6">
+            <table className=" 
+              table table-xs">
+              <thead className="lg:text-xl text-gray-800 ">
                 <tr>
-                  <th className="px-6 py-3 text-left w-3/8">Service Title</th>
-                  <th className="px-6 py-3 text-left w-2/8">Category</th>
-                
-                  <th className="px-6 py-3 text-left w-1/8">Price</th>
-                  <th className="px-6 py-3 text-center w-2/8"> Actions</th>
+                <th
+                 className="   py-3"
+                >Service Image</th>
+                  <th 
+                  className="  py-3">
+                  Service Title</th>
+                  <th 
+                  className=" text-left  py-3">
+                  Company Name</th>
+                  <th 
+                  className=" text-left py-3">
+                    Category</th>
+                  <th 
+                  className=" text-left  py-3">
+                    Price</th>
+                  <th
+                   className=" text-left  py-3">
+                    Description</th>
+                  <th 
+                  className=" text-center py-3"> 
+                  Actions</th>
+                  
                 
                 </tr>
               </thead>

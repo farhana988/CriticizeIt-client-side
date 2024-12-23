@@ -80,7 +80,9 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
     >
       <div className="bg-white p-6 rounded-lg w-11/12 lg:w-9/12
       h-5/6 md:h-4/5 lg:h-3/5 overflow-y-scroll   ">
-        <h2 className="text-2xl font-semibold mb-6">Update Service</h2>
+        <h2 className="text-primary font-semibold mb-6 text-center
+        text-4xl  lg:text-7xl active">
+          Update Service</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Service Image */}

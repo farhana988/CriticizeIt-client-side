@@ -233,7 +233,7 @@ const AddService = () => {
               rows="4"
               className="w-full px-4 py-2 text-gray-700 bg-white border
                border-gray-200 rounded-md focus:outline-none focus:ring
-                focus:ring-blue-300"
+                focus:ring-blue-300 break-words"
               required
             ></textarea>
           </div>

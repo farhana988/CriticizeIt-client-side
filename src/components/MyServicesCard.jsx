@@ -9,7 +9,16 @@ import UpdateServiceModal from "./UpdateServiceModal";
 const MyServicesCard = ({ service, setServices }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
-  const {serviceTitle, _id, category, price, } = service || {};
+  const {
+    serviceTitle,
+    _id,
+    category,
+    price,
+    serviceImage,
+    companyName,
+    description,
+    website,
+  } = service || {};
 
   // Delete function
   const handleDelete = async (id) => {
@@ -23,7 +32,7 @@ const MyServicesCard = ({ service, setServices }) => {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!",
       });
-      
+
       if (result.isConfirmed) {
         await axios.delete(`${import.meta.env.VITE_API_URL}/service/${id}`);
 
@@ -42,38 +51,63 @@ const MyServicesCard = ({ service, setServices }) => {
     }
   };
 
-    //  Update Button
-    const handleUpdateClick = () => {
-      setSelectedService(service); 
-      setIsModalOpen(true); 
-    };
+  //  Update Button
+  const handleUpdateClick = () => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
-      <tr className=" border-b hover:bg-gray-100 transition-colors duration-200">
-      <td className="px-6 py-4">{serviceTitle ? serviceTitle : "N/A"}</td>
-      <td className="px-6 py-4">{category}</td>
+      <tr className=" border-b hover:bg-gray-100 ">
+        <td className="border-2">
+          <img
+            className="h-24 w-32 object-cover rounded-xl "
+            src={serviceImage}
+            alt=""
+          />
+        </td>
+        <td className="lg:text-lg break-words border-2">
+          {serviceTitle.substring(0, 20)}...
+        </td>
 
-      <td className="px-6 py-4">${price}</td>
-      <td className="px-6 py-4 flex flex-col lg:flex-row gap-4 text-white 
-      items-center justify-center">
-        {/* delete btn */}
-        <div
-          onClick={() => handleDelete(_id)}
-          className="bg-primary px-3 py-1 rounded-full lg:text-lg"
+        <td className="lg:text-lg text-blue-600 hover:underline break-words border-2">
+          <a href={website}>{companyName.substring(0, 20)}...</a>
+        </td>
+
+        <td className="lg:text-lg border-2">{category}</td>
+
+        <td className="lg:text-lg border-2">${price}</td>
+
+        <td className="lg:text-lg break-words border-2">
+          {description.substring(0, 70)}...
+        </td>
+
+        <td
+          className="flex flex-col lg:flex-row gap-5 lg:gap-2 text-white 
+      items-center justify-center py-5 md:py-3 lg:py-8  border-2 "
         >
-          delete
-        </div>
-        {/* update btn */}
-        <div   onClick={handleUpdateClick} 
-          className="bg-primary px-3 py-1 rounded-full lg:text-lg">update</div>
-      </td>
-    </tr>
-        {/* Update Service Modal */}
-        <UpdateServiceModal
+          {/* delete btn */}
+          <button
+            onClick={() => handleDelete(_id)}
+            className="bg-primary px-4 py-2 rounded-full lg:text-lg"
+          >
+            delete
+          </button>
+          {/* update btn */}
+          <button
+            onClick={handleUpdateClick}
+            className="bg-primary px-4 py-2 rounded-full lg:text-lg"
+          >
+            update
+          </button>
+        </td>
+      </tr>
+      {/* Update Service Modal */}
+      <UpdateServiceModal
         service={selectedService}
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)} 
+        onClose={() => setIsModalOpen(false)}
         setServices={setServices}
       />
     </>
