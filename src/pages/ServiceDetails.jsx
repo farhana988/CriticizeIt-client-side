@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import ServiceDetailsCard from "./ServiceDetailsCard";
 import Heading from "../components/Heading";
 import ReviewForm from "../components/ReviewForm";
+import ReviewCard from "../components/ReviewCard";
 
 const ServiceDetails = () => {
   const [details, setDetails] = useState([]);
@@ -43,6 +44,7 @@ const ServiceDetails = () => {
         <ReviewForm></ReviewForm>
       </div>
       </section>
+      <ReviewCard></ReviewCard>
       
 
       {/* review section */}
