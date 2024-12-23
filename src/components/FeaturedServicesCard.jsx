@@ -26,7 +26,8 @@ const FeaturedServicesCard = ({service}) => {
         {/* Card Content */}
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{serviceTitle}</h3>
-          <p className="text-gray-600 text-sm mb-4">{ description}</p>
+          <p className="text-gray-600 text-sm mb-4">
+            { description.substring(0,100)}</p>
   
           {/* Category and Price */}
           <div className="flex justify-between items-center mb-4">

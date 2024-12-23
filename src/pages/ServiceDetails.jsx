@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ServiceDetailsCard from "./ServiceDetailsCard";
 import Heading from "../components/Heading";
+import ReviewForm from "../components/ReviewForm";
 
 const ServiceDetails = () => {
   const [details, setDetails] = useState([]);
@@ -29,13 +30,18 @@ const ServiceDetails = () => {
 
   return (
     <div className="pt-20 ">
-      <Heading title={"Service Details"}></Heading>
+      <Heading title={"Service Details & Review"}></Heading>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2  mx-6">
+      <section className="grid grid-cols-1 lg:grid-cols-2  mx-6 bg-white rounded-xl
+      border-2 border-red-700">
 
       <ServiceDetailsCard details={details}></ServiceDetailsCard>
 
-      <div className="bg-white">aa</div>
+      <div className="">
+        <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
+          Review Form</h2>
+        <ReviewForm></ReviewForm>
+      </div>
       </section>
       
 

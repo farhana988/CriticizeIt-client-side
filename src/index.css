@@ -20,3 +20,8 @@ html {
       background-color: #e0fbe28c;
       
     }
+
+    svg.star-svg{
+      display: inline;
+    }
+    

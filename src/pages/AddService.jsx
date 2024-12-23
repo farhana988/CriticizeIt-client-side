@@ -78,7 +78,7 @@ const AddService = () => {
                 type="url"
                 id="service_image"
                 name="service_image"
-                defaultValue={"service image URL"}
+                placeholder={"service image URL"}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -95,7 +95,7 @@ const AddService = () => {
                 type="text"
                 id="service_title"
                 name="service_title"
-                defaultValue={"service title"}
+                placeholder={"service title"}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -114,7 +114,7 @@ const AddService = () => {
                 type="text"
                 id="company_name"
                 name="company_name"
-                defaultValue={'Company Name'}
+                placeholder={'Company Name'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -128,10 +128,10 @@ const AddService = () => {
                 Website
                 </label>
                 <input
-                type="text"
+                type="url"
                 id="website"
                 name="website"
-                defaultValue={'Website Name'}
+                placeholder={'Website URL'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -176,7 +176,7 @@ const AddService = () => {
                 type="number"
                 id="price"
                 name="price"
-                defaultValue={'price'}
+                placeholder={'price'}
                 className="w-full px-4 py-2 text-gray-700 bg-white border
                  border-gray-200 rounded-md focus:outline-none focus:ring
                   focus:ring-blue-300"
@@ -229,7 +229,7 @@ const AddService = () => {
             <textarea
               id="description"
               name="description"
-              defaultValue={'Short Description of the service'}
+             placeholder={'Short Description of the service'}
               rows="4"
               className="w-full px-4 py-2 text-gray-700 bg-white border
                border-gray-200 rounded-md focus:outline-none focus:ring
