@@ -28,7 +28,7 @@ const ServiceDetails = () => {
 
     fetchAllDetails();
   }, [id]);
-
+  
   return (
     <div className="pt-20 ">
       <Heading title={"Service Details & Review"}></Heading>
@@ -41,7 +41,7 @@ const ServiceDetails = () => {
       <div className="">
         <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
           Review Form</h2>
-        <ReviewForm></ReviewForm>
+        <ReviewForm details={details}></ReviewForm>
       </div>
       </section>
       <ReviewCard></ReviewCard>

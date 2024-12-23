@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import React from 'react';
 
 import { useContext, useState } from "react";
@@ -7,7 +8,7 @@ import axios from "axios";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
 
-const ReviewForm = () => {
+const ReviewForm = ({details}) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -16,6 +17,14 @@ const ReviewForm = () => {
   const [rating, setRating] = useState(0);
   const addedDate = new Date().toLocaleDateString();
 
+  const { serviceImage,
+    serviceTitle,
+    companyName,
+    website,
+   
+    category,
+   }=details||{}
+ 
   // rating
   const handleRating = (rate) => {
     setRating(rate);
@@ -57,6 +66,12 @@ const ReviewForm = () => {
         rating: rating,
         serviceId: id,
         addedDate,
+        serviceImage,
+        serviceTitle,
+        companyName,
+        website,
+       
+        category,
       };
 
       const { data } = await axios.post(

@@ -1,30 +1,89 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-
-
-const MyReviewsCard = ({ review }) => {
+const MyReviewsCard = ({ review,  setReviews }) => {
   const {
-    // userEmail,
-    userName,
-    userPhoto,
+    _id,
     reviewText,
     rating,
-    // serviceId,
+    serviceImage,
+    companyName,
+    website,
+    category,
+    serviceTitle,
     addedDate,
   } = review || {};
+  
   const validRating =
     typeof rating === "number" && !isNaN(rating) ? Math.floor(rating) : 0;
+
+  // Delete function 
+  const handleDelete = async (id) => {
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (result.isConfirmed) {
+        await axios.delete(
+          `${import.meta.env.VITE_API_URL}/review/${id}`
+        );
+
+         setReviews((prevReviews) => prevReviews.filter((review) => review._id !== id));
+
+        Swal.fire('Deleted!', 'Your review has been deleted.', 'success');
+      }
+    } catch{
+      Swal.fire('Error', 'An error occurred while deleting the review.', 'error');
+    }
+  };
+
   return (
     <div className="flex flex-col bg-white shadow-md rounded-lg p-4 space-y-4">
       <div className="flex items-center space-x-4">
-        <img
-          src={userPhoto || "https://via.placeholder.com/40"}
-          alt={userName}
-          className="w-12 h-12 rounded-full object-cover"
-        />
+        {/* Service Image */}
+        <div className="w-80 h-52 rounded-xl ml-6 border-2 border-red-700">
+          <img
+            src={serviceImage || "https://via.placeholder.com/300"}
+            alt={serviceTitle}
+            className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg"
+          />
+        </div>
         <div>
-          <div className="font-semibold text-lg">{userName}</div>
+          {/* Service title */}
+          <h2 className="text-xl font-bold text-gray-900 break-words">
+            Service Title:
+            <span className="text-base font-semibold text-gray-500">
+              {" "}
+              {serviceTitle}
+            </span>
+          </h2>
+          {/* Category */}
+          <p className="text-base font-semibold text-gray-700">
+            <span className="text-xl font-bold text-gray-900 ">Category: </span>
+            {category}
+          </p>
+          {/* Company name */}
+          <p className="text-sm text-gray-500 mt-3">
+            <span className="text-xl font-bold text-gray-900 ">
+              Company Name:{" "}
+            </span>
+            <a
+              className="text-blue-500 text-base font-medium hover:underline break-words"
+              href={website}
+            >
+              {companyName}
+            </a>
+          </p>
+
           {/* Rating */}
           <div className="flex items-center font-semibold text-sm lg:font-bold lg:text-lg">
             <span className="mr-2">Rating:</span>
@@ -48,13 +107,31 @@ const MyReviewsCard = ({ review }) => {
         </div>
       </div>
 
-      {/* Review Text */}
-      <p className="text-gray-600">{reviewText}</p>
+      <div>
+        {/* Review Text */}
+        <p className="text-gray-600">{reviewText}</p>
 
-      {/* Review Date */}
-      <p className="text-sm text-gray-500">
-        {new Date(addedDate).toLocaleDateString()}
-      </p>
+        {/* Review Date */}
+        <p className="text-sm text-gray-500">
+          {new Date(addedDate).toLocaleDateString()}
+        </p>
+      </div>
+
+      {/* Buttons */}
+      <div className="card-actions flex-col md:flex-row lg:flex-row md:justify-around lg:justify-around gap-5 items-end pr-4 md:pr-0 lg:pr-0 py-2 md:py-6 lg:py-6">
+        {/* Delete Button */}
+        <button
+          onClick={() => handleDelete(_id)}  
+          className="btn bg-primary text-white lg:text-xl"
+        >
+          Delete review
+        </button>
+
+        {/* Update Button */}
+        <button className="btn bg-primary text-white lg:text-xl">
+          <Link to={`/update/${_id}`}>Update review</Link>
+        </button>
+      </div>
     </div>
   );
 };

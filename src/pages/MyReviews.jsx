@@ -17,7 +17,6 @@ const MyReviews = () => {
           const { data } = await axios.get(
             `${import.meta.env.VITE_API_URL}/myReviews/${user?.email}`
           );
-          console.log(data);
           setReviews(data);
         } catch {
           console.log("first");
@@ -41,13 +40,14 @@ const MyReviews = () => {
         </div>
       ) : (
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+          className=" gap-6
                 mx-5 mt-10"
         >
           {reviews.map((review) => (
             <MyReviewsCard
               key={review._id}
               review={review}
+              setReviews={setReviews}
             ></MyReviewsCard>
           ))}
         </div>
