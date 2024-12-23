@@ -6,28 +6,50 @@ import { AuthContext } from "../providers/AuthProvider";
 import MyServicesCard from "../components/MyServicesCard";
 import { TfiFaceSad } from "react-icons/tfi";
 import Heading from "../components/Heading";
+import { FaSearch } from "react-icons/fa";
 
 const MyServices = () => {
   const [services, setServices] = useState([]);
   const { user } = useContext(AuthContext);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchAllServices = async () => {
       try {
+    
+  
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/myServices/${user?.email}`
+          `${import.meta.env.VITE_API_URL}/myServices/${user?.email}`,
+          { params: { search: searchQuery } }
         );
-        console.log(data);
+
         setServices(data);
       } catch {
         console.log("first");
       }
     };
     fetchAllServices();
-  }, [user]);
+  }, [searchQuery, user]);
   return (
     <div className="pt-10  container mx-auto min-h-screen">
       <Heading title={"My Services"}></Heading>
+
+       {/* Search Input Field */}
+       <div className="mb-5 flex justify-center relative
+        items-center ">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)} 
+          placeholder="Search by service title"
+          className="w-11/12 md:w-6/12 lg:w-5/12 px-4 py-2 border border-gray-300
+           rounded-lg pl-10"
+        />
+        <FaSearch className="absolute left-8 md:left-52 lg:left-96  top-1/2 transform -translate-y-1/2
+         text-gray-400" /> 
+      </div>
+
+      
 
       {services.length === 0 ? (
         <div
@@ -63,6 +85,7 @@ const MyServices = () => {
                     setServices={setServices}
                   ></MyServicesCard>
                 ))}
+                
               </tbody>
             </table>
           </div>

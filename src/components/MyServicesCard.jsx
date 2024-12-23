@@ -2,16 +2,14 @@
 // import React from 'react';
 
 import axios from "axios";
+import { useState } from "react";
 import Swal from "sweetalert2";
+import UpdateServiceModal from "./UpdateServiceModal";
 
 const MyServicesCard = ({ service, setServices }) => {
-  const {
-    serviceTitle,
-    _id,
-
-    category,
-    price,
-  } = service || {};
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+  const {serviceTitle, _id, category, price, } = service || {};
 
   // Delete function
   const handleDelete = async (id) => {
@@ -44,8 +42,15 @@ const MyServicesCard = ({ service, setServices }) => {
     }
   };
 
+    //  Update Button
+    const handleUpdateClick = () => {
+      setSelectedService(service); 
+      setIsModalOpen(true); 
+    };
+
   return (
-    <tr className=" border-b hover:bg-gray-100 transition-colors duration-200">
+    <>
+      <tr className=" border-b hover:bg-gray-100 transition-colors duration-200">
       <td className="px-6 py-4">{serviceTitle ? serviceTitle : "N/A"}</td>
       <td className="px-6 py-4">{category}</td>
 
@@ -59,9 +64,18 @@ const MyServicesCard = ({ service, setServices }) => {
           delete
         </div>
         {/* update btn */}
-        <div className="bg-primary px-3 py-1 rounded-full text-lg">update</div>
+        <div   onClick={handleUpdateClick} 
+        className="bg-primary px-3 py-1 rounded-full text-lg">update</div>
       </td>
     </tr>
+        {/* Update Service Modal */}
+        <UpdateServiceModal
+        service={selectedService}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)} 
+        setServices={setServices}
+      />
+    </>
   );
 };
 
