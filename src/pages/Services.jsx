@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import FeaturedServicesCard from "../components/FeaturedServicesCard";
+import { FaSearch } from "react-icons/fa";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -67,26 +68,25 @@ const Services = () => {
         </div>
 
         {/* search */}
-        <div className="flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
+        <div
+          className="flex justify-center relative 
+        items-center "
+        >
           <input
-            className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white
-                 outline-none focus:placeholder-transparent"
+            className=" p-4 border border-gray-300 lg:w-96
+           rounded-lg pl-10"
             type="text"
             name="search"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
-            placeholder="Enter Service Title"
+            placeholder="Search by service title"
             aria-label="Enter Service Title"
           />
 
-          <button
-            className="px-3 md:px-4 py-3 text-sm font-medium tracking-wider
-               text-gray-100 uppercase transition-colors duration-300 transform
-                bg-primary rounded-md hover:bg-gray-600 focus:bg-gray-600
-                 focus:outline-none"
-          >
-            Search
-          </button>
+          <FaSearch
+            className="absolute left-4  top-1/2 transform -translate-y-1/2
+         text-gray-400"
+          />
         </div>
       </div>
 

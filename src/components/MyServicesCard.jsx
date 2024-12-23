@@ -23,7 +23,7 @@ const MyServicesCard = ({ service, setServices }) => {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!",
       });
-
+      
       if (result.isConfirmed) {
         await axios.delete(`${import.meta.env.VITE_API_URL}/service/${id}`);
 
@@ -55,17 +55,18 @@ const MyServicesCard = ({ service, setServices }) => {
       <td className="px-6 py-4">{category}</td>
 
       <td className="px-6 py-4">${price}</td>
-      <td className="px-6 py-4 flex flex-col lg:flex-row gap-4 text-white justify-center">
+      <td className="px-6 py-4 flex flex-col lg:flex-row gap-4 text-white 
+      items-center justify-center">
         {/* delete btn */}
         <div
           onClick={() => handleDelete(_id)}
-          className="bg-primary px-3 py-1 rounded-full text-lg"
+          className="bg-primary px-3 py-1 rounded-full lg:text-lg"
         >
           delete
         </div>
         {/* update btn */}
         <div   onClick={handleUpdateClick} 
-        className="bg-primary px-3 py-1 rounded-full text-lg">update</div>
+          className="bg-primary px-3 py-1 rounded-full lg:text-lg">update</div>
       </td>
     </tr>
         {/* Update Service Modal */}

@@ -61,7 +61,7 @@ const MyServices = () => {
           <p className="opacity-50">Start adding some services to your list!</p>
         </div>
       ) : (
-        <div className="group relative bg-[#ffffffb4] rounded-xl shadow-lg
+        <div className="group relative bg-[#ffffffb4] rounded-xl shadow-xl shadow-primary
          overflow-hidden hover:shadow-2xl mx-5">
           {/* Table */}
           <div className="overflow-x-auto ">

@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import UpdateReviewModal from "./UpdateReviewModal";
+import { useState } from "react";
 
 const MyReviewsCard = ({ review,  setReviews }) => {
+   const [selectedReview, setSelectedReview] = useState(null);
+     const [isModalOpen, setIsModalOpen] = useState(false);
   const {
     _id,
     reviewText,
@@ -46,6 +49,12 @@ const MyReviewsCard = ({ review,  setReviews }) => {
     }
   };
 
+   //  Update Button
+   const handleUpdateClick = () => {
+    setSelectedReview(review); 
+    setIsModalOpen(true); 
+  };
+
   return (
     <div className="flex flex-col bg-white shadow-md rounded-lg p-4 space-y-4">
       <div className="flex items-center space-x-4">
@@ -59,13 +68,13 @@ const MyReviewsCard = ({ review,  setReviews }) => {
         </div>
         <div>
           {/* Service title */}
-          <h2 className="text-xl font-bold text-gray-900 break-words">
-            Service Title:
-            <span className="text-base font-semibold text-gray-500">
-              {" "}
-              {serviceTitle}
-            </span>
-          </h2>
+            <h2 className="text-xl font-bold text-gray-900 break-words">
+              Service Title:
+              <span className="text-base font-semibold text-gray-500">
+                {" "}
+                {serviceTitle}
+              </span>
+            </h2>
           {/* Category */}
           <p className="text-base font-semibold text-gray-700">
             <span className="text-xl font-bold text-gray-900 ">Category: </span>
@@ -124,14 +133,22 @@ const MyReviewsCard = ({ review,  setReviews }) => {
           onClick={() => handleDelete(_id)}  
           className="btn bg-primary text-white lg:text-xl"
         >
-          Delete review
+          Delete 
         </button>
 
         {/* Update Button */}
-        <button className="btn bg-primary text-white lg:text-xl">
-          <Link to={`/update/${_id}`}>Update review</Link>
+        <button  onClick={handleUpdateClick} 
+        className="btn bg-primary text-white lg:text-xl">
+            Update
         </button>
       </div>
+        {/* Update Review Modal */}
+        <UpdateReviewModal
+        review={selectedReview}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        setReviews={setReviews}
+      />
     </div>
   );
 };
