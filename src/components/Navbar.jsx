@@ -39,6 +39,15 @@ const Navbar = () => {
       >
         <i>Add Service</i>
       </NavLink>
+       {/*My Services Page */}
+       <NavLink 
+        to="/myServices" 
+        className={({ isActive }) =>
+          ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+        }
+      >
+        <i>My Services</i>
+      </NavLink>
       {/* My Reviews */}
       <NavLink 
         to="/myReviews" 

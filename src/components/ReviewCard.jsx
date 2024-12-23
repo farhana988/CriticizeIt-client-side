@@ -24,9 +24,11 @@ const ReviewCard = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="container mx-auto px-6">
         <Heading title={"All Reviews"} />
 
+        <p className=" active text-primary text-5xl font-extrabold pb-6"> 
+            Total Reviews : {reviews.length}</p>
         {/* Reviews grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.length === 0 ? (
@@ -85,7 +87,7 @@ const ReviewCard = () => {
 
                   {/* Review Date */}
                   <p className="text-sm text-gray-500">
-                    {new Date(review.date).toLocaleDateString()}
+                  {new Date(review.addedDate).toLocaleDateString()}
                   </p>
                 </div>
               );
