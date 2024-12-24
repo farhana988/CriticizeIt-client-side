@@ -67,6 +67,14 @@ const Login = () => {
         });
       }
     }
+    
+
+      // dynamic title
+
+  if(location.pathname==='/login')
+        
+      { document.title= 'CriticizeIt | Login' }
+
     return (
       <div className="pt-20">
         <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-14 text-primary 

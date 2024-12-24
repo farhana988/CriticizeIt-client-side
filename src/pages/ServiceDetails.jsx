@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ServiceDetailsCard from "./ServiceDetailsCard";
 import Heading from "../components/Heading";
 import ReviewForm from "../components/ReviewForm";
@@ -28,6 +28,13 @@ const ServiceDetails = () => {
 
     fetchAllDetails();
   }, [id]);
+
+    // dynamic title
+    const location =useLocation()
+    if(location.pathname===`/serviceDetails/${id}`)
+          
+        { document.title= 'CriticizeIt | Service Details' }
+  
   
   return (
     <div className="pt-20 ">

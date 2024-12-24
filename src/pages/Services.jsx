@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import FeaturedServicesCard from "../components/FeaturedServicesCard";
 import { FaSearch } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -27,6 +28,14 @@ const Services = () => {
 
     fetchAllServices();
   }, [filter, search]);
+
+
+  // dynamic title
+  const location =useLocation()
+  if(location.pathname==='/services')
+        
+      { document.title= 'CriticizeIt | Services' }
+
 
   return (
     <div className="container mx-auto py-10 min-h-screen">

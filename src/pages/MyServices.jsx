@@ -7,6 +7,7 @@ import MyServicesCard from "../components/MyServicesCard";
 import { TfiFaceSad } from "react-icons/tfi";
 import Heading from "../components/Heading";
 import { FaSearch } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const MyServices = () => {
   const [services, setServices] = useState([]);
@@ -30,6 +31,15 @@ const MyServices = () => {
     };
     fetchAllServices();
   }, [searchQuery, user]);
+
+    // dynamic title
+    const location =useLocation()
+    if(location.pathname==='/myServices')
+          
+        { document.title= 'CriticizeIt | My Services' }
+
+        
+
   return (
     <div className="pt-10  min-h-screen">
       <Heading title={"My Services"}></Heading>

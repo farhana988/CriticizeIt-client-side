@@ -6,6 +6,7 @@ import axios from "axios";
 import Heading from "../components/Heading";
 import { TfiFaceSad } from "react-icons/tfi";
 import MyReviewsCard from "../components/MyReviewsCard";
+import { useLocation } from "react-router-dom";
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -24,6 +25,13 @@ const MyReviews = () => {
       };
       fetchAllReviews();
     }, [user]);
+
+      // dynamic title
+  const location =useLocation()
+  if(location.pathname==='/myReviews')
+        
+      { document.title= 'CriticizeIt | My Reviews' }
+
     return (
         <div className="pt-10  container mx-auto min-h-screen">
         <Heading

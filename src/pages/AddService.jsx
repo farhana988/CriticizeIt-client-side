@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import Heading from "../components/Heading";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -58,6 +59,13 @@ const AddService = () => {
       setLoading(false);
     }
   };
+
+    // dynamic title
+    const location =useLocation()
+    if(location.pathname==='/addService')
+          
+        { document.title= 'CriticizeIt | Add Service' }
+  
 
   return (
     <div className=" py-10 container mx-auto px-6 md:px-10">

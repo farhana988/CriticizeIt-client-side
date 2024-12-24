@@ -108,10 +108,11 @@ const MeetOurPartners = () => {
         <div className="mt-5 lg:mt-8 mb-5 md:mb-2 lg:mb-0 flex justify-end">
           <button
             onClick={() => setShowMore(!showMore)}
-            className="text-sm md:text-base lg:text-xl text-primary font-semibold
-             hover:text-indigo-800    bg-slate-100 rounded-full
+            className="text-sm md:text-base lg:text-xl font-semibold text-white
+            bg-gradient-to-r from-purple-500 to-blue-500
+             hover:from-purple-600 hover:to-blue-600   rounded-full
              transition-all flex items-center gap-1 md:gap-2 lg:gap-3 
-            px-3 md:px-5 lg:px-7 border-2 border-primary"
+            px-3 md:px-5  border-2 border-primary"
           >
             {showMore ? (
               <>
@@ -131,10 +132,11 @@ const MeetOurPartners = () => {
             Want to partner with us and make a difference together?
           </p>
           <div
-            className="btn lg:btn-lg bg-primary 
-          text-sm lg:text-lg text-white py-3
+            className="btn lg:btn-lg text-sm lg:text-lg text-white py-3
            px-6 rounded-full 
-          font-semibold shadow-lg hover:bg-indigo-700 transition-all
+           bg-gradient-to-r from-purple-500 to-blue-500
+             hover:from-purple-600 hover:to-blue-600
+          font-semibold shadow-lg 
           "
           >
             Become a Partner <FaLongArrowAltRight />
