@@ -3,55 +3,44 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Heading from "../components/Heading";
-import { TfiFaceSad } from "react-icons/tfi";
 import MyReviewsCard from "../components/MyReviewsCard";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import NoData from "../components/NoData";
 
 const MyReviews = () => {
-  const axiosSecure = useAxiosSecure()
-    const [reviews, setReviews] = useState([]);
-    const { user } = useContext(AuthContext);
-  
-    useEffect(() => {
-      const fetchAllReviews = async () => {
-        try {
-          const { data } = await axiosSecure.get(
-            `/myReviews/${user?.email}`
-          );
-          setReviews(data);
-        } catch {
-           Swal.fire(
-                                "Error",
-                                "An error occurred",
-                                "error"
-                              );
-        }
-      };
-      fetchAllReviews();
-    }, [axiosSecure, user]);
+  const axiosSecure = useAxiosSecure();
+  const [reviews, setReviews] = useState([]);
+  const { user } = useContext(AuthContext);
 
-      // dynamic title
-  const location =useLocation()
-  if(location.pathname==='/myReviews')
-        
-      { document.title= 'CriticizeIt | My Reviews' }
+  useEffect(() => {
+    const fetchAllReviews = async () => {
+      try {
+        const { data } = await axiosSecure.get(`/myReviews/${user?.email}`);
+        setReviews(data);
+      } catch {
+        Swal.fire("Error", "An error occurred", "error");
+      }
+    };
+    fetchAllReviews();
+  }, [axiosSecure, user]);
 
-    return (
-        <div className="pt-10  container mx-auto min-h-screen">
-        <Heading
-        title={'My reviews'}></Heading>
-    
+  // dynamic title
+  const location = useLocation();
+  if (location.pathname === "/myReviews") {
+    document.title = "CriticizeIt | My Reviews";
+  }
+
+  return (
+    <div className="pt-10  container mx-auto min-h-screen">
+      <Heading title={"My reviews"}></Heading>
+
       {reviews.length === 0 ? (
-        <div
-          className="flex flex-col justify-center items-center gap-5 my-40 active
-            text-xl md:text-2xl lg:text-4xl font-bold"
-        >
-          <TfiFaceSad className="text-9xl " />
-          <p className="opacity-50">No reviews found.</p>
-          <p className="opacity-50">Start adding some reviews to your list!</p>
-        </div>
+        <NoData
+          title={"No reviews found."}
+          subtitle="Start adding some reviews to your list!"
+        ></NoData>
       ) : (
         <div
           className="grid grid-cols-1 gap-6
@@ -67,7 +56,7 @@ const MyReviews = () => {
         </div>
       )}
     </div>
-    );
+  );
 };
 
 export default MyReviews;
