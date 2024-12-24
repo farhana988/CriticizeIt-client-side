@@ -6,6 +6,7 @@ import DealsAndDiscounts from "../components/DealsAndDiscounts";
 import FeaturedServices from "../components/FeaturedServices";
 import MeetOurPartners from "../components/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/UserTestimonialSpotligh";
+import Users from "../components/Users";
 
 const Home = () => {
   const location =useLocation()
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <Users></Users>
       <FeaturedServices></FeaturedServices>
         <MeetOurPartners></MeetOurPartners>
         <UserTestimonialSpotlight></UserTestimonialSpotlight>

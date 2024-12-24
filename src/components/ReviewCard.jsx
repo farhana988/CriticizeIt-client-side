@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Heading from "./Heading";
+import CountUp from "react-countup";
 
 const ReviewCard = () => {
   const [reviews, setReviews] = useState([]);
@@ -29,10 +30,19 @@ const ReviewCard = () => {
     <div className=" mx-6 lg:mx-14  lg:px-0">
       <Heading title={"All Reviews"} />
 
-      <p className="active text-primary text-5xl font-extrabold pb-6
+      {/* total reviews */}
+      <p className="active text-primary text-2xl md:text-4xl lg:text-5xl 
+      font-extrabold pb-6
       ">
-        Total Reviews : {reviews.length}
+        Total Reviews : {" "}
+        <CountUp
+          start={0}
+          end={reviews.length}
+          duration={3}
+          separator=","
+        />
       </p>
+      
       {/* Reviews grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
      ">

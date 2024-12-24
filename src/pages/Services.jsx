@@ -6,6 +6,7 @@ import Heading from "../components/Heading";
 import FeaturedServicesCard from "../components/FeaturedServicesCard";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import CountUp from "react-countup";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -29,13 +30,11 @@ const Services = () => {
     fetchAllServices();
   }, [filter, search]);
 
-
   // dynamic title
-  const location =useLocation()
-  if(location.pathname==='/services')
-        
-      { document.title= 'CriticizeIt | Services' }
-
+  const location = useLocation();
+  if (location.pathname === "/services") {
+    document.title = "CriticizeIt | Services";
+  }
 
   return (
     <div className="container mx-auto py-10 min-h-screen">
@@ -99,8 +98,20 @@ const Services = () => {
         </div>
       </div>
 
-      {/* main card section */}
+     
+      {/* total services */}
+      <p className="active text-primary  text-2xl md:text-4xl lg:text-5xl 
+       font-extrabold px-5">
 
+        Total Services :{" "}
+
+        <CountUp start={0} 
+        end={services.length} 
+        duration={3} 
+        separator="," />
+      </p>
+
+       {/* main card section */}
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
             mx-5 mt-10"
