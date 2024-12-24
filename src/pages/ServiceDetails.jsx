@@ -20,7 +20,6 @@ const ServiceDetails = () => {
           `${import.meta.env.VITE_API_URL}/serviceDetails/${id}`
         );
         setDetails(data);
-        // setReviews(data.reviews || []);
       } catch (error) {
         console.error("Error fetching details:", error);
       }
@@ -29,30 +28,34 @@ const ServiceDetails = () => {
     fetchAllDetails();
   }, [id]);
 
-    // dynamic title
-    const location =useLocation()
-    if(location.pathname===`/serviceDetails/${id}`)
-          
-        { document.title= 'CriticizeIt | Service Details' }
-  
-  
+  // dynamic title
+  const location = useLocation();
+  if (location.pathname === `/serviceDetails/${id}`) {
+    document.title = "CriticizeIt | Service Details";
+  }
+
   return (
     <div className="pt-20 ">
       <Heading title={"Service Details & Review"}></Heading>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2  mx-6 bg-white rounded-xl
-      border-2 border-red-700">
+      <section
+        className="grid grid-cols-1 lg:grid-cols-2  mx-6  rounded-xl
+      "
+      >
+        {/* details card */}
+        <ServiceDetailsCard details={details}></ServiceDetailsCard>
 
-      <ServiceDetailsCard details={details}></ServiceDetailsCard>
-
-      <div className="">
-        <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
-          Review Form</h2>
-        <ReviewForm details={details}></ReviewForm>
-      </div>
+        {/* review form  */}
+        <div className="">
+          <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
+            Review Form
+          </h2>
+          <ReviewForm details={details}></ReviewForm>
+        </div>
       </section>
+
+      {/* review card */}
       <ReviewCard></ReviewCard>
-      
 
       {/* review section */}
     </div>

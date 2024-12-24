@@ -8,8 +8,8 @@ const FeaturedServicesCard = ({ service }) => {
     service || {};
   return (
     <div
-      className="group relative bg-white rounded-xl shadow-lg overflow-hidden 
-         hover:shadow-2xl"
+      className="group relative bg-[#ffffff7a] rounded-xl shadow-xl overflow-hidden 
+        shadow-primary hover:shadow-2xl"
     >
       {/* Image */}
       <div className="relative w-full h-64 p-5">
@@ -17,7 +17,7 @@ const FeaturedServicesCard = ({ service }) => {
           src={serviceImage}
           alt={serviceTitle}
           className="object-cover w-full h-full 
-             rounded-2xl  "
+             rounded-xl  "
         />
       </div>
 

@@ -99,7 +99,7 @@ const ReviewForm = ({details}) => {
   };
 
   return (
-    <div>
+    <div className="">
       {/* review section */}
       <form onSubmit={handleReviewSubmit} className="mt-6 p-6">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">

@@ -114,7 +114,7 @@ const Registration = () => {
                 type="name"
                 name="name"
                 placeholder="name"
-                className="input input-bordered"
+                className="input input-bordered break-words"
                 required
               />
             </div>
