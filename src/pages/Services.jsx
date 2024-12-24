@@ -106,7 +106,7 @@ const Services = () => {
      
       {/* total services */}
       <p className="active text-primary  text-2xl md:text-4xl lg:text-5xl 
-       font-extrabold px-5">
+       font-extrabold px-5 my-6">
 
         Total Services :{" "}
 
@@ -119,7 +119,7 @@ const Services = () => {
        {/* main card section */}
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
-            mx-5 mt-10"
+            mx-5"
       >
         {services.map((service) => (
           <FeaturedServicesCard key={service._id} service={service} />

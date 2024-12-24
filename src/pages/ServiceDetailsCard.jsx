@@ -84,11 +84,10 @@ const ServiceDetailsCard = ({ details }) => {
           
             {/* Description */}
           <div className="mt-3">
-           
-            <h3 className="text-xl font-bold text-gray-900 mb-1">
-              Description:
-            </h3>
             <p className="text-gray-600 break-words">
+              <span className="text-xl font-bold text-gray-900 mb-1">
+              Description : {" "}
+              </span>
               {isExpanded
                 ? description
                 : `${description?.substring(0, 156)}...`}
