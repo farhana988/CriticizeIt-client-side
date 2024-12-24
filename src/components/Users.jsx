@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
+import Swal from "sweetalert2";
 
 const Users = () => {
   const [services, setServices] = useState([]);
@@ -13,8 +14,12 @@ const Users = () => {
           `${import.meta.env.VITE_API_URL}/users`
         );
         setServices(data);
-      } catch (error) {
-        console.error("Error fetching services:", error);
+      } catch {
+         Swal.fire(
+                              "Error",
+                              "An error occurred",
+                              "error"
+                            );
       }
     };
 

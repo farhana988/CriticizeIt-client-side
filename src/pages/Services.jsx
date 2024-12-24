@@ -7,6 +7,7 @@ import FeaturedServicesCard from "../components/FeaturedServicesCard";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import CountUp from "react-countup";
+import Swal from "sweetalert2";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -22,8 +23,12 @@ const Services = () => {
           }/all-services?filter=${filter}&search=${search}`
         );
         setServices(data);
-      } catch (error) {
-        console.error("Error fetching services:", error);
+      } catch {
+        Swal.fire(
+                             "Error",
+                             "An error occurred",
+                             "error"
+                           );
       }
     };
 

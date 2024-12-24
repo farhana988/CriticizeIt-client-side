@@ -7,6 +7,7 @@ import { TfiFaceSad } from "react-icons/tfi";
 import MyReviewsCard from "../components/MyReviewsCard";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const axiosSecure = useAxiosSecure()
@@ -21,7 +22,11 @@ const MyReviews = () => {
           );
           setReviews(data);
         } catch {
-          console.log("first");
+           Swal.fire(
+                                "Error",
+                                "An error occurred",
+                                "error"
+                              );
         }
       };
       fetchAllReviews();

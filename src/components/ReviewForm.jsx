@@ -4,11 +4,12 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const ReviewForm = ({details}) => {
+  const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -74,8 +75,8 @@ const ReviewForm = ({details}) => {
         category,
       };
 
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/add-review`,
+      const { data } = await axiosSecure.post(
+        `/add-review`,
         reviewData
       );
 

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import axios from "axios";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
+  const axiosSecure = useAxiosSecure()
   const [formData, setFormData] = useState({
     serviceImage: "",
     serviceTitle: "",
@@ -50,8 +51,8 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
     setLoading(true);
 
     try {
-      const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/update-service/${service._id}`,
+      const response = await axiosSecure.put(
+        `/update-service/${service._id}`,
         formData
       );
 

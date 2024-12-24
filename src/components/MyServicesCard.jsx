@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-import axios from "axios";
+
 import { useState } from "react";
 import Swal from "sweetalert2";
 import UpdateServiceModal from "./UpdateServiceModal";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyServicesCard = ({ service, setServices }) => {
+  const axiosSecure = useAxiosSecure()
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const {
@@ -34,7 +36,7 @@ const MyServicesCard = ({ service, setServices }) => {
       });
 
       if (result.isConfirmed) {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/service/${id}`);
+        await axiosSecure.delete(`/service/${id}`);
 
         setServices((prevServices) =>
           prevServices.filter((service) => service._id !== id)

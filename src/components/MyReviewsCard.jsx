@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import axios from "axios";
 import Swal from "sweetalert2";
 import UpdateReviewModal from "./UpdateReviewModal";
 import { useState } from "react";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyReviewsCard = ({ review, setReviews }) => {
+  const axiosSecure = useAxiosSecure()
   const [selectedReview, setSelectedReview] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -38,7 +39,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
       });
 
       if (result.isConfirmed) {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/review/${id}`);
+        await axiosSecure.delete(`/review/${id}`);
 
         setReviews((prevReviews) =>
           prevReviews.filter((review) => review._id !== id)

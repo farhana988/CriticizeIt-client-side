@@ -7,6 +7,7 @@ import ServiceDetailsCard from "./ServiceDetailsCard";
 import Heading from "../components/Heading";
 import ReviewForm from "../components/ReviewForm";
 import ReviewCard from "../components/ReviewCard";
+import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
   const [details, setDetails] = useState([]);
@@ -20,8 +21,12 @@ const ServiceDetails = () => {
           `${import.meta.env.VITE_API_URL}/serviceDetails/${id}`
         );
         setDetails(data);
-      } catch (error) {
-        console.error("Error fetching details:", error);
+      } catch  {
+        Swal.fire(
+                             "Error",
+                             "An error occurred",
+                             "error"
+                           );
       }
     };
 

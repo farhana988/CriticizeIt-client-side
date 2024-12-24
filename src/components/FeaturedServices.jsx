@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Heading from "./Heading";
 import FeaturedServicesCard from "./FeaturedServicesCard";
+import Swal from "sweetalert2";
 
 const FeaturedServices = () => {
     const [services, setServices] = useState([]);
@@ -11,8 +12,12 @@ const FeaturedServices = () => {
             try {
                 const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/services`);
                 setServices(data);
-            } catch (error) {
-                console.error("Error fetching services:", error);
+            } catch {
+               Swal.fire(
+                      "Error",
+                      "An error occurred",
+                      "error"
+                    );
             }
         };
 

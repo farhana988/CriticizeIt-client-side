@@ -8,6 +8,7 @@ import Heading from "../components/Heading";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const MyServices = () => {
   const axiosSecure = useAxiosSecure()
@@ -27,7 +28,11 @@ const MyServices = () => {
 
         setServices(data);
       } catch {
-        console.log("first");
+        Swal.fire(
+                             "Error",
+                             "An error occurred",
+                             "error"
+                           );
       }
     };
     fetchAllServices();

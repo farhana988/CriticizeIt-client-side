@@ -39,7 +39,7 @@ const Registration = () => {
     try {
       // User Registration
       const result = await createUser(email, pass);
-      console.log(result);
+    
       await updateUserProfile(name, photo);
       setUser({ ...result.user, photoURL: photo, displayName: name });
 
@@ -49,11 +49,11 @@ const Registration = () => {
         name: name,
       };
 
-      const { data } = await axios.post(
+      await axios.post(
         ` ${import.meta.env.VITE_API_URL}/users`,
         userData
       );
-      console.log(data)
+    
 
       
       Swal.fire({

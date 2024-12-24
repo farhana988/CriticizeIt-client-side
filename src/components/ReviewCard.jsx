@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Heading from "./Heading";
 import CountUp from "react-countup";
+import Swal from "sweetalert2";
 
 const ReviewCard = () => {
   const [reviews, setReviews] = useState([]);
@@ -17,8 +18,12 @@ const ReviewCard = () => {
           `${import.meta.env.VITE_API_URL}/reviews`
         );
         setReviews(data);
-      } catch (error) {
-        console.error("Error fetching reviews", error);
+      } catch  {
+         Swal.fire(
+                              "Error",
+                              "An error occurred",
+                              "error"
+                            );
       }
     };
 

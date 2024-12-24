@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import axios from "axios";
 import Heading from "../components/Heading";
 import Swal from "sweetalert2";
 import { useLocation } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
- 
+  const axiosSecure = useAxiosSecure()
   const [loading, setLoading] = useState(false);
   const addedDate = new Date().toLocaleDateString();
 
@@ -38,7 +38,7 @@ const AddService = () => {
     };
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/add-service`, formData);
+      await axiosSecure.post(`/add-service`, formData);
       form.reset();
      Swal.fire({
               position: "top-end",

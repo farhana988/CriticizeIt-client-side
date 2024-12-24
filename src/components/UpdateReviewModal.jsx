@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import axios from "axios";
 import { Rating } from "react-simple-star-rating";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 const UpdateReviewModal = ({ review, isOpen, onClose, setReviews }) => {
+  const axiosSecure = useAxiosSecure()
   const [formData, setFormData] = useState({
     reviewText: "",
     rating: 0,
@@ -48,8 +49,8 @@ const UpdateReviewModal = ({ review, isOpen, onClose, setReviews }) => {
     setLoading(true);
 
     try {
-      const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/update-review/${review._id}`,
+      const response = await axiosSecure.put(
+        `/update-review/${review._id}`,
         formData
       );
 
