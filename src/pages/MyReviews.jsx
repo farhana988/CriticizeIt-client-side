@@ -2,21 +2,22 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import axios from "axios";
 import Heading from "../components/Heading";
 import { TfiFaceSad } from "react-icons/tfi";
 import MyReviewsCard from "../components/MyReviewsCard";
 import { useLocation } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyReviews = () => {
+  const axiosSecure = useAxiosSecure()
     const [reviews, setReviews] = useState([]);
     const { user } = useContext(AuthContext);
   
     useEffect(() => {
       const fetchAllReviews = async () => {
         try {
-          const { data } = await axios.get(
-            `${import.meta.env.VITE_API_URL}/myReviews/${user?.email}`
+          const { data } = await axiosSecure.get(
+            `/myReviews/${user?.email}`
           );
           setReviews(data);
         } catch {
@@ -24,7 +25,7 @@ const MyReviews = () => {
         }
       };
       fetchAllReviews();
-    }, [user]);
+    }, [axiosSecure, user]);
 
       // dynamic title
   const location =useLocation()

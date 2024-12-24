@@ -1,6 +1,5 @@
 // import React from 'react';
 
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import MyServicesCard from "../components/MyServicesCard";
@@ -8,8 +7,10 @@ import { TfiFaceSad } from "react-icons/tfi";
 import Heading from "../components/Heading";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyServices = () => {
+  const axiosSecure = useAxiosSecure()
   const [services, setServices] = useState([]);
   const { user } = useContext(AuthContext);
   const [searchQuery, setSearchQuery] = useState("");
@@ -19,8 +20,8 @@ const MyServices = () => {
       try {
     
   
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/myServices/${user?.email}`,
+        const { data } = await axiosSecure.get(
+          `/myServices/${user?.email}`,
           { params: { search: searchQuery } }
         );
 
@@ -30,7 +31,7 @@ const MyServices = () => {
       }
     };
     fetchAllServices();
-  }, [searchQuery, user]);
+  }, [axiosSecure, searchQuery, user]);
 
     // dynamic title
     const location =useLocation()
