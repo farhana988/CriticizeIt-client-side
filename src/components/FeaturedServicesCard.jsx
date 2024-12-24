@@ -3,49 +3,93 @@
 
 import { Link } from "react-router-dom";
 
-const FeaturedServicesCard = ({service}) => {
-    const { serviceImage,
-        serviceTitle,
-        _id,
-        description,
-        category,
-        price,
-        } =
-    service || {}
-    return (
-        <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
-        {/* Image */}
-        <div className="relative w-full h-48">
-          <img
-            src={ serviceImage}
-            alt={serviceTitle}
-            className="object-cover w-full h-full transition-transform transform group-hover:scale-110"
-          />
-        </div>
-  
-        {/* Card Content */}
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">{serviceTitle}</h3>
-          <p className="text-gray-600 text-sm mb-4">
-            { description.substring(0,100)}</p>
-  
-          {/* Category and Price */}
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-sm text-gray-500">{category}</span>
-            <span className="text-lg font-bold text-gray-800">${price}</span>
+const FeaturedServicesCard = ({ service }) => {
+  const { serviceImage, serviceTitle, _id, description, category, price } =
+    service || {};
+  return (
+    <div
+      className="group relative bg-white rounded-xl shadow-lg overflow-hidden 
+         hover:shadow-2xl"
+    >
+      {/* Image */}
+      <div className="relative w-full h-64 p-5">
+        <img
+          src={serviceImage}
+          alt={serviceTitle}
+          className="object-cover w-full h-full 
+             rounded-2xl  "
+        />
+      </div>
+
+      {/* Card Content */}
+      <div className="px-6">
+        {/* title */}
+        <div
+          className="text-gray-800  max-w-full sm:max-w-md 
+           "
+        >
+          <div className="relative group">
+            <div className="tooltip tooltip-top" data-tip={serviceTitle}>
+              <p className="truncate  max-w-full sm:max-w-xs">
+                {/* des title */}
+                <span className="text-xl font-semibold text-gray-800">
+                Service Title :{" "}
+                </span>
+                {/* des title */}
+                {serviceTitle.substring(0, 20)}
+                {serviceTitle.length > 20 && "..."}
+              </p>
+            </div>
           </div>
-  
+        </div>
+
+        {/* category */}
+        <div className="text-base  text-gray-800 mb-2">
+          <span className="text-xl font-semibold">Category : </span>
+
+          {category}
+        </div>
+        {/* description */}
+        <div
+          className="text-gray-800 text-sm mb-2  max-w-full sm:max-w-md 
+           "
+        >
+          <div className="relative group">
+            <div className="tooltip tooltip-top" data-tip={description}>
+              <p className="truncate  max-w-full sm:max-w-xs ">
+                {/* des title */}
+                <span className="text-xl font-semibold text-gray-800">
+                  Description:{" "}
+                </span>
+                {/* des title */}
+                {description.substring(0, 20)}
+                {description.length > 20 && "..."}
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div
+          className="flex justify-between items-center mb-6
+        "
+        >
+          {/* price */}
+          <span className="  text-gray-800">
+            <span className="text-xl font-semibold">Price: </span>${price}
+          </span>
           {/* "See Details" Button */}
           <Link
-            to={`/serviceDetails/${_id}`} 
-            className="text-blue-500 font-semibold hover:text-blue-600 transition-colors"
+            to={`/serviceDetails/${_id}`}
+            className="bg-primary px-3 py-1 rounded-xl lg:text-lg
+             text-white font-semibold hover:text-blue-600 transition-colors"
           >
             See Details
           </Link>
         </div>
-  
       </div>
-    );
+    </div>
+  );
 };
 
 export default FeaturedServicesCard;
