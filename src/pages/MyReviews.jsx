@@ -48,8 +48,8 @@ const MyReviews = () => {
         </div>
       ) : (
         <div
-          className=" gap-6
-                mx-5 mt-10"
+          className="grid grid-cols-1 gap-6
+                mx-5 "
         >
           {reviews.map((review) => (
             <MyReviewsCard
