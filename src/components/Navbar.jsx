@@ -116,7 +116,8 @@ const Navbar = () => {
           {user?.email ? (
             <div className="flex gap-2 justify-center items-center">
               <div className="user-info relative ">
-                <img src={user.photoURL} alt="" 
+                <img referrerPolicy="no-referrer"
+                 src={user.photoURL} alt="" 
                 className="ring-2 ring-offset-4 ring-primary w-10 h-10 rounded-full" />
                 <div
                   className="user-name absolute bottom--10 left-0 w-full text-xs  text-center

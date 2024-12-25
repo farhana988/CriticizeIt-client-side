@@ -73,7 +73,7 @@ const ReviewCard = ({ triggerFetch }) => {
                 
                 "
                   >
-                    <img
+                    <img referrerPolicy="no-referrer"
                       src={review.userPhoto || "no photo"}
                       alt={review.userName}
                       className="w-10 md:w-12 lg:w-16  h-10 md:h-12 lg:h-16
