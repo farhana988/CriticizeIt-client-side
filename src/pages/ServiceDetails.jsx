@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
   const [details, setDetails] = useState([]);
+  const [triggerFetch, setTriggerFetch] = useState(false);
 
   const { id } = useParams();
 
@@ -21,12 +22,8 @@ const ServiceDetails = () => {
           `${import.meta.env.VITE_API_URL}/serviceDetails/${id}`
         );
         setDetails(data);
-      } catch  {
-        Swal.fire(
-                             "Error",
-                             "An error occurred",
-                             "error"
-                           );
+      } catch {
+        Swal.fire("Error", "An error occurred", "error");
       }
     };
 
@@ -38,6 +35,11 @@ const ServiceDetails = () => {
   if (location.pathname === `/serviceDetails/${id}`) {
     document.title = "CriticizeIt | Service Details";
   }
+
+    // fetch new review 
+    const handleNewReview = () => {
+      setTriggerFetch((prev) => !prev); 
+    };
 
   return (
     <div className="pt-20 ">
@@ -55,12 +57,16 @@ const ServiceDetails = () => {
           <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
             Review Form
           </h2>
-          <ReviewForm details={details}></ReviewForm>
+          <ReviewForm details={details}
+          onNewReview={handleNewReview}
+          ></ReviewForm>
         </div>
       </section>
 
       {/* review card */}
-      <ReviewCard></ReviewCard>
+      <ReviewCard
+      triggerFetch={triggerFetch} 
+      ></ReviewCard>
 
       {/* review section */}
     </div>

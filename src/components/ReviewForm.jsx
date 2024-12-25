@@ -8,7 +8,7 @@ import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
-const ReviewForm = ({details}) => {
+const ReviewForm = ({details , onNewReview }) => {
   const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -87,6 +87,8 @@ const ReviewForm = ({details}) => {
         showConfirmButton: false,
         timer: 1500,
       });
+       
+        onNewReview();
       setReviews([data, ...reviews]);
       setNewReview("");
       setRating(0);
@@ -121,9 +123,31 @@ const ReviewForm = ({details}) => {
                  border-gray-200 rounded-md focus:outline-none"
             />
           </div>
-
-          {/* rating */}
+          
+          {/* user name */}
           <div className="form-control">
+            <label className="label">
+              <span className={`label-text text-xl font-semibold `}>
+                User Name{" "}
+              </span>
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value= {user?`${user.displayName} `:`no name found`}
+              disabled
+              className="input input-bordered  text-gray-700 bg-gray-100 border
+                 border-gray-200 rounded-md focus:outline-none"
+            />
+          </div>
+         
+         
+        </section>
+
+        {/* Add Review */}
+         {/* rating */}
+         <div className="form-control">
             <label className="label">
               <span className={`label-text text-xl font-semibold `}>
                 Rating{" "}
@@ -147,9 +171,6 @@ const ReviewForm = ({details}) => {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Add Review */}
         <div>
           <h4 className="text-xl font-semibold my-2">Add a Review</h4>
 
@@ -158,6 +179,7 @@ const ReviewForm = ({details}) => {
             placeholder="Write your review..."
             value={newReview}
             onChange={(e) => setNewReview(e.target.value)}
+            required
           ></textarea>
         </div>
 
@@ -167,7 +189,7 @@ const ReviewForm = ({details}) => {
             type="submit"
             className="btn md:btn-wide lg:btn-lg bg-primary text-white 
             font-medium lg:text-lg rounded-lg
-             shadow-md hover:bg-indigo-700"
+             shadow-md hover:bg-indigo-500"
           >
             Post Review
           </button>

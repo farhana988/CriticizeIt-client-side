@@ -4,6 +4,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import nlogo from "../assets/slides/navLogo-modified.png"
 // import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
@@ -95,15 +96,14 @@ const Navbar = () => {
           </ul>
         </div>
          <div id='logo' className='flex relative'>
-          {/* <div className=' absolute -top-3 left-3 -rotate-12'>
-
-          <img className='w-14 animate__animated animate__fadeInTopLeft animate__infinite
-          animate__slower ' src={logo} alt="" />
-          </div> */}
           <Link to="/" className="font-bold text-primary text-2xl md:text-3xl lg:text-5xl
-           ml-10 z-10
+           lg:ml-5 z-10
          ">
-        <> CriticizeIt</>
+         
+          <img
+          className="w-12 h-12 object-cover rounded-full"
+           src={nlogo} alt="" />
+      
         </Link>
          </div>
         

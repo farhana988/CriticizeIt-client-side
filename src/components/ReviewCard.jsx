@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import React from 'react';
 
 import axios from "axios";
@@ -8,7 +9,7 @@ import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import NoData from "./NoData";
 
-const ReviewCard = () => {
+const ReviewCard = ({ triggerFetch }) => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,7 +28,7 @@ const ReviewCard = () => {
     };
 
     fetchAllReviews();
-  }, [id]);
+  }, [id ,  triggerFetch ]);
 
   return (
     <div>
