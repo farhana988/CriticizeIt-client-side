@@ -141,13 +141,26 @@ const ReviewForm = ({details , onNewReview }) => {
                  border-gray-200 rounded-md focus:outline-none"
             />
           </div>
-         
-         
-        </section>
 
-        {/* Add Review */}
-         {/* rating */}
-         <div className="form-control">
+          {/* user email */}
+          <div className="form-control">
+            <label className="label">
+              <span className={`label-text text-xl font-semibold `}>
+                User Email{" "}
+              </span>
+            </label>
+            <input
+              type="text"
+              id="userEmail"
+              name="userEmail"
+              value= {user?`${user.email} `:`no email found`}
+              disabled
+              className="input input-bordered  text-gray-700 bg-gray-100 border
+                 border-gray-200 rounded-md focus:outline-none"
+            />
+          </div>
+
+          <div className="form-control">
             <label className="label">
               <span className={`label-text text-xl font-semibold `}>
                 Rating{" "}
@@ -171,6 +184,12 @@ const ReviewForm = ({details , onNewReview }) => {
               </div>
             </div>
           </div>
+         
+        </section>
+
+        {/* Add Review */}
+         {/* rating */}
+        
         <div>
           <h4 className="text-xl font-semibold my-2">Add a Review</h4>
 
