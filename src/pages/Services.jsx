@@ -3,11 +3,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
-import FeaturedServicesCard from "../components/FeaturedServicesCard";
+// import FeaturedServicesCard from "../components/FeaturedServicesCard";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import CountUp from "react-countup";
 import Swal from "sweetalert2";
+import ServicesCard from "../components/ServicesCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -122,7 +123,7 @@ const Services = () => {
             mx-5"
       >
         {services.map((service) => (
-          <FeaturedServicesCard key={service._id} service={service} />
+          <ServicesCard key={service._id} service={service} />
         ))}
       </div>
     </div>

@@ -3,8 +3,8 @@
 
 import { Link } from "react-router-dom";
 
-const FeaturedServicesCard = ({ service }) => {
-  const { serviceImage, serviceTitle, _id, description,  price } =
+const ServicesCard = ({ service }) => {
+    const { serviceImage, serviceTitle, _id, description, category, price } =
     service || {};
   return (
     <div
@@ -43,7 +43,12 @@ const FeaturedServicesCard = ({ service }) => {
           </div>
         </div>
 
-       
+        {/* category */}
+        <div className="text-base  text-gray-800 mb-2">
+          <span className="text-xl font-semibold">Category : </span>
+
+          {category}
+        </div>
         {/* description */}
         <div
           className="text-gray-800 text-sm mb-2  max-w-full sm:max-w-md 
@@ -84,7 +89,7 @@ const FeaturedServicesCard = ({ service }) => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default FeaturedServicesCard;
+export default ServicesCard;
