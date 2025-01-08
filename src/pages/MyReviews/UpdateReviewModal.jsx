@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { Rating } from "react-simple-star-rating";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 
 
 const UpdateReviewModal = ({ review, isOpen, onClose, setReviews }) => {

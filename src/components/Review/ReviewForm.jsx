@@ -2,14 +2,14 @@
 // import React from 'react';
 
 import { useContext, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
-const ReviewForm = ({details , onNewReview }) => {
-  const axiosSecure = useAxiosSecure()
+const ReviewForm = ({ details, onNewReview }) => {
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -18,14 +18,15 @@ const ReviewForm = ({details , onNewReview }) => {
   const [rating, setRating] = useState(0);
   const addedDate = new Date().toLocaleDateString();
 
-  const { serviceImage,
+  const {
+    serviceImage,
     serviceTitle,
     companyName,
     website,
-   
+
     category,
-   }=details||{}
- 
+  } = details || {};
+
   // rating
   const handleRating = (rate) => {
     setRating(rate);
@@ -60,7 +61,7 @@ const ReviewForm = ({details , onNewReview }) => {
 
     try {
       const reviewData = {
-        userEmail:user.email,
+        userEmail: user.email,
         userName: user.displayName,
         userPhoto: user.photoURL,
         reviewText: newReview,
@@ -71,14 +72,11 @@ const ReviewForm = ({details , onNewReview }) => {
         serviceTitle,
         companyName,
         website,
-       
+
         category,
       };
 
-      const { data } = await axiosSecure.post(
-        `/add-review`,
-        reviewData
-      );
+      const { data } = await axiosSecure.post(`/add-review`, reviewData);
 
       Swal.fire({
         position: "top-end",
@@ -87,8 +85,8 @@ const ReviewForm = ({details , onNewReview }) => {
         showConfirmButton: false,
         timer: 1500,
       });
-       
-        onNewReview();
+
+      onNewReview();
       setReviews([data, ...reviews]);
       setNewReview("");
       setRating(0);
@@ -123,7 +121,7 @@ const ReviewForm = ({details , onNewReview }) => {
                  border-gray-200 rounded-md focus:outline-none"
             />
           </div>
-          
+
           {/* user name */}
           <div className="form-control">
             <label className="label">
@@ -135,7 +133,7 @@ const ReviewForm = ({details , onNewReview }) => {
               type="text"
               id="username"
               name="username"
-              value= {user?`${user.displayName} `:`no name found`}
+              value={user ? `${user.displayName} ` : `no name found`}
               disabled
               className="input input-bordered  text-gray-700 bg-gray-100 border
                  border-gray-200 rounded-md focus:outline-none"
@@ -153,7 +151,7 @@ const ReviewForm = ({details , onNewReview }) => {
               type="text"
               id="userEmail"
               name="userEmail"
-              value= {user?`${user.email} `:`no email found`}
+              value={user ? `${user.email} ` : `no email found`}
               disabled
               className="input input-bordered  text-gray-700 bg-gray-100 border
                  border-gray-200 rounded-md focus:outline-none"
@@ -184,12 +182,11 @@ const ReviewForm = ({details , onNewReview }) => {
               </div>
             </div>
           </div>
-         
         </section>
 
         {/* Add Review */}
-         {/* rating */}
-        
+        {/* rating */}
+
         <div>
           <h4 className="text-xl font-semibold my-2">Add a Review</h4>
 

@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-
 import { useState } from "react";
 import Swal from "sweetalert2";
+
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import UpdateServiceModal from "./UpdateServiceModal";
-import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyServicesCard = ({ service, setServices }) => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const {

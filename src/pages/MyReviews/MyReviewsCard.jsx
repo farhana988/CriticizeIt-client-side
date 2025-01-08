@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
-import UpdateReviewModal from "./UpdateReviewModal";
 import { useState } from "react";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import UpdateReviewModal from "./UpdateReviewModal";
 
 const MyReviewsCard = ({ review, setReviews }) => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const [selectedReview, setSelectedReview] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -168,24 +168,21 @@ const MyReviewsCard = ({ review, setReviews }) => {
           </a>
         </p>
         {/* Review Text */}
-      
-         <div className="mt-3">
-           <p className="text-base lg:text-lg font-semibold text-gray-500 break-words">
-             <span className="text-xl lg:text-2xl font-bold text-gray-900 "> 
-              Review : </span>
-             {isExpanded
-               ? reviewText
-               : `${reviewText?.substring(0, 206)}...`}
-           </p>
-           <button
-             onClick={toggle}
-             className="text-primary hover:underline mt-2"
-           >
-             {isExpanded ? "Show Less" : "Read More"}
-           </button>
-         </div>
 
-
+        <div className="mt-3">
+          <p className="text-base lg:text-lg font-semibold text-gray-500 break-words">
+            <span className="text-xl lg:text-2xl font-bold text-gray-900 ">
+              Review :{" "}
+            </span>
+            {isExpanded ? reviewText : `${reviewText?.substring(0, 206)}...`}
+          </p>
+          <button
+            onClick={toggle}
+            className="text-primary hover:underline mt-2"
+          >
+            {isExpanded ? "Show Less" : "Read More"}
+          </button>
+        </div>
       </section>
 
       {/* Update Review Modal */}

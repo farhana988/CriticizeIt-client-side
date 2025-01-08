@@ -4,9 +4,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import ServiceDetailsCard from "./ServiceDetailsCard";
-import Heading from "../components/Heading";
-import ReviewForm from "../components/ReviewForm";
-import ReviewCard from "../components/ReviewCard";
+import Heading from "../../components/shared/Heading";
+import ReviewForm from "../../components/Review/ReviewForm";
+import ReviewCard from "../../components/Review/ReviewCard";
 import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
@@ -36,10 +36,10 @@ const ServiceDetails = () => {
     document.title = "CriticizeIt | Service Details";
   }
 
-    // fetch new review 
-    const handleNewReview = () => {
-      setTriggerFetch((prev) => !prev); 
-    };
+  // fetch new review
+  const handleNewReview = () => {
+    setTriggerFetch((prev) => !prev);
+  };
 
   return (
     <div className="pt-20 ">
@@ -57,16 +57,15 @@ const ServiceDetails = () => {
           <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
             Review Form
           </h2>
-          <ReviewForm details={details}
-          onNewReview={handleNewReview}
+          <ReviewForm
+            details={details}
+            onNewReview={handleNewReview}
           ></ReviewForm>
         </div>
       </section>
 
       {/* review card */}
-      <ReviewCard
-      triggerFetch={triggerFetch} 
-      ></ReviewCard>
+      <ReviewCard triggerFetch={triggerFetch}></ReviewCard>
 
       {/* review section */}
     </div>

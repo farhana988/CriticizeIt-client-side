@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         clifford: "#da373d",
-        primary: "#536493",
+        primary: "#7f745f",
+        accent: "#9492b4",
+        secondary: "#b0c4c9",
         tab: "#ffffff",
       },
         fontFamily: {

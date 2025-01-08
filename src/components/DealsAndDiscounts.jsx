@@ -1,6 +1,6 @@
 import Countdown from "react-countdown";
 import { FaClock } from "react-icons/fa";
-import Heading from "./Heading";
+import Heading from "./shared/Heading";
 
 const deals = [
   {

@@ -3,11 +3,11 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "./Heading";
+import Heading from "../shared/Heading";
 import CountUp from "react-countup";
 import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
-import NoData from "./NoData";
+import NoData from "../shared/NoData";
 
 const ReviewCard = ({ triggerFetch }) => {
   const { id } = useParams();
@@ -28,7 +28,7 @@ const ReviewCard = ({ triggerFetch }) => {
     };
 
     fetchAllReviews();
-  }, [id ,  triggerFetch ]);
+  }, [id, triggerFetch]);
 
   return (
     <div>
@@ -73,7 +73,8 @@ const ReviewCard = ({ triggerFetch }) => {
                 
                 "
                   >
-                    <img referrerPolicy="no-referrer"
+                    <img
+                      referrerPolicy="no-referrer"
                       src={review.userPhoto || "no photo"}
                       alt={review.userName}
                       className="w-10 md:w-12 lg:w-16  h-10 md:h-12 lg:h-16

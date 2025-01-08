@@ -1,13 +1,13 @@
 // import React from 'react';
 
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
-import Heading from "../components/Heading";
-import MyReviewsCard from "../components/MyReviewsCard";
+import { AuthContext } from "../../providers/AuthProvider";
+import Heading from "../../components/shared/Heading";
+import MyReviewsCard from "./MyReviewsCard";
 import { useLocation } from "react-router-dom";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import NoData from "../components/NoData";
+import NoData from "../../components/shared/NoData";
 
 const MyReviews = () => {
   const axiosSecure = useAxiosSecure();

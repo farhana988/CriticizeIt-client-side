@@ -1,16 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "../components/ErrorPage";
+import ErrorPage from "../components/shared/ErrorPage";
 
 import PageLayout from "../layout/PageLayout";
 import Home from "../pages/Home";
-import Services from "../pages/Services";
+import Services from "../pages/services/Services";
 import AddService from "../pages/AddService";
-import MyReviews from "../pages/MyReviews";
+import MyReviews from "../pages/MyReviews/MyReviews";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
-import ServiceDetails from "../pages/ServiceDetails";
-import MyServices from "../pages/MyServices";
+import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import MyServices from "../pages/MyServices/MyServices";
 
 const router = createBrowserRouter([
   {
@@ -29,15 +29,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/addService",
-        element: <PrivateRoute><AddService></AddService></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myServices",
-        element: <PrivateRoute><MyServices></MyServices></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <MyServices></MyServices>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myReviews",
-        element:  <PrivateRoute> <MyReviews></MyReviews></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -48,10 +61,9 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/serviceDetails/:id',
-        element: <ServiceDetails></ServiceDetails>
+        path: "/serviceDetails/:id",
+        element: <ServiceDetails></ServiceDetails>,
       },
-      
     ],
   },
 ]);

@@ -1,14 +1,14 @@
 // import React from 'react';
 
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
-import MyServicesCard from "../components/MyServicesCard";
-import Heading from "../components/Heading";
+import { AuthContext } from "../../providers/AuthProvider";
+import MyServicesCard from "./MyServicesCard";
+import Heading from "../../components/shared/Heading";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import NoData from "../components/NoData";
+import NoData from "../../components/shared/NoData";
 
 const MyServices = () => {
   const axiosSecure = useAxiosSecure();

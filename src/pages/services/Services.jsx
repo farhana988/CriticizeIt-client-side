@@ -2,13 +2,13 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "../components/Heading";
+import Heading from "../../components/shared/Heading";
 // import FeaturedServicesCard from "../components/FeaturedServicesCard";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import CountUp from "react-countup";
 import Swal from "sweetalert2";
-import ServicesCard from "../components/ServicesCard";
+import ServicesCard from "./ServicesCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -25,11 +25,7 @@ const Services = () => {
         );
         setServices(data);
       } catch {
-        Swal.fire(
-                             "Error",
-                             "An error occurred",
-                             "error"
-                           );
+        Swal.fire("Error", "An error occurred", "error");
       }
     };
 
@@ -104,20 +100,16 @@ const Services = () => {
         </div>
       </div>
 
-     
       {/* total services */}
-      <p className="active text-primary  text-2xl md:text-4xl lg:text-5xl 
-       font-extrabold px-5 my-6">
-
+      <p
+        className="active text-primary  text-2xl md:text-4xl lg:text-5xl 
+       font-extrabold px-5 my-6"
+      >
         Total Services :{" "}
-
-        <CountUp start={0} 
-        end={services.length} 
-        duration={3} 
-        separator="," />
+        <CountUp start={0} end={services.length} duration={3} separator="," />
       </p>
 
-       {/* main card section */}
+      {/* main card section */}
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
             mx-5"

@@ -1,8 +1,9 @@
 // import React from 'react';
 
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
+import Footer from "../components/shared/Footer";
+import Navbar from "../components/shared/Navbar";
 
 const PageLayout = () => {
   return (
@@ -13,9 +14,8 @@ const PageLayout = () => {
          via-transparent to-indigo-100"
       >
         <Outlet></Outlet>
-     
 
-      <Footer></Footer>
+        <Footer></Footer>
       </section>
     </div>
   );

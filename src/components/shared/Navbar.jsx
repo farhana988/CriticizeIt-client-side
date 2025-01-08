@@ -3,8 +3,8 @@
 // import { useContext } from "react";
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
-import nlogo from "../assets/slides/navLogo-modified.png"
+import nlogo from "../../assets/slides/navLogo-modified.png"
+import { AuthContext } from "../../providers/AuthProvider";
 // import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
       <NavLink 
         to="/" 
         className={({ isActive }) =>
-          ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+          ` ${isActive ? 'active text-primary text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
         }
       >
        <i> Home</i>
@@ -26,7 +26,7 @@ const Navbar = () => {
       <NavLink 
         to="/services" 
         className={({ isActive }) =>
-          ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+          ` ${isActive ? 'active text-primary text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
         }
       >
         <i>Services</i>
@@ -36,7 +36,7 @@ const Navbar = () => {
         <NavLink 
         to="/addService" 
         className={({ isActive }) =>
-          ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+          ` ${isActive ? 'active text-primary text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
         }
       >
         <i>Add Service</i>
@@ -47,7 +47,7 @@ const Navbar = () => {
          <NavLink 
          to="/myServices" 
          className={({ isActive }) =>
-           ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+           ` ${isActive ? 'active text-primary text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
          }
        >
          <i>My Services</i>
@@ -58,7 +58,7 @@ const Navbar = () => {
        <NavLink 
        to="/myReviews" 
        className={({ isActive }) =>
-         ` ${isActive ? 'active text-[#536493] text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
+         ` ${isActive ? 'active text-primary text-3xl font-extrabold' : 'font-thin text-xl text-gray-400 hover:text-[#536493]'}`
        }
      >
        <i>My Reviews</i>

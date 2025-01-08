@@ -1,6 +1,8 @@
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import Heading from "./Heading";
+import Heading from "./shared/Heading";
 import { useEffect, useState } from "react";
+import "animate.css";
+import { motion } from "framer-motion";
 
 // import React from 'react';
 const partners = [
@@ -53,9 +55,7 @@ const MeetOurPartners = () => {
   }, [showMore]);
 
   return (
-    <section
-      className="relative pt-14"
-    >
+    <section className="relative pt-14">
       <div className="container mx-auto px-6 text-center">
         {/*  Title */}
         <Heading
@@ -88,18 +88,21 @@ const MeetOurPartners = () => {
                 </div>
 
                 {/* Details */}
-                <div className="card pt-24 pb-14 px-3 rounded-2xl bg-[#ffffffb4]
-               ">
+                <div
+                  className="card pt-24 pb-14 px-3 rounded-2xl bg-[#ffffffb4]
+               "
+                >
                   <h3
                     className="text-2xl font-semibold text-gray-700 mt-4
                 "
                   >
                     {partner.name}
                   </h3>
-                  <p className="text-gray-600 mt-2 px-3 lg:px-8">{partner.description}</p>
+                  <p className="text-gray-600 mt-2 px-3 lg:px-8">
+                    {partner.description}
+                  </p>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
@@ -108,9 +111,9 @@ const MeetOurPartners = () => {
         <div className="mt-5 lg:mt-8 mb-5 md:mb-2 lg:mb-0 flex justify-end">
           <button
             onClick={() => setShowMore(!showMore)}
-            className="text-sm md:text-base lg:text-xl font-semibold text-white
-            bg-gradient-to-r from-purple-500 to-blue-500
-             hover:from-purple-600 hover:to-blue-600   rounded-full
+            className="text-sm md:text-base lg:text-xl font-semibold text-black
+            bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary  rounded-full
              transition-all flex items-center gap-1 md:gap-2 lg:gap-3 
             px-3 md:px-5  border-2 border-primary"
           >
@@ -128,18 +131,28 @@ const MeetOurPartners = () => {
 
         {/* become a partner */}
         <div className="">
-          <p className= "text-sm md:text-lg lg:text-xl text-gray-700 mb-4">
+          <p className="text-sm md:text-lg lg:text-xl  mb-4">
             Want to partner with us and make a difference together?
           </p>
           <div
-            className="btn lg:btn-lg text-sm lg:text-lg text-white py-3
-           px-6 rounded-full 
-           bg-gradient-to-r from-purple-500 to-blue-500
-             hover:from-purple-600 hover:to-blue-600
+            className="btn lg:btn-lg text-sm lg:text-lg py-3
+           px-6 rounded-full text-black
+            bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary
           font-semibold shadow-lg 
           "
           >
-            Become a Partner <FaLongArrowAltRight />
+            Become a Partner
+            <motion.span
+              animate={{ x: [0, 10, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 0,
+              }}
+            >
+              <FaLongArrowAltRight />
+            </motion.span>
           </div>
         </div>
       </div>
