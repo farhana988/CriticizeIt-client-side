@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,10 +29,10 @@ const Footer = () => {
         </nav>
         <nav>
           <h4 className="text-2xl font-bold ">Quick Links</h4>
-          <a className="dark:opacity-80" href="/privacy-policy">Privacy Policy</a>
-          <a className="dark:opacity-80" href="/faq">FAQ</a>
-          <a className="dark:opacity-80" href="/terms">Terms of Service</a>
-          <a className="dark:opacity-80" href="/support">Support</a>
+          <Link to={"/privacy"} className="dark:opacity-80" >Privacy Policy</Link>
+          <Link to={"/faq"} className="dark:opacity-80" >FAQ</Link>
+          <Link to={"/terms"} className="dark:opacity-80" >Terms of Service</Link>
+          <Link to={"/support"} className="dark:opacity-80" >Support</Link>
         </nav>
         <nav >
           <h6 className="text-2xl font-bold ">Social</h6>

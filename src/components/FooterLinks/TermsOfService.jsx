@@ -20,6 +20,7 @@ const TermsOfService = () => {
         <p className="text-gray-700 dark:text-gray-300 mb-4">
           We reserve the right to terminate your account if you violate our terms of service. We may also suspend your services for any reason at any time.
         </p>
+        
       </div>
     </div>
   );

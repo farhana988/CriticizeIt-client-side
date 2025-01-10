@@ -11,6 +11,10 @@ import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import MyServices from "../pages/MyServices/MyServices";
+import PrivacyPolicy from "../components/FooterLinks/PrivacyPolicy";
+import FAQ from "../components/FooterLinks/FAQ";
+import Support from "../components/FooterLinks/Support";
+import TermsOfService from "../components/FooterLinks/TermsOfService";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +67,22 @@ const router = createBrowserRouter([
       {
         path: "/serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+      {
+        path: "/faq",
+        element:<FAQ></FAQ>,
+      },
+      {
+        path: "/terms",
+        element: <TermsOfService></TermsOfService>,
+      },
+      {
+        path: "/support",
+        element: <Support></Support>,
       },
     ],
   },

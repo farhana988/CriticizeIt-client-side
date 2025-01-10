@@ -25,6 +25,7 @@ const Support = () => {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Live Chat</h3>
             <p className="text-gray-700 dark:text-gray-300">You can chat with our team directly on our website during business hours.</p>
           </div>
+          
         </div>
       </div>
     </div>

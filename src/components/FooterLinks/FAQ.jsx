@@ -36,6 +36,9 @@ const FAQ = () => {
               Yes, our support team is available 7 days a week, from 9 AM to 6
               PM.
             </p>
+          
+
+
           </div>
         </div>
       </div>
