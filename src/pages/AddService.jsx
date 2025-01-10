@@ -69,14 +69,14 @@ const AddService = () => {
     <div className=" py-10 container mx-auto px-6 md:px-10">
       <Heading title={"  Add New Service"}></Heading>
       <section
-        className="p-6 lg:p-10 rounded-xl bg-[#dce4c98f] shadow-2xl
+        className="p-6 lg:p-10 rounded-xl bg-[#dce4c98f] dark:bg-dCard shadow-2xl
       shadow-primary w-full"
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Service Image */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Service Image
               </label>
               <input
@@ -84,16 +84,16 @@ const AddService = () => {
                 id="service_image"
                 name="service_image"
                 placeholder={"service image URL"}
-                className="w-full px-4 py-2 text-gray-700 bg-white border
+                className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
                  border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-blue-300"
+                  focus:ring-primary"
                 required
               />
             </div>
 
             {/* Service Title */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Service Title
               </label>
               <input
@@ -101,9 +101,9 @@ const AddService = () => {
                 id="service_title"
                 name="service_title"
                 placeholder={"service title"}
-                className="w-full px-4 py-2 text-gray-700 bg-white border
+                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
                  border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-blue-300"
+                  focus:ring-primary"
                 required
               />
             </div>
@@ -112,7 +112,7 @@ const AddService = () => {
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Company Name */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Company Name
               </label>
               <input
@@ -120,16 +120,16 @@ const AddService = () => {
                 id="company_name"
                 name="company_name"
                 placeholder={"Company Name"}
-                className="w-full px-4 py-2 text-gray-700 bg-white border
+                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
                  border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-blue-300"
+                  focus:ring-primary"
                 required
               />
             </div>
 
             {/* Website */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Website
               </label>
               <input
@@ -137,9 +137,9 @@ const AddService = () => {
                 id="website"
                 name="website"
                 placeholder={"Website URL"}
-                className="w-full px-4 py-2 text-gray-700 bg-white border
+                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
                  border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-blue-300"
+                  focus:ring-primary"
               />
             </div>
           </section>
@@ -147,13 +147,13 @@ const AddService = () => {
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Category */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Category
               </label>
               <select
                 id="category"
                 name="category"
-                className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-primary"
                 required
               >
                 <option value="" disabled selected>
@@ -185,7 +185,7 @@ const AddService = () => {
 
             {/* Price */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Price
               </label>
               <input
@@ -193,9 +193,9 @@ const AddService = () => {
                 id="price"
                 name="price"
                 placeholder={"price"}
-                className="w-full px-4 py-2 text-gray-700 bg-white border
+                className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
                  border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-blue-300"
+                  focus:ring-primary"
                 required
               />
             </div>
@@ -204,7 +204,7 @@ const AddService = () => {
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Added date */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Added Date
               </label>
               <input
@@ -213,14 +213,14 @@ const AddService = () => {
                 name="added_date"
                 value={addedDate}
                 disabled
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border
+                className="w-full px-4 py-2  border
                  border-gray-200 rounded-md focus:outline-none"
               />
             </div>
 
             {/* Email  */}
             <div className="">
-              <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+              <label className=" md:text-xl font-semibold block mb-1">
                 Email
               </label>
               <input
@@ -229,7 +229,7 @@ const AddService = () => {
                 name="email"
                 value={user?.email || ""}
                 disabled
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 
+                className="w-full px-4 py-2  
                 border border-gray-200 rounded-md focus:outline-none"
               />
             </div>
@@ -237,7 +237,7 @@ const AddService = () => {
 
           {/* Description */}
           <div className="">
-            <label className="text-gray-900 md:text-xl font-semibold block mb-1">
+            <label className=" md:text-xl font-semibold block mb-1">
               Description
             </label>
             <textarea
@@ -245,9 +245,9 @@ const AddService = () => {
               name="description"
               placeholder={"Short Description of the service"}
               rows="4"
-              className="w-full px-4 py-2 text-gray-700 bg-white border
+              className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
                border-gray-200 rounded-md focus:outline-none focus:ring
-                focus:ring-blue-300 break-words"
+                focus:ring-primary break-words"
               required
             ></textarea>
           </div>
@@ -256,7 +256,9 @@ const AddService = () => {
           <div className="flex justify-end mt-4">
             <button
               type="submit"
-              className={`px-6 py-2 text-white bg-primary rounded-md 
+              className={`px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-base lg:text-lg
+                 text-black  rounded-md font-semibold
                 focus:outline-none focus:ring ${
                   loading ? "cursor-not-allowed opacity-50" : "hover:bg-primary"
                 }`}

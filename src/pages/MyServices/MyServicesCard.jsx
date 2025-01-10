@@ -61,7 +61,7 @@ const MyServicesCard = ({ service, setServices }) => {
 
   return (
     <>
-      <tr className=" border-b hover:bg-gray-100 ">
+      <tr className=" border-b  ">
         <td className="border-2">
           <img
             className="h-24 w-32 object-cover rounded-xl "
@@ -92,14 +92,18 @@ const MyServicesCard = ({ service, setServices }) => {
           {/* delete btn */}
           <button
             onClick={() => handleDelete(_id)}
-            className="bg-primary px-4 py-2 rounded-full lg:text-lg"
+            className=" bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-black font-semibold
+             px-4 py-2 rounded-full lg:text-lg"
           >
             delete
           </button>
           {/* update btn */}
           <button
             onClick={handleUpdateClick}
-            className="bg-primary px-4 py-2 rounded-full lg:text-lg"
+            className="bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-black font-semibold
+             px-4 py-2 rounded-full lg:text-lg"
           >
             update
           </button>

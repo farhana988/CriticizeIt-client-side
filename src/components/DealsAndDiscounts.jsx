@@ -70,10 +70,12 @@ const DealsAndDiscounts = () => {
                 <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
                   {deal.service}
                 </h3>
-                <p className=" text-xs lg:text-sm mb-2"
-                title={deal.description}>
+                <p
+                  className=" text-xs lg:text-sm mb-2"
+                  title={deal.description}
+                >
                   {deal.description.substring(0, 60)}...
-                  </p>
+                </p>
                 {/* discount badge */}
                 <btn
                   className="text-sm md:text-base lg:text-lg font-semibold absolute 
@@ -84,26 +86,25 @@ const DealsAndDiscounts = () => {
                   {deal.discount}
                 </btn>
 
-              
-                  {/* Timer */}
-                  <div
-                    className="flex items-center justify-center text-primary dark:text-ivory 
+                {/* Timer */}
+                <div
+                  className="flex items-center justify-center text-primary dark:text-ivory 
                  text-sm lg:text-lg my-2"
-                  >
-                    <FaClock className="mr-2 text-primary dark:text-ivory" />
-                    <Countdown
-                      date={deal.endDate}
-                      renderer={({ days, hours, minutes, seconds }) => (
-                        <span>
-                          <span className="font-semibold">{days}</span>d{" "}
-                          <span className="font-semibold">{hours}</span>h{" "}
-                          <span className="font-semibold">{minutes}</span>m{" "}
-                          <span className="font-semibold">{seconds}</span>s
-                        </span>
-                      )}
-                    />
-                  </div>
-              
+                >
+                  <FaClock className="mr-2 text-primary dark:text-ivory" />
+                  <Countdown
+                    date={deal.endDate}
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <span>
+                        <span className="font-semibold">{days}</span>d{" "}
+                        <span className="font-semibold">{hours}</span>h{" "}
+                        <span className="font-semibold">{minutes}</span>m{" "}
+                        <span className="font-semibold">{seconds}</span>s
+                      </span>
+                    )}
+                  />
+                </div>
+
                 {/* Button */}
                 <button
                   className="  bg-gradient-to-r from-primary via-secondary to-accent

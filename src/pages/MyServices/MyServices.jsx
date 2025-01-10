@@ -51,12 +51,13 @@ const MyServices = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search by service title"
-          className="w-11/12 md:w-6/12 lg:w-5/12 px-4 py-2 border border-gray-300
+          className="w-11/12 md:w-6/12 lg:w-5/12 px-4 py-2 border
+           border-gray-300 bg-[#ffffffb4] dark:bg-dCard
            rounded-lg pl-10"
         />
         <FaSearch
           className="absolute left-8 md:left-52 lg:left-[435px]  
-        top-1/2 transform -translate-y-1/2 text-gray-400"
+        top-1/2 transform -translate-y-1/2 "
         />
       </div>
 
@@ -67,8 +68,8 @@ const MyServices = () => {
         ></NoData>
       ) : (
         <div
-          className="group relative bg-[#ffffffb4] rounded-xl shadow-xl
-         shadow-primary
+          className="group relative bg-[#dce4c98f]] dark:bg-dCard rounded-xl 
+          shadow-xl shadow-primary
          overflow-hidden hover:shadow-2xl mx-5 lg:mx-10"
         >
           {/* Table */}
@@ -77,7 +78,8 @@ const MyServices = () => {
               className=" 
               table table-xs"
             >
-              <thead className="lg:text-xl text-gray-800 ">
+              <thead className="lg:text-xl text-black dark:text-ivory 
+              opacity-70 dark:opacity-90">
                 <tr>
                   <th className="   py-3">Service Image</th>
                   <th className="  py-3">Service Title</th>
