@@ -19,11 +19,11 @@ const ServiceDetailsCard = ({ details }) => {
   } = details || {};
 
   return (
-    <div className=" overflow-hidden ">
+    <div className=" overflow-hidden lg:border-r border-primary border-dashed ">
       <div className="flex flex-col ">
-        <section className="flex flex-col md:flex-row gap-5 mt-5 ">
+        <section className="flex flex-row md:gap-5 mt-5 ">
           {/* Service Image */}
-          <div className="w-80 h-52   ml-6  ">
+          <div className="w-40 h-32 md:w-80 md:h-52   ml-6  ">
             <img
               src={serviceImage || "https://via.placeholder.com/300"}
               alt={serviceTitle}
@@ -31,70 +31,47 @@ const ServiceDetailsCard = ({ details }) => {
             />
           </div>
           {/* image side */}
-          <div className="flex flex-col gap-3 md:pt-9 px-6 md:px-0 ">
-            {/* Price */}
-            <p className="text-xl font-bold text-gray-900 ">
-              Price:{" "}
-              <span className="text-base font-bold text-gray-500">
-                ${price}
-              </span>
+          <div className="flex flex-col gap-1 justify-center px-6 md:px-0 ">
+            {/* service title */}
+            <h2 className="text-sm lg:text-xl font-bold  break-words">
+              {serviceTitle?.substring(0, 20)}
+            </h2>
+              {/* Category */}
+              <p className="text-xs md:text-base font-semibold ">{category}</p>
+            {/* company name */}
+            <p className="text-sm  ">
+              <a
+                className="text-blue-500 text-xs md:text-base font-medium
+                 hover:underline break-words"
+                href={website}
+              >
+                {companyName?.substring(0, 100)}
+              </a>
             </p>
+            {/* Price */}
+            <p className="text-xs md:text-xl font-bold  ">${price}</p>
 
             {/* Added Date */}
-            <p className="text-base text-gray-500 ">
-              <span className="text-xl font-bold text-gray-900 ">
-                Added on:{" "}
-              </span>
+            <p className="text-xs md:text-base  ">
               {new Date(addedDate).toLocaleDateString()}
             </p>
-            {/* Category */}
-            <p className="text-base font-semibold text-gray-700">
-              <span className="text-xl font-bold text-gray-900 ">
-                Category:{" "}
-              </span>
-              {category}
-            </p>
+          
+            
           </div>
         </section>
 
         {/* Service Info */}
-        <div className="px-6 pt-3">
-          {/* service title */}
-          <h2 className="text-xl font-bold text-gray-900 break-words">
-            Service Title:
-            <span className="text-base font-semibold text-gray-500">
-              {" "}
-              {serviceTitle?.substring(0, 100)}
-            </span>
-          </h2>
-
-          {/* company name */}
-          <p className="text-sm text-gray-500 mt-3">
-            <span className="text-xl font-bold text-gray-900 ">
-              Company Name:{" "}
-            </span>
-
-            <a
-              className="text-blue-500 text-base font-medium hover:underline break-words"
-              href={website}
-            >
-              {companyName?.substring(0, 100)}
-            </a>
-          </p>
-          
-            {/* Description */}
-          <div className="mt-3">
-            <p className="text-gray-600 break-words">
-              <span className="text-xl font-bold text-gray-900 mb-1">
-              Description : {" "}
-              </span>
+        <div className="px-6 pt-3 text-sm lg:text-lg md:mr-6">
+          {/* Description */}
+          <div className="mt-1">
+            <p className=" break-words">
               {isExpanded
                 ? description
                 : `${description?.substring(0, 156)}...`}
             </p>
             <button
               onClick={toggle}
-              className="text-blue-500 hover:underline mt-2"
+              className="border-2 border-primary px-3 rounded-full mt-2 text-xs lg:text-base"
             >
               {isExpanded ? "Show Less" : "Read More"}
             </button>

@@ -102,12 +102,12 @@ const ReviewForm = ({ details, onNewReview }) => {
   return (
     <div className="">
       {/* review section */}
-      <form onSubmit={handleReviewSubmit} className="mt-6 p-6">
+      <form onSubmit={handleReviewSubmit} className=" px-6">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
           {/* Added date */}
           <div className="form-control">
             <label className="label">
-              <span className={`label-text text-xl font-semibold `}>
+              <span className="text-xl font-semibold ">
                 Review Added Date{" "}
               </span>
             </label>
@@ -116,57 +116,23 @@ const ReviewForm = ({ details, onNewReview }) => {
               id="added_date"
               name="added_date"
               value={addedDate}
-              disabled
-              className="input input-bordered  text-gray-700 bg-gray-100 border
+              readOnly
+              className="input input-bordered   bg-gray-100 dark:bg-dCard border
                  border-gray-200 rounded-md focus:outline-none"
             />
           </div>
 
-          {/* user name */}
+          {/* rating */}
           <div className="form-control">
             <label className="label">
-              <span className={`label-text text-xl font-semibold `}>
-                User Name{" "}
-              </span>
-            </label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={user ? `${user.displayName} ` : `no name found`}
-              disabled
-              className="input input-bordered  text-gray-700 bg-gray-100 border
-                 border-gray-200 rounded-md focus:outline-none"
-            />
-          </div>
-
-          {/* user email */}
-          <div className="form-control">
-            <label className="label">
-              <span className={`label-text text-xl font-semibold `}>
-                User Email{" "}
-              </span>
-            </label>
-            <input
-              type="text"
-              id="userEmail"
-              name="userEmail"
-              value={user ? `${user.email} ` : `no email found`}
-              disabled
-              className="input input-bordered  text-gray-700 bg-gray-100 border
-                 border-gray-200 rounded-md focus:outline-none"
-            />
-          </div>
-
-          <div className="form-control">
-            <label className="label">
-              <span className={`label-text text-xl font-semibold `}>
+              <span className={`text-xl font-semibold `}>
                 Rating{" "}
               </span>
             </label>
 
             <div
               className={`rating-container flex justify-between input input-bordered
+                dark:bg-dCard
                  `}
             >
               <Rating
@@ -185,13 +151,12 @@ const ReviewForm = ({ details, onNewReview }) => {
         </section>
 
         {/* Add Review */}
-        {/* rating */}
 
         <div>
           <h4 className="text-xl font-semibold my-2">Add a Review</h4>
 
           <textarea
-            className="w-full p-4 border rounded-lg mb-4"
+            className="w-full p-4 border rounded-lg mb-4 dark:bg-dCard"
             placeholder="Write your review..."
             value={newReview}
             onChange={(e) => setNewReview(e.target.value)}
@@ -200,11 +165,12 @@ const ReviewForm = ({ details, onNewReview }) => {
         </div>
 
         {/* btn */}
-        <div className="flex justify-end  mt-5">
+        <div className="flex justify-end">
           <button
             type="submit"
-            className="btn md:btn-wide lg:btn-lg bg-primary text-white 
-            font-medium lg:text-lg rounded-lg
+            className="px-3 py-2 lg:px-5 rounded-xl bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-sm lg:text-lg
+                 text-black font-semibold
              shadow-md hover:bg-indigo-500"
           >
             Post Review

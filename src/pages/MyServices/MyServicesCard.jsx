@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import UpdateServiceModal from "./UpdateServiceModal";
+import { MdDelete } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
 
 const MyServicesCard = ({ service, setServices }) => {
   const axiosSecure = useAxiosSecure();
@@ -86,26 +88,24 @@ const MyServicesCard = ({ service, setServices }) => {
         </td>
 
         <td
-          className="flex flex-col lg:flex-row gap-5 lg:gap-2 text-white 
+          className="flex flex-col  gap-2 
       items-center justify-center py-5 md:py-3 lg:py-8  border-2 "
         >
           {/* delete btn */}
           <button
             onClick={() => handleDelete(_id)}
-            className=" bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary text-black font-semibold
-             px-4 py-2 rounded-full lg:text-lg"
+            className="  font-semibold
+              py-2 rounded-full  text-xl lg:text-3xl"
           >
-            delete
+           <MdDelete />
           </button>
           {/* update btn */}
           <button
             onClick={handleUpdateClick}
-            className="bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary text-black font-semibold
-             px-4 py-2 rounded-full lg:text-lg"
+            className=" font-semibold
+              py-2 rounded-full text-xl lg:text-3xl"
           >
-            update
+              <CiEdit />
           </button>
         </td>
       </tr>

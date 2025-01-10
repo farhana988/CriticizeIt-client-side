@@ -80,16 +80,16 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
       className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center 
     justify-center z-50"
     >
-      <div className="bg-white p-6 rounded-lg w-11/12 lg:w-9/12
-      h-5/6 md:h-4/5 lg:h-3/5 overflow-y-scroll   ">
-        <h2 className="text-primary font-semibold mb-6 text-center
+      <div className="bg-white dark:bg-[#1f1e1e] p-6 rounded-lg w-11/12 lg:w-9/12
+      h-5/6 md:h-4/5 lg:h-4/6 overflow-y-scroll   ">
+        <h2 className="text-primary dark:text-ivory font-semibold mb-6 text-center
         text-4xl  lg:text-7xl active">
           Update Service</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Service Image */}
             <div>
-              <label className="text-gray-900 font-semibold mb-32">
+              <label className="lg:text-lg font-semibold ">
                 Service Image
               </label>
               <input
@@ -97,7 +97,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
                 name="serviceImage"
                 value={formData.serviceImage}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 placeholder="Service Image URL"
                 required
               />
@@ -105,7 +105,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
 
             {/* Service Title */}
             <div>
-              <label className="text-gray-900 font-semibold">
+              <label className="lg:text-lg font-semibold">
                 Service Title
               </label>
               <input
@@ -113,7 +113,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
                 name="serviceTitle"
                 value={formData.serviceTitle}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 required
               />
             </div>
@@ -122,7 +122,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Company Name */}
             <div>
-              <label className="text-gray-900 font-semibold">
+              <label className="lg:text-lg  font-semibold">
                 Company Name
               </label>
               <input
@@ -130,20 +130,20 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 required
               />
             </div>
 
             {/* Website */}
             <div>
-              <label className="text-gray-900 font-semibold">Website</label>
+              <label className="lg:text-lg  font-semibold">Website</label>
               <input
                 type="url"
                 name="website"
                 value={formData.website}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 placeholder="Website URL"
               />
             </div>
@@ -152,12 +152,12 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Category */}
             <div>
-              <label className="text-gray-900 font-semibold">Category</label>
+              <label className="lg:text-lg  font-semibold">Category</label>
               <select
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 required
               >
                 <option value="" disabled>
@@ -189,13 +189,13 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
 
             {/* Price */}
             <div>
-              <label className="text-gray-900 font-semibold">Price</label>
+              <label className="lg:text-lg  font-semibold">Price</label>
               <input
                 type="number"
                 name="price"
                 value={formData.price}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 rounded-md w-full"
+                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 required
               />
             </div>
@@ -204,7 +204,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Updated Date */}
             <div>
-              <label className="text-gray-900 font-semibold">
+              <label className="lg:text-lg  font-semibold">
                 Updated Date
               </label>
               <input
@@ -212,31 +212,34 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
                 name="addedDate"
                 value={formData.addedDate} 
                 disabled
-                className="px-4 py-2 border border-gray-200 rounded-md w-full bg-gray-100"
+                className="px-4 py-2 border border-gray-200 rounded-md w-full
+                 dark:bg-dCard bg-gray-100"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="text-gray-900 font-semibold">Email</label>
+              <label className="lg:text-lg  font-semibold">Email</label>
               <input
                 type="email"
                 name="userEmail"
                 value={formData.userEmail}
                 disabled
-                className="px-4 py-2 border border-gray-200 rounded-md w-full bg-gray-100"
+                className="px-4 py-2 border border-gray-200 rounded-md w-full
+                 dark:bg-dCard bg-gray-100"
+               
               />
             </div>
           </section>
 
           {/* Description */}
           <div>
-            <label className="text-gray-900 font-semibold">Description</label>
+            <label className="lg:text-lg  font-semibold">Description</label>
             <textarea
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="px-4 py-2 border border-gray-200 rounded-md w-full"
+              className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
               rows="4"
               required
             />
@@ -246,7 +249,9 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <div className="flex justify-end gap-4 mt-6">
             <button
               type="submit"
-              className={`px-6 py-2 text-white bg-primary rounded-md ${
+              className={`px-3 lg:px-6 py-2  bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-black  font-semibold 
+             text-sm lg:text-lg  rounded-md ${
                 loading ? "cursor-not-allowed opacity-50" : "hover:bg-primary"
               }`}
               disabled={loading}

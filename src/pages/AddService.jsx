@@ -212,8 +212,8 @@ const AddService = () => {
                 id="added_date"
                 name="added_date"
                 value={addedDate}
-                disabled
-                className="w-full px-4 py-2  border
+               readOnly
+                className="w-full px-4 py-2  border dark:bg-dCard
                  border-gray-200 rounded-md focus:outline-none"
               />
             </div>
@@ -228,8 +228,8 @@ const AddService = () => {
                 id="email"
                 name="email"
                 value={user?.email || ""}
-                disabled
-                className="w-full px-4 py-2  
+                readOnly
+                className="w-full px-4 py-2  dark:bg-dCard
                 border border-gray-200 rounded-md focus:outline-none"
               />
             </div>

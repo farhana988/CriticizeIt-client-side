@@ -47,7 +47,7 @@ const ReviewCard = ({ triggerFetch }) => {
 
         {/* Reviews grid */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6
      "
         >
           {reviews.length === 0 ? (
@@ -64,8 +64,9 @@ const ReviewCard = ({ triggerFetch }) => {
               return (
                 <div
                   key={review._id}
-                  className="flex flex-col bg-[#ffffff7a] shadow-xl shadow-primary
-                 rounded-xl p-6 space-y-4 h-60
+                  className="flex flex-col bg-lCard dark:bg-dCard shadow-xl
+                   shadow-primary
+                 rounded-xl p-6 space-y-4 h-36 md:h-40 lg:h-52
                  relative hover:shadow-2xl"
                 >
                   <div
@@ -83,17 +84,18 @@ const ReviewCard = ({ triggerFetch }) => {
                     />
                     <div className="">
                       {/* username */}
-                      <div className="font-semibold text-xl break-words   ">
+                      <div className="font-semibold text-sm md:text-base lg:text-xl break-words   ">
                         {review.userName?.slice(0, 20)}
                       </div>
                       {/* Rating */}
-                      <div className="flex items-center font-semibold text-sm lg:font-bold lg:text-lg">
-                        <span className="mr-2">Rating:</span>
+                      <div className="flex items-center font-semibold text-xs
+                        md:text-sm lg:font-bold lg:text-lg">
+                       
                         {[...Array(validRating)].map((_, index) => (
                           <svg
                             key={index}
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-5 h-5 lg:w-7 lg:h-7 text-yellow-400"
+                            className="w-4 h-4  lg:w-7 lg:h-7 text-yellow-400"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             aria-hidden="true"
@@ -114,16 +116,17 @@ const ReviewCard = ({ triggerFetch }) => {
                     className="mt-3 flex flex-col justify-between flex-grow
                 overflow-y-scroll"
                   >
-                    <p className="text-gray-600 break-words">
+                    <p className=" break-words text-xs lg:text-base">
                       {isExpanded
                         ? review.reviewText
-                        : `${review.reviewText?.substring(0, 130)}...`}
+                        : `${review.reviewText?.substring(0, 90)}...`}
                     </p>
 
                     {/* See More Button */}
                     <button
                       onClick={toggle}
-                      className="text-primary hover:underline self-start"
+                      className="border px-3 text-xs lg:text-base rounded-full mt-2
+                       border-primary self-start"
                     >
                       {isExpanded ? "Show Less" : "Read More"}
                     </button>
@@ -131,7 +134,8 @@ const ReviewCard = ({ triggerFetch }) => {
 
                   {/* Review Date */}
                   <p
-                    className="text-lg  px-3 py-1 rounded-xl text-primary font-semibold absolute
+                    className="text-sm lg:text-lg  px-3 py-1 rounded-xl text-primary dark:text-ivory
+                     font-semibold absolute
                 right-0 -top-4"
                   >
                     {new Date(review.addedDate).toLocaleDateString()}

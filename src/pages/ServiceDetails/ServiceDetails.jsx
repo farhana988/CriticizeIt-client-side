@@ -42,11 +42,11 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="pt-20 ">
+    <div className="pt-20 min-h-screen">
       <Heading title={"Service Details & Review"}></Heading>
 
       <section
-        className="grid grid-cols-1 lg:grid-cols-2  mx-6  rounded-xl
+        className="grid grid-cols-1 lg:grid-cols-2  rounded-xl
       "
       >
         {/* details card */}
@@ -54,8 +54,8 @@ const ServiceDetails = () => {
 
         {/* review form  */}
         <div className="">
-          <h2 className="text-center active text-primary text-5xl font-extrabold pt-2">
-            Review Form
+          <h2 className="text-center active text-primary text-5xl font-extrabold pb-4 pt-8 lg:pt-0">
+           Add Review 
           </h2>
           <ReviewForm
             details={details}
