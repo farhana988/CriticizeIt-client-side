@@ -36,11 +36,11 @@ const Heading = ({ title, subtitle }) => {
           repeatDelay: 5,
           ease: "easeInOut"
         }}
-        className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 text-primary"
+        className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 "
       >
         {title}
       </motion.h1>
-      <p className="text-xs lg:text-lg md:px-20 lg:px-80 text-primary text-center 
+      <p className="text-xs lg:text-lg md:px-20 lg:px-80  text-center 
       font-thin">
         {subtitle}
       </p>

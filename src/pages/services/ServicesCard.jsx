@@ -33,7 +33,8 @@ const ServicesCard = ({ service }) => {
           >
             <div className="relative group">
               <div className="tooltip tooltip-top" data-tip={serviceTitle}>
-                <p className="truncate  max-w-full sm:max-w-xs text-sm md:text-base lg:text-xl 
+                <p className="truncate  max-w-full sm:max-w-xs 
+                text-sm md:text-base lg:text-xl 
                 font-bold">
               
                  

@@ -40,6 +40,8 @@ const MeetOurPartners = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
+        setVisibleCards(showMore ? partners.length : 4);
+      } else if (window.innerWidth >= 768) {
         setVisibleCards(showMore ? partners.length : 3);
       } else {
         setVisibleCards(showMore ? partners.length : 2);
@@ -66,7 +68,7 @@ const MeetOurPartners = () => {
         ></Heading>
 
         {/* Partner card*/}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {partners.slice(0, visibleCards).map((partner, index) => (
             <div
               key={index}
@@ -76,31 +78,34 @@ const MeetOurPartners = () => {
               <div className="pt-16 ">
                 {/*  Logo */}
                 <div
-                  className="w-36 h-36 z-10 mx-auto bg-gradient-to-r
-                 from-indigo-500 to-purple-500 rounded-full p-1
-                 absolute top-2 left-28 md:left-24 lg:left-32 animate-pulse"
+                  className="w-20 md:w-24 lg:w-32 z-10 mx-auto bg-gradient-to-r from-primary
+                   via-secondary to-accent rounded-full p-1
+                 absolute top-2 left-12 md:left-16 lg:left-20 animate-pulse"
                 >
                   <img
                     src={partner.logo}
                     alt={`${partner.name} Logo`}
-                    className="w-full h-full object-contain rounded-full"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
 
-                {/* Details */}
+                {/*card Details */}
                 <div
-                  className="card pt-24 pb-14 px-3 rounded-2xl bg-[#ffffffb4]
+                  className="card pt-9 md:pt-14 lg:pt-24 pb-4 md:pb-6 lg:pb-8 px-3 
+                  rounded-2xl bg-[#ffffffb4] dark:bg-dCard
                "
                 >
+                  {/* partner name */}
                   <h3
-                    className="text-2xl font-semibold text-gray-700 mt-4
+                    className="font-semibold  text-sm md:text-lg lg:text-2xl 
                 "
                   >
                     {partner.name}
                   </h3>
-                  <p className="text-gray-600 mt-2 px-3 lg:px-8">
-                    {partner.description}
-                  </p>
+                  {/* description  */}
+                  <p className=" mt-1 
+                  text-xs lg:text-sm"
+                  >{partner.description.substring(0,60)}...</p>
                 </div>
               </div>
             </div>
