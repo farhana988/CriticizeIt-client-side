@@ -14,6 +14,8 @@ export default {
         tab: "#ffffff",
         ivory: "#F5F5F5",
         darkSlate: "#2C3E50",
+        dCard: "#38363694",
+        lCard: "#ffffff7a",
       },
         fontFamily: {
           exo: ["Exo 2"]

@@ -26,7 +26,7 @@ const FeaturedServices = () => {
     <div className="container mx-auto ">
       <Heading title={"Featured Services"} />
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6
             mx-5"
       >
         {services.map((service) => (

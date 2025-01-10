@@ -9,7 +9,7 @@ const Footer = () => {
         <nav>
           <div className=" w-full md:w-60 lg:w-96 space-y-2">
             <h4 className="text-2xl text-[#28251e] font-bold">
-            CriticizeIt  --tt
+            CriticizeIt
             </h4>
             <p>
               We are a platform dedicated to helping users discover, review, and
