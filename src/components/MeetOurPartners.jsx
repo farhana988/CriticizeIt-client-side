@@ -103,10 +103,13 @@ const MeetOurPartners = () => {
                     {partner.name}
                   </h3>
                   {/* description  */}
-                  <p className=" mt-1 
+                  <p
+                    className=" mt-1 
                   text-xs lg:text-sm"
-                  title={partner.description}
-                  >{partner.description.substring(0,60)}...</p>
+                    title={partner.description}
+                  >
+                    {partner.description.substring(0, 60)}...
+                  </p>
                 </div>
               </div>
             </div>

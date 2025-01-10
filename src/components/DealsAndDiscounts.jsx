@@ -9,7 +9,7 @@ const deals = [
     description:
       "Enjoy sparkling clean homes with our professional cleaning services.",
     image: "https://i.ibb.co.com/RPn2wDt/Home-Cleaning.jpg",
-    endDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000),
+    endDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
   },
   {
     service: "Personal Training",
@@ -17,7 +17,7 @@ const deals = [
     description:
       "Achieve your fitness goals with personalized training sessions.",
     image: "https://i.ibb.co.com/923xCX4/Personal-Training.webp",
-    endDate: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+    endDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
   },
   {
     service: "Pet Grooming",
@@ -25,7 +25,15 @@ const deals = [
     description:
       "Give your pets the care they deserve with our grooming services.",
     image: "https://i.ibb.co.com/9wR62zC/Pet-Grooming.jpg",
-    endDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000),
+    endDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
+  },
+  {
+    service: "Event Planning",
+    discount: "15% OFF",
+    description:
+      "Plan your dream event with our professional event planning services.",
+    image: "https://i.ibb.co.com/k84mykT/event.jpg",
+    endDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
   },
 ];
 
@@ -41,14 +49,15 @@ const DealsAndDiscounts = () => {
         ></Heading>
 
         {/* Deals */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
           {deals.map((deal, index) => (
             <div
               key={index}
-              className="relative bg-[#ffffff7a] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+              className="relative bg-lCard dark:bg-dCard shadow-xl shadow-primary 
+              rounded-xl overflow-hidden hover:shadow-xl transition-all"
             >
               {/* Image */}
-              <div className="h-52 overflow-hidden">
+              <div className="w-full h-28 md:h-32 lg:h-44 overflow-hidden">
                 <img
                   src={deal.image}
                   alt={deal.service}
@@ -57,29 +66,31 @@ const DealsAndDiscounts = () => {
               </div>
 
               {/* Content */}
-              <div className="px-6 pt-2 pb-8 ">
-                <h3 className="text-xl lg:text-2xl font-semibold text-gray-700 my-2">
+              <div className="px-2 pt-2 pb-3 lg:pb-5 ">
+                <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
                   {deal.service}
                 </h3>
-                <p className="text-gray-600 mb-4">{deal.description}</p>
+                <p className=" text-xs lg:text-sm mb-2"
+                title={deal.description}>
+                  {deal.description.substring(0, 60)}...
+                  </p>
                 {/* discount badge */}
                 <btn
-                  className="text-lg font-semibold absolute rounded-bl-md
-                top-0 z-10 right-0 bg-black px-3
-                bg-gradient-to-r from-purple-500 to-blue-500
-                 text-white  shadow-md hover:from-purple-600
-                  hover:to-blue-600 transition-all "
+                  className="text-sm md:text-base lg:text-lg font-semibold absolute 
+                  rounded-bl-md top-0 z-10 right-0 text-black px-3
+                 bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary  transition-all "
                 >
                   {deal.discount}
                 </btn>
 
-                <section className="flex items-center justify-between">
+              
                   {/* Timer */}
                   <div
-                    className="flex items-center justify-center text-primary 
-                lg:text-lg"
+                    className="flex items-center justify-center text-primary dark:text-ivory 
+                 text-sm lg:text-lg my-2"
                   >
-                    <FaClock className="mr-2 text-primary" />
+                    <FaClock className="mr-2 text-primary dark:text-ivory" />
                     <Countdown
                       date={deal.endDate}
                       renderer={({ days, hours, minutes, seconds }) => (
@@ -92,16 +103,16 @@ const DealsAndDiscounts = () => {
                       )}
                     />
                   </div>
-
-                  {/* Button */}
-                  <button
-                    className="bg-gradient-to-r from-purple-500 to-blue-500
-                 text-white lg:py-1 px-6 rounded-full shadow-md hover:from-purple-600
-                  hover:to-blue-600 transition-all font-semibold"
-                  >
-                    Snag It!
-                  </button>
-                </section>
+              
+                {/* Button */}
+                <button
+                  className="  bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary text-sm lg:text-base
+                 text-black lg:py-1 px-6 rounded-full shadow-md 
+                  transition-all font-semibold"
+                >
+                  Snag It!
+                </button>
               </div>
             </div>
           ))}

@@ -26,9 +26,9 @@ const testimonials = [
   },
   {
     name: "Michael Lee",
-    service: "Lawn Care",
+    service: "Event Planning",
     quote:
-      "The lawn care service was fantastic! My yard has never looked this good, and they worked quickly and efficiently.",
+      "The event planning team made our special day absolutely perfect! Every detail was taken care of flawlessly.",
     rating: 4,
   },
 ];
@@ -52,16 +52,20 @@ const UserTestimonialSpotlight = () => {
                 <Lottie animationData={quote}></Lottie>
               </div>
               {/*card details */}
-              <div className="py-6 lg:py-10 px-3 lg:px-4 rounded-2xl bg-lCard dark:bg-dCard 
-               shadow-xl shadow-primary">
+              <div
+                className="py-6 lg:py-10 px-3 lg:px-4 rounded-2xl bg-lCard
+                 dark:bg-dCard shadow-xl shadow-primary"
+              >
                 <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
                   {testimonial.name}
                 </h3>
                 <p className="text-sm lg:text-base mb-2">
                   {testimonial.service}
                 </p>
-                <p className="italic mb-2 text-xs lg:text-sm">
-                  {testimonial.quote.substring(0,90)}</p>
+                <p className="italic mb-2 text-xs lg:text-sm"
+                title={testimonial.quote}>
+                  {testimonial.quote.substring(0, 90)}...
+                </p>
 
                 {/* rating  */}
                 <div className="flex justify-center space-x-1">

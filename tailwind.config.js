@@ -13,7 +13,6 @@ export default {
         secondary: "#b0c4c9",
         tab: "#ffffff",
         ivory: "#F5F5F5",
-        darkSlate: "#2C3E50",
         dCard: "#38363694",
         lCard: "#ffffff7a",
       },
