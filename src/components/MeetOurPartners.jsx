@@ -68,7 +68,7 @@ const MeetOurPartners = () => {
         ></Heading>
 
         {/* Partner card*/}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
           {partners.slice(0, visibleCards).map((partner, index) => (
             <div
               key={index}
@@ -92,7 +92,7 @@ const MeetOurPartners = () => {
                 {/*card Details */}
                 <div
                   className="card pt-9 md:pt-14 lg:pt-24 pb-4 md:pb-6 lg:pb-8 px-3 
-                  rounded-2xl bg-[#ffffffb4] dark:bg-dCard
+                  rounded-2xl bg-[#ffffffb4] dark:bg-dCard 
                "
                 >
                   {/* partner name */}
@@ -105,6 +105,7 @@ const MeetOurPartners = () => {
                   {/* description  */}
                   <p className=" mt-1 
                   text-xs lg:text-sm"
+                  title={partner.description}
                   >{partner.description.substring(0,60)}...</p>
                 </div>
               </div>

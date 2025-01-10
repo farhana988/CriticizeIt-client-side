@@ -18,11 +18,18 @@ const testimonials = [
     rating: 4,
   },
   {
-    name: "Emily Johnson",
+    name: "Emily Cole",
     service: "Pet Grooming",
     quote:
       "My dog looks amazing after the grooming session! The team was gentle and caring, and I couldn't be happier.",
     rating: 5,
+  },
+  {
+    name: "Michael Lee",
+    service: "Lawn Care",
+    quote:
+      "The lawn care service was fantastic! My yard has never looked this good, and they worked quickly and efficiently.",
+    rating: 4,
   },
 ];
 
@@ -33,26 +40,28 @@ const UserTestimonialSpotlight = () => {
         <Heading title={" What Our Users Are Saying"}></Heading>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="rounded-xl shadow-lg transform 
-                transition-all hover:scale-105 hover:shadow-lg hover:bg-indigo-50"
+                transition-all hover:scale-105 hover:shadow-lg shadow-primary"
             >
               {/*  Image */}
-              <div className="absolute w-20">
+              <div className="absolute w-14 lg:w-20">
                 <Lottie animationData={quote}></Lottie>
               </div>
-              {/* details */}
-              <div className="py-10 px-2 lg:px-4 rounded-2xl bg-[#ffffff7a] shadow-xl shadow-primary">
-                <h3 className="text-2xl font-semibold text-gray-800">
+              {/*card details */}
+              <div className="py-6 lg:py-10 px-3 lg:px-4 rounded-2xl bg-lCard dark:bg-dCard 
+               shadow-xl shadow-primary">
+                <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm lg:text-base mb-2">
                   {testimonial.service}
                 </p>
-                <p className="text-gray-600 italic mb-4">{testimonial.quote}</p>
+                <p className="italic mb-2 text-xs lg:text-sm">
+                  {testimonial.quote.substring(0,90)}</p>
 
                 {/* rating  */}
                 <div className="flex justify-center space-x-1">
