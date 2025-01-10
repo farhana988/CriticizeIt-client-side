@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "title": "Top 5 Tips to Boost Your Productivity in life",
+      "description": "Discover proven techniques to enhance your daily productivity and achieve more in less time.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 5, 2025"
+    },
+    {
+      "id": 2,
+      "title": "How Our Services Can Simplify Your Life",
+      "description": "Learn how our tailored services are designed to make your life easier and stress-free.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "December 28, 2024"
+    },
+    {
+      "id": 3,
+      "title": "Success Stories from Our Community over the years",
+      "description": "Hear from our users about how they achieved their goals using our platform.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "December 20, 2024"
+    },
+    {
+      "id": 4,
+      "title": "Top 10 Tools for Efficient Time Management",
+      "description": "Explore the best tools and strategies to manage your time effectively and achieve your goals effortlessly.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 10, 2025"
+    },
+    {
+      "id": 5,
+      "title": "The Future of AI in Everyday Life",
+      "description": "Discover how artificial intelligence is shaping the future and making our daily lives smarter.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 12, 2025"
+    },
+    {
+      "id": 6,
+      "title": "10 Budget-Friendly Ways to Stay Healthy",
+      "description": "Learn simple and affordable tips to maintain your health and well-being on a budget.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 15, 2025"
+    },
+    {
+      "id": 7,
+      "title": "Why Customer Feedback is Key to Success",
+      "description": "Understand the importance of listening to your customers and improving your services based on their feedback.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 18, 2025"
+    },
+    {
+      "id": 8,
+      "title": "Work-Life Balance: Tips for a Happier Life",
+      "description": "Find out how to balance work and personal life to achieve happiness and reduce stress.",
+      "image": "https://via.placeholder.com/400x250",
+      "date": "January 20, 2025"
+    }
+  ]
+  

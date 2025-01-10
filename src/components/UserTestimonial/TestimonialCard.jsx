@@ -1,49 +1,12 @@
+/* eslint-disable react/prop-types */
 import Lottie from "lottie-react";
-import quote from "../assets/lottie/quote.json";
-import Heading from "./shared/Heading";
+import quote from "../../assets/lottie/quote.json";
 
-const testimonials = [
-  {
-    name: "John Doe",
-    service: "Home Cleaning",
-    quote:
-      "This service was incredible! My home has never been cleaner, and the team was professional and friendly.",
-    rating: 5,
-  },
-  {
-    name: "Jane Smith",
-    service: "Personal Training",
-    quote:
-      "I had an amazing experience with the personal trainer. The sessions were tailored to my goals, and I saw great results.",
-    rating: 4,
-  },
-  {
-    name: "Emily Cole",
-    service: "Pet Grooming",
-    quote:
-      "My dog looks amazing after the grooming session! The team was gentle and caring, and I couldn't be happier.",
-    rating: 5,
-  },
-  {
-    name: "Michael Lee",
-    service: "Event Planning",
-    quote:
-      "The event planning team made our special day absolutely perfect! Every detail was taken care of flawlessly.",
-    rating: 4,
-  },
-];
-
-const UserTestimonialSpotlight = () => {
-  return (
-    <section className="pt-10">
-      <div className="container mx-auto text-center px-6">
-        <Heading title={" What Our Users Are Saying"}></Heading>
-
-        {/* Testimonials */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
+const TestimonialCard = ({testimonial}) => {
+    return (
+        <div>
+             <div
+             
               className="rounded-xl shadow-xl transform 
                 transition-all hover:scale-105 hover:shadow-xl  shadow-primary"
             >
@@ -62,8 +25,10 @@ const UserTestimonialSpotlight = () => {
                 <p className="text-sm lg:text-base mb-2">
                   {testimonial.service}
                 </p>
-                <p className="italic mb-2 text-xs lg:text-sm"
-                title={testimonial.quote}>
+                <p
+                  className="italic mb-2 text-xs lg:text-sm"
+                  title={testimonial.quote}
+                >
                   {testimonial.quote.substring(0, 90)}...
                 </p>
 
@@ -84,11 +49,8 @@ const UserTestimonialSpotlight = () => {
                 </div>
               </div>
             </div>
-          ))}
         </div>
-      </div>
-    </section>
-  );
+    );
 };
 
-export default UserTestimonialSpotlight;
+export default TestimonialCard;
