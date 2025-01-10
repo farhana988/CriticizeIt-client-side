@@ -52,7 +52,8 @@ const Services = () => {
             id="category"
             onChange={(e) => setFilter(e.target.value)}
             value={filter}
-            className="border p-4 rounded-lg"
+            className="border p-4 rounded-lg border-gray-300 bg-lCard dark:bg-dCard
+            "
           >
             <option value="">Filter By Category</option>
             <option value="Home Services">Home Services</option>
@@ -83,8 +84,8 @@ const Services = () => {
         items-center "
         >
           <input
-            className=" p-4 border border-gray-300 lg:w-96
-           rounded-lg pl-10"
+            className=" p-4 border border-gray-300 bg-lCard dark:bg-dCard lg:w-96
+           rounded-lg pl-10 "
             type="text"
             name="search"
             onChange={(e) => setSearch(e.target.value)}
@@ -95,7 +96,7 @@ const Services = () => {
 
           <FaSearch
             className="absolute left-4  top-1/2 transform -translate-y-1/2
-         text-gray-400"
+         text-gray-500  "
           />
         </div>
       </div>

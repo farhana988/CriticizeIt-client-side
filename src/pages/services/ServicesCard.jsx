@@ -2,94 +2,87 @@
 // import React from 'react';
 
 import { Link } from "react-router-dom";
+import ResponsiveText from "../../components/shared/ResponsiveText";
 
 const ServicesCard = ({ service }) => {
     const { serviceImage, serviceTitle, _id, description, category, price } =
     service || {};
-  return (
-    <div
-      className="group relative bg-[#ffffff7a] rounded-xl shadow-xl overflow-hidden 
-        shadow-primary hover:shadow-2xl"
-    >
-      {/* Image */}
-      <div className="relative w-full h-64 p-5">
-        <img
-          src={serviceImage}
-          alt={serviceTitle}
-          className="object-cover w-full h-full 
-             rounded-xl  "
-        />
-      </div>
-
-      {/* Card Content */}
-      <div className="px-6">
-        {/* title */}
-        <div
-          className="text-gray-800  max-w-full sm:max-w-md 
-           "
-        >
-          <div className="relative group">
-            <div className="tooltip tooltip-top" data-tip={serviceTitle}>
-              <p className="truncate  max-w-full sm:max-w-xs">
-                {/* des title */}
-                <span className="text-xl font-semibold text-gray-800">
-                Service Title :{" "}
-                </span>
-                {/* des title */}
-                {serviceTitle.substring(0, 20)}
-                {serviceTitle.length > 20 && "..."}
-              </p>
+    return (
+      <div
+        className="group relative bg-lCard dark:bg-dCard rounded-xl shadow-xl 
+        overflow-hidden flex flex-col
+          shadow-primary hover:shadow-2xl h-[245px] md:h-[252px] lg:h-[335px] "
+      >
+        {/* Image */}
+        <div className="relative w-full p-3">
+          <img
+            src={serviceImage}
+            alt={serviceTitle}
+            className="object-cover w-full h-24 md:h-24 lg:h-36  
+               rounded-xl  "
+               referrerPolicy="no-referrer"
+          />
+        </div>
+  
+        {/* Card Content */}
+        <div className="px-3 lg:px-6 pb-3 lg:pb-4 flex flex-col flex-grow">
+          {/* title */}
+          <div
+            className="  max-w-full sm:max-w-md 
+             "
+          >
+            <div className="relative group">
+              <div className="tooltip tooltip-top" data-tip={serviceTitle}>
+                <p className="truncate  max-w-full sm:max-w-xs text-sm md:text-base lg:text-xl 
+                font-bold">
+              
+                 
+                  {/*title */}
+                  {serviceTitle.substring(0, 20)}
+                  {serviceTitle.length > 20 && "..."}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* category */}
-        <div className="text-base  text-gray-800 mb-2">
-          <span className="text-xl font-semibold">Category : </span>
+  
+           {/* category */}
+        <div className="text-xs lg:text-base mb-2">
+       
 
           {category}
         </div>
-        {/* description */}
-        <div
-          className="text-gray-800 text-sm mb-2  max-w-full sm:max-w-md 
-           "
-        >
-          <div className="relative group">
-            <div className="tooltip tooltip-top" data-tip={description}>
-              <p className="truncate  max-w-full sm:max-w-xs ">
-                {/* des title */}
-                <span className="text-xl font-semibold text-gray-800">
-                  Description:{" "}
-                </span>
-                {/* des title */}
-                {description.substring(0, 20)}
-                {description.length > 20 && "..."}
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        <div
-          className="flex justify-between items-center mb-6
-        "
-        >
+         
+            {/* description */}
+          
+              <ResponsiveText
+              text={description}
+              className="text-xs lg:text-sm "
+              breakpoints={{lg: 50,md: 52, sm: 30, default: 35}}></ResponsiveText>
+               
+               
+   
+              
+             
+  
+  
+           {/* Price and See Details */}
+        <div className="flex justify-between items-center mt-auto">
           {/* price */}
-          <span className="  text-gray-800">
-            <span className="text-xl font-semibold">Price: </span>${price}
+          <span className="font-semibold text-sm lg:font-bold lg:text-lg">
+            ${price}
           </span>
           {/* "See Details" Button */}
           <Link
             to={`/serviceDetails/${_id}`}
-            className="bg-primary px-3 py-1 rounded-xl lg:text-lg
-             text-white font-semibold hover:text-blue-600 transition-colors"
+            className="bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary px-3 py-1 rounded-xl 
+             text-xs lg:text-lg text-black font-semibold"
           >
             See Details
           </Link>
         </div>
+        </div>
       </div>
-    </div>
     );
-};
-
+  }
 export default ServicesCard;

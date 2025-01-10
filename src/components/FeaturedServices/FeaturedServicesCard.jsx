@@ -11,7 +11,7 @@ const FeaturedServicesCard = ({ service }) => {
     <div
       className="group relative bg-lCard dark:bg-dCard rounded-xl shadow-xl 
       overflow-hidden 
-        shadow-primary hover:shadow-2xl h-[235px] md:h-[239px] lg:h-[315px] "
+        shadow-primary hover:shadow-2xl h-[220px] md:h-[226px] lg:h-[305px] "
     >
       {/* Image */}
       <div className="relative w-full p-3">
@@ -25,7 +25,7 @@ const FeaturedServicesCard = ({ service }) => {
       </div>
 
       {/* Card Content */}
-      <div className="p-3 lg:px-6">
+      <div className="px-3 lg:px-6">
         {/* title */}
         <div
           className="  max-w-full sm:max-w-md 
