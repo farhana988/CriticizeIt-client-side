@@ -4,7 +4,7 @@ const Support = () => {
   return (
     <div className="min-h-screen py-10 container mx-auto px-6">
       <Heading title={"Support"} />
-      <div className="  p-8 mt-6 space-y-6">
+      <div className=" md:w-10/12 mx-auto space-y-6">
         <p className="text-xl font-medium mb-4">
           Our support team is here to help. If you have any questions or need
           assistance, please reach out to us using one of the options below.

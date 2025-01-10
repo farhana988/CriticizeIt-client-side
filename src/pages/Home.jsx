@@ -7,6 +7,7 @@ import FeaturedServices from "../components/FeaturedServices/FeaturedServices";
 import MeetOurPartners from "../components/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/UserTestimonialSpotligh";
 import Users from "../components/Users";
+import Blog from "../components/Blog";
 
 const Home = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const Home = () => {
       <MeetOurPartners></MeetOurPartners>
       <UserTestimonialSpotlight></UserTestimonialSpotlight>
       <DealsAndDiscounts></DealsAndDiscounts>
+      <Blog></Blog>
     </div>
   );
 };

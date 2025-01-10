@@ -1,0 +1,81 @@
+[
+    {
+      "name": "John Doe",
+      "service": "Home Cleaning",
+      "quote": "This service was incredible! My home has never been cleaner, and the team was professional and friendly.",
+      "rating": 5
+    },
+    {
+      "name": "Jane Smith",
+      "service": "Personal Training",
+      "quote": "I had an amazing experience with the personal trainer. The sessions were tailored to my goals, and I saw great results.",
+      "rating": 4
+    },
+    {
+      "name": "Emily Cole",
+      "service": "Pet Grooming",
+      "quote": "My dog looks amazing after the grooming session! The team was gentle and caring, and I couldn't be happier.",
+      "rating": 5
+    },
+    {
+      "name": "Michael Lee",
+      "service": "Event Planning",
+      "quote": "The event planning team made our special day absolutely perfect! Every detail was taken care of flawlessly.",
+      "rating": 4
+    },
+    {
+      "name": "Sara Lee",
+      "service": "Web Design",
+      "quote": "The website they created for me is amazing! The design was clean, and the functionality is perfect.",
+      "rating": 5
+    },
+    {
+      "name": "Daniel Kim",
+      "service": "Graphic Design",
+      "quote": "Great experience! The design exceeded my expectations, and the team was easy to work with.",
+      "rating": 4
+    },
+    {
+      "name": "Linda Wang",
+      "service": "SEO Services",
+      "quote": "Thanks to their SEO service, my website traffic increased significantly. Highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Chris Roberts",
+      "service": "Photography",
+      "quote": "The photoshoot was fantastic. The photographer was professional, and the results were amazing.",
+      "rating": 4
+    },
+    {
+      "name": "Anna Martinez",
+      "service": "Digital Marketing",
+      "quote": "Their digital marketing strategy helped boost my online presence, and I saw a significant increase in engagement.",
+      "rating": 5
+    },
+    {
+      "name": "David Clark",
+      "service": "Content Writing",
+      "quote": "The content they provided was exactly what I needed! Well-researched, engaging, and delivered on time.",
+      "rating": 5
+    },
+    {
+      "name": "Olivia White",
+      "service": "Social Media Management",
+      "quote": "The team managed my social media beautifully! They helped me connect with my audience and grow my brand.",
+      "rating": 4
+    },
+    {
+      "name": "Ethan Green",
+      "service": "Video Editing",
+      "quote": "The video editing service was top-notch! The final product was professional and exceeded my expectations.",
+      "rating": 5
+    },
+    {
+      "name": "Charlotte Adams",
+      "service": "App Development",
+      "quote": "The app they developed for my business is fantastic! It's user-friendly, efficient, and meets all my needs.",
+      "rating": 4
+    }
+  ]
+  

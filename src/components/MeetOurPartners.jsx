@@ -30,6 +30,79 @@ const partners = [
     description:
       "Creators of innovative UI/UX designs to elevate user experiences.",
   },
+  {
+    name: "GreenTech Solutions",
+    logo: "https://i.ibb.co/1Ry6KkX/Green-Tech-Solutions.jpg",
+    description:
+      "Focused on sustainable technology to help businesses go green.",
+  },
+ 
+  {
+    name: "NextGen Robotics",
+    logo: "https://i.ibb.co/hF8RC2v/Next-Gen-Robotics.jpg",
+    description:
+      "Developing advanced robotics for automation and industry innovation.",
+  },
+  {
+    name: "SecureNet Solutions",
+    logo: "https://i.ibb.co/zFxppb5/Secure-Net-Solutions.jpg",
+    description:
+      "Experts in cybersecurity, ensuring your data and systems remain protected.",
+  },
+  {
+    name: "BrightPath Education",
+    logo: "https://i.ibb.co/TtdD2Zx/Bright-Path-Education.jpg",
+    description:
+      "Providing educational tools and resources to empower learning and growth.",
+  },
+  {
+    name: "GlobalTrade Logistics",
+    logo: "https://i.ibb.co/VxB6KdN/Global-Trade-Logistics.jpg",
+    description:
+      "Streamlining international trade with efficient logistics solutions.",
+  },
+  {
+    name: "FutureFit AI",
+    logo: "https://i.ibb.co/7XJwhty/Future-Fit-AI.jpg",
+    description:
+      "Pioneering AI technologies for smarter decision-making and automation.",
+  },
+  {
+    name: "Zenith HealthTech",
+    logo: "https://i.ibb.co/QPM9LtP/Zenith-Health-Tech.jpg",
+    description:
+      "Revolutionizing healthcare with innovative tech and patient-focused solutions.",
+  },
+  {
+    name: "EcoBuilders Co.",
+    logo: "https://i.ibb.co/wRx5mLn/Eco-Builders-Co.jpg",
+    description:
+      "Leaders in sustainable construction practices and eco-friendly design.",
+  },
+  {
+    name: "UrbanScape Architects",
+    logo: "https://i.ibb.co/0qYMYrD/Urban-Scape-Architects.jpg",
+    description:
+      "Designing modern architectural solutions for urban living.",
+  },
+  {
+    name: "Spark Innovations Lab",
+    logo: "https://i.ibb.co/yS9YWXz/Spark-Innovations-Lab.jpg",
+    description:
+      "Fueling startups with innovative ideas and strategic guidance.",
+  },
+  {
+    name: "Visionary Tech",
+    logo: "https://i.ibb.co/Xj3x4Pg/Visionary-Tech-Solutions.jpg",
+    description:
+      "Innovating technology to shape the future of businesses worldwide.",
+  },
+  {
+    name: "EcoVision Consulting",
+    logo: "https://i.ibb.co/y6RjD3Q/EcoVision-Consulting.jpg",
+    description:
+      "Providing strategic insights for businesses to embrace sustainability and growth.",
+  },
 ];
 
 const MeetOurPartners = () => {
@@ -73,7 +146,7 @@ const MeetOurPartners = () => {
             <div
               key={index}
               className="relative rounded-2xl 
-              overflow-hidden transform transition-all hover:scale-125 "
+              overflow-hidden transform transition-all hover:scale-105 "
             >
               <div className="pt-16 ">
                 {/*  Logo */}
@@ -153,7 +226,7 @@ const MeetOurPartners = () => {
           >
             Become a Partner
             <motion.span
-              animate={{ x: [0, 10, 0] }}
+              animate={{ x: [0, 5, 0] }}
               transition={{
                 duration: 2,
                 repeat: Infinity,

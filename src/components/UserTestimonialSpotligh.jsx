@@ -44,8 +44,8 @@ const UserTestimonialSpotlight = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="rounded-xl shadow-lg transform 
-                transition-all hover:scale-105 hover:shadow-lg shadow-primary"
+              className="rounded-xl shadow-xl transform 
+                transition-all hover:scale-105 hover:shadow-xl  shadow-primary"
             >
               {/*  Image */}
               <div className="absolute w-14 lg:w-20">
@@ -54,7 +54,7 @@ const UserTestimonialSpotlight = () => {
               {/*card details */}
               <div
                 className="py-6 lg:py-10 px-3 lg:px-4 rounded-2xl bg-lCard
-                 dark:bg-dCard shadow-xl shadow-primary"
+                 dark:bg-dCard "
               >
                 <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
                   {testimonial.name}
