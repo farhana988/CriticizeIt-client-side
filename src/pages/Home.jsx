@@ -8,6 +8,7 @@ import MeetOurPartners from "../components/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/UserTestimonialSpotligh";
 import Users from "../components/Users";
 import Blog from "../components/Blog";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const Home = () => {
       <UserTestimonialSpotlight></UserTestimonialSpotlight>
       <DealsAndDiscounts></DealsAndDiscounts>
       <Blog></Blog>
+      <Newsletter></Newsletter>
     </div>
   );
 };
