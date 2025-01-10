@@ -5,13 +5,13 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className=" mt-20 py-10">
-      <footer className="footer  text-base-content p-10  container mx-auto">
+      <footer className="footer   p-10  container mx-auto">
         <nav>
           <div className=" w-full md:w-60 lg:w-96 space-y-2">
-            <h4 className="text-2xl text-[#28251e] font-bold">
+            <h4 className="text-2xl  font-bold">
             CriticizeIt
             </h4>
-            <p>
+            <p className="dark:opacity-60">
               We are a platform dedicated to helping users discover, review, and
               recommend services. Our mission is to provide reliable feedback,
               empowering users to make informed decisions.
@@ -20,22 +20,22 @@ const Footer = () => {
             </p>
            
             <div className="flex items-center gap-2 border-2 mr-36 md:mr-12 lg:mr-48 
-            rounded-full px-4 border-slate-700">
+            rounded-full px-4 dark:opacity-80">
               <a href="">Learn More About Us </a>
               <FaLongArrowAltRight />
             </div>
           </div>
         </nav>
         <nav>
-          <h4 className="text-2xl font-bold text-[#28251e]">Quick Links</h4>
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="/faq">FAQ</a>
-          <a href="/support">Support</a>
+          <h4 className="text-2xl font-bold ">Quick Links</h4>
+          <a className="dark:opacity-80" href="/privacy-policy">Privacy Policy</a>
+          <a className="dark:opacity-80" href="/faq">FAQ</a>
+          <a className="dark:opacity-80" href="/terms">Terms of Service</a>
+          <a className="dark:opacity-80" href="/support">Support</a>
         </nav>
-        <nav>
-          <h6 className="text-2xl font-bold text-[#28251e]">Social</h6>
-          <div className="grid grid-flow-col gap-4">
+        <nav >
+          <h6 className="text-2xl font-bold ">Social</h6>
+          <div className="grid grid-flow-col gap-4 dark:opacity-80">
             <a href="https://twitter.com">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const Footer = () => {
         </nav>
       </footer>
       <div className="divider"></div>
-      <aside className="text-center text-xl text-black">
+      <aside className="text-center text-xl ">
         <p>
           Copyright © {new Date().getFullYear()} - All right reserved by{" "}
           <i>CriticizeIt</i>
