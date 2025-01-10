@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Banner from "../components/Banner";
 import DealsAndDiscounts from "../components/DealsAndDiscounts";
 import FeaturedServices from "../components/FeaturedServices/FeaturedServices";
-import MeetOurPartners from "../components/MeetOurPartners";
+import MeetOurPartners from "../components/MeetOurPartners/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/UserTestimonialSpotligh";
 import Users from "../components/Users";
 import Blog from "../components/Blog";

@@ -15,6 +15,7 @@ import PrivacyPolicy from "../components/FooterLinks/PrivacyPolicy";
 import FAQ from "../components/FooterLinks/FAQ";
 import Support from "../components/FooterLinks/Support";
 import TermsOfService from "../components/FooterLinks/TermsOfService";
+import AllPartners from "../components/MeetOurPartners/AllPartners";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "/support",
         element: <Support></Support>,
+      },
+      {
+        path: "/partners",
+        element: <AllPartners></AllPartners>,
       },
     ],
   },
