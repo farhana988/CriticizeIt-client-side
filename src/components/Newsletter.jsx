@@ -22,7 +22,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-5">
       <Heading
         title={"Newsletter"}
         subtitle={"If you haven't subscribed yet, please subscribe now."}
@@ -45,10 +45,10 @@ const Newsletter = () => {
             "lg:w-1/2 mx-auto text-center  py-12 px-6 opacity-90 text-white"
           }
         >
-          <h2 className="text-4xl font-semibold mb-6 leading-tight">
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-6 leading-tight">
             Get the Latest Movie News and Offers!
           </h2>
-          <p className="text-lg mb-8 ">
+          <p className="text-xs md:text-base lg:text-lg mb-8 ">
             Join our newsletter to get exclusive movie releases, special offers,
             and updates directly in your inbox.
           </p>
@@ -56,22 +56,24 @@ const Newsletter = () => {
           {/* Subscription Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex justify-center lg:justify-start items-center space-x-4"
+            className="flex justify-center flex-col gap-2 md:flex-row 
+            items-end md:items-center "
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="py-3 px-6 w-full lg:w-80 rounded-full text-lg text-black
+              className="py-1 md:py-3 px-6 w-full lg:w-80 rounded-full text-sm md:text-lg 
+              text-black
                "
               placeholder="Enter your email"
               required
             />
             <button
               type="submit"
-              className=" text-black 
+              className=" text-black text-sm md:text-base
                  bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary py-3 px-6 rounded-full
+             hover:from-primary hover:to-primary py-1 md:py-3 px-3 md:px-6 rounded-full
              font-bold"
             >
               Subscribe
