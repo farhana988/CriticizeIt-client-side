@@ -20,64 +20,66 @@
       "description": "Creators of innovative UI/UX designs to elevate user experiences."
     },
     {
+      "name": "Pawfect Care",
+      "logo": "https://i.ibb.co/SQ4C269/Pawfect-Care.jpg",
+      "description": "Offering top-notch grooming, training, and healthcare services for your furry friends."
+    },
+    {
       "name": "GreenTech Solutions",
-      "logo": "https://i.ibb.co/1Ry6KkX/Green-Tech-Solutions.jpg",
+      "logo": "https://i.ibb.co/4mb7Hfr/Green-Tech-Solutions.jpg",
       "description": "Focused on sustainable technology to help businesses go green."
     },
     {
       "name": "NextGen Robotics",
-      "logo": "https://i.ibb.co/hF8RC2v/Next-Gen-Robotics.jpg",
+      "logo": "https://i.ibb.co/371CJxy/Next-Gen-Robotics.png",
       "description": "Developing advanced robotics for automation and industry innovation."
     },
     {
       "name": "SecureNet Solutions",
-      "logo": "https://i.ibb.co/zFxppb5/Secure-Net-Solutions.jpg",
+      "logo": "https://i.ibb.co/m4R911M/Secure-Net-Solutions.png",
       "description": "Experts in cybersecurity, ensuring your data and systems remain protected."
     },
     {
+      "name": "RoomEase Services",
+      "logo": "https://i.ibb.co/LCkQGhK/Room-Ease-Services.png",
+      "description": "Specializing in top-notch hotel room service and hospitality solutions."
+    },
+    {
+      "name": "Comfort Hospitality",
+      "logo": "https://i.ibb.co/1nsvkwj/Comfort-Hospitality.jpg",
+      "description": "Delivering exceptional room service and customer care for luxury hotels."
+    },
+    {
       "name": "BrightPath Education",
-      "logo": "https://i.ibb.co/TtdD2Zx/Bright-Path-Education.jpg",
+      "logo": "https://i.ibb.co/VThMGYT/Bright-Path-Education.jpg",
       "description": "Providing educational tools and resources to empower learning and growth."
     },
     {
       "name": "GlobalTrade Logistics",
-      "logo": "https://i.ibb.co/VxB6KdN/Global-Trade-Logistics.jpg",
+      "logo": "https://i.ibb.co/CVmnS9v/Global-Trade-Logistics.jpg",
       "description": "Streamlining international trade with efficient logistics solutions."
+    }, 
+    {
+      "name": "Eventology Experts",
+      "logo": "https://i.ibb.co/wRCs8yp/Eventology-Experts.jpg",
+      "description": "Bringing your dream events to life with creative and flawless execution."
     },
     {
-      "name": "FutureFit AI",
-      "logo": "https://i.ibb.co/7XJwhty/Future-Fit-AI.jpg",
-      "description": "Pioneering AI technologies for smarter decision-making and automation."
+      "name": "Celebration Crew",
+      "logo": "https://i.ibb.co/4T904n3/Celebration-Crew.png",
+      "description": "Specialists in organizing weddings, parties, and corporate events."
+    },
+   
+    {
+      "name": "EduSphere Academy",
+      "logo": "https://i.ibb.co/ZLqTfC1/Edu-Sphere-Academy.jpg",
+      "description": "Innovative online courses and resources for students and professionals."
     },
     {
-      "name": "Zenith HealthTech",
-      "logo": "https://i.ibb.co/QPM9LtP/Zenith-Health-Tech.jpg",
-      "description": "Revolutionizing healthcare with innovative tech and patient-focused solutions."
-    },
-    {
-      "name": "EcoBuilders Co.",
-      "logo": "https://i.ibb.co/wRx5mLn/Eco-Builders-Co.jpg",
-      "description": "Leaders in sustainable construction practices and eco-friendly design."
-    },
-    {
-      "name": "UrbanScape Architects",
-      "logo": "https://i.ibb.co/0qYMYrD/Urban-Scape-Architects.jpg",
-      "description": "Designing modern architectural solutions for urban living."
-    },
-    {
-      "name": "Spark Innovations Lab",
-      "logo": "https://i.ibb.co/yS9YWXz/Spark-Innovations-Lab.jpg",
-      "description": "Fueling startups with innovative ideas and strategic guidance."
-    },
-    {
-      "name": "Visionary Tech",
-      "logo": "https://i.ibb.co/Xj3x4Pg/Visionary-Tech-Solutions.jpg",
-      "description": "Innovating technology to shape the future of businesses worldwide."
-    },
-    {
-      "name": "EcoVision Consulting",
-      "logo": "https://i.ibb.co/y6RjD3Q/EcoVision-Consulting.jpg",
-      "description": "Providing strategic insights for businesses to embrace sustainability and growth."
+      "name": "LearnWave Solutions",
+      "logo": "https://i.ibb.co/S39YKyQ/Learn-Wave-Solutions.jpg",
+      "description": "Empowering education through modern e-learning platforms."
     }
+   
   ]
   

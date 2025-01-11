@@ -26,7 +26,7 @@ const Banner = () => {
           currentSlide === 1 ? "block" : "hidden"
         }`}
       >
-        <img src={slide1} className="w-full h-60 md:h-96 lg:h-[550px]" />
+        <img src={slide1} className="w-full h-60 md:h-96 lg:h-[550px] object-cover" />
         {/* the text of slide 1 */}
         <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center 
         items-center">

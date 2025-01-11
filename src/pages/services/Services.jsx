@@ -14,6 +14,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   const [filter, setFilter] = useState("");
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
 
   useEffect(() => {
     const fetchAllServices = async () => {
@@ -21,7 +22,7 @@ const Services = () => {
         const { data } = await axios.get(
           `${
             import.meta.env.VITE_API_URL
-          }/all-services?filter=${filter}&search=${search}`
+          }/all-services?filter=${filter}&search=${search}&sort=${sort}`
         );
         setServices(data);
       } catch {
@@ -30,7 +31,7 @@ const Services = () => {
     };
 
     fetchAllServices();
-  }, [filter, search]);
+  }, [filter, search, sort]);
 
   // dynamic title
   const location = useLocation();
@@ -98,6 +99,22 @@ const Services = () => {
             className="absolute left-4  top-1/2 transform -translate-y-1/2
          text-gray-500  "
           />
+        </div>
+          {/* Sort */}
+          <div>
+          <select
+          placeholder='filter'
+            name="sort"
+            id="sort"
+            onChange={(e) => setSort(e.target.value)}
+            value={sort}
+            className="border p-4 rounded-lg border-gray-300 bg-lCard dark:bg-dCard"
+            
+          >
+            <option >Sort By Price</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
         </div>
       </div>
 

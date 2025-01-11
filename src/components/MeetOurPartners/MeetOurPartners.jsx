@@ -64,7 +64,7 @@ const MeetOurPartners = () => {
           font-semibold shadow-lg 
           "
           >
-            Become a Partner
+            <Link to="/become-partner">Become a Partner</Link> 
             <motion.span
               animate={{ x: [0, 5, 0] }}
               transition={{

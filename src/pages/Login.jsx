@@ -77,6 +77,7 @@ const Login = () => {
     return (
       <div className="pt-20">
         <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-14 text-primary 
+        dark:text-ivory
           active text-center
        ">
             Login Form
@@ -89,36 +90,40 @@ const Login = () => {
         <div className="hero-content flex-col ">
           
          
-          <div className="card bg-base-100 w-full max-w-5xl shrink-0 shadow-2xl shadow-primary">
+          <div className="card bg-lCard dark:bg-dCard w-full max-w-5xl 
+          shrink-0 shadow-2xl shadow-primary">
             <form onSubmit={handleSignIn} className="card-body w-96 lg:w-[500px]">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold text-2xl text-gray-600">Email</span>
+                  <span className="label-text font-bold text-2xl text-gray-600
+                  dark:text-ivory">Email</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-lCard dark:bg-dCard "
                   required
                 />
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold text-2xl text-gray-600">Password</span>
+                  <span className="label-text font-bold text-2xl text-gray-600
+                  dark:text-ivory">Password</span>
                 </label>
                 <input
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered bg-lCard dark:bg-dCard "
                   required
                 />
                 <label  className="label">
                   <a
                     href="#"
-                    className="label-text-alt link link-hover text-xl text-gray-500"
+                    className="label-text-alt link link-hover text-xl text-gray-500
+                    dark:text-ivory"
                   >
                     Forgot password?
                   </a>
@@ -132,14 +137,15 @@ const Login = () => {
               <h2 className="text-lg mt-3 flex items-center gap-2">
                 No account yet?{" "}
                 <Link to="/register">
-                  <span className=" flex items-center gap-4  text-primary active text-2xl font-extrabold">
+                  <span className=" flex items-center gap-4 
+                   text-primary dark:text-ivory active text-2xl font-extrabold">
                     <FaLongArrowAltRight />Register
                   </span>
                 </Link>
               </h2>
             </form>
 
-            <div className="divider text-primary font-bold text-xl">OR</div>
+            <div className="divider text-primary dark:text-ivory font-bold text-xl">OR</div>
             <div className="space-y-4">
               <button
                 onClick={handleGoogleSignIn}

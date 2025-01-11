@@ -36,7 +36,7 @@ const Heading = ({ title, subtitle }) => {
           repeatDelay: 5,
           ease: "easeInOut"
         }}
-        className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 "
+        className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 "
       >
         {title}
       </motion.h1>

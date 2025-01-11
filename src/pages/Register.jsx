@@ -106,23 +106,25 @@ const Registration = () => {
     <div className="pt-20">
       <h2
         className="text-3xl md:text-5xl lg:text-7xl font-bold mb-14
-       text-primary active text-center"
+       text-primary dark:text-ivory  active text-center"
       >
         Registration Form
       </h2>
-      <div className="hero flex flex-col md:flex-row lg:flex-row justify-center">
+      <div className="hero flex flex-col md:flex-row lg:flex-row justify-center
+      ">
         <div className="w-96">
           <Lottie animationData={reg}></Lottie>
         </div>
-        <div className="hero-content flex-col">
-          <div className="card bg-base-100 w-full max-w-5xl shrink-0 shadow-2xl">
+        <div className="hero-content flex-col ">
+          <div className="card bg-lCard dark:bg-dCard  w-full max-w-5xl shrink-0 shadow-2xl">
             <form
               onSubmit={handleSignUp}
               className="card-body w-96 lg:w-[500px]"
             >
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text  font-bold text-2xl text-gray-600">
+                  <span className="label-text  font-bold text-2xl text-gray-600
+                  dark:text-ivory">
                     Name
                   </span>
                 </label>
@@ -130,13 +132,13 @@ const Registration = () => {
                   type="name"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered break-words"
+                  className="input input-bordered break-words bg-lCard dark:bg-dCard "
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600  font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory  font-bold text-2xl">
                     Email
                   </span>
                 </label>
@@ -144,13 +146,13 @@ const Registration = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-lCard dark:bg-dCard "
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600  font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory  font-bold text-2xl">
                     Photo Url
                   </span>
                 </label>
@@ -158,13 +160,13 @@ const Registration = () => {
                   type="Url"
                   name="image"
                   placeholder="photoUrl"
-                  className="input input-bordered"
+                  className="input input-bordered bg-lCard dark:bg-dCard "
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600  font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory font-bold text-2xl">
                     Password
                   </span>
                 </label>
@@ -172,27 +174,27 @@ const Registration = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered bg-lCard dark:bg-dCard "
                   required
                 />
               </div>
               {error && <p className="text-red-900">{error}</p>}
               <div className="form-control mt-6">
-                <button className="btn  bg-primary text-white  font-bold text-2xl">
+                <button className="btn  bg-primary  text-white  font-bold text-2xl">
                   Register
                 </button>
               </div>
               <h2 className="text-lg mt-3 flex items-center gap-2">
                 Already have an account?
                 <Link to="/login">
-                  <span className=" flex items-center gap-4  text-primary active text-2xl font-extrabold">
+                  <span className=" flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
                     <FaLongArrowAltRight />
                     Log in
                   </span>
                 </Link>
               </h2>
             </form>
-            <div className="divider text-primary font-bold text-xl">OR</div>
+            <div className="divider text-primary dark:text-ivory font-bold text-xl">OR</div>
             <div className="space-y-4">
               <button
                 onClick={handleGoogleSignIn}

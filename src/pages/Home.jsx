@@ -6,7 +6,7 @@ import DealsAndDiscounts from "../components/DealsAndDiscounts";
 import FeaturedServices from "../components/FeaturedServices/FeaturedServices";
 import MeetOurPartners from "../components/MeetOurPartners/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/UserTestimonial/UserTestimonialSpotligh";
-import Users from "../components/Users";
+// import Users from "../components/Users";
 import Blog from "../components/Blog/Blog";
 import Newsletter from "../components/Newsletter";
 
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Users></Users>
+      {/* <Users></Users> */}
       <FeaturedServices></FeaturedServices>
       <MeetOurPartners></MeetOurPartners>
       <UserTestimonialSpotlight></UserTestimonialSpotlight>

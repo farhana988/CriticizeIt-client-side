@@ -17,6 +17,7 @@ import Support from "../components/FooterLinks/Support";
 import TermsOfService from "../components/FooterLinks/TermsOfService";
 import AllPartners from "../components/MeetOurPartners/AllPartners";
 import AllBlogs from "../components/Blog/AllBlogs";
+import BecomePartner from "../components/MeetOurPartners/BecomePartner";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <AllBlogs></AllBlogs>,
+      },
+      {
+        path: "/become-partner",
+        element: <BecomePartner></BecomePartner>,
       },
     ],
   },
