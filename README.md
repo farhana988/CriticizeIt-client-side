@@ -4,7 +4,7 @@
 **CriticizeIt** is a user-driven platform designed to help individuals explore, rate, and review various services. It aims to provide users with a transparent way to make informed decisions based on personal experiences and community feedback. Users can easily add new services, post reviews, and interact with others, building a trusted database of service recommendations. This helps users make better choices when selecting services in their daily lives.
 
 <!-- ![CriticizeIt Screenshot](https://i.ibb.co/2ysHGGf/screenshot.png) -->
- <img src="https://i.ibb.co/2ysHGGf/screenshot.png" alt="CriticizeIt Screenshot" style="width: 100%; max-width: 800px;"/>
+ <img src="https://i.ibb.co/TBn9CLQY/criti.jpg" alt="CriticizeIt Screenshot" style="width: 100%; max-width: 800px;"/>
 
 - **Live Link :** https://assi11-fb837.web.app
 
