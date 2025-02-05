@@ -3,9 +3,10 @@
 
 **CriticizeIt** is a user-driven platform designed to help individuals explore, rate, and review various services. It aims to provide users with a transparent way to make informed decisions based on personal experiences and community feedback. Users can easily add new services, post reviews, and interact with others, building a trusted database of service recommendations. This helps users make better choices when selecting services in their daily lives.
 
-![CriticizeIt Screenshot](https://i.ibb.co/2ysHGGf/screenshot.png)
+<!-- ![CriticizeIt Screenshot](https://i.ibb.co/2ysHGGf/screenshot.png) -->
+ <img src="https://i.ibb.co/2ysHGGf/screenshot.png" alt="CriticizeIt Screenshot" style="width: 100%; max-width: 800px;"/>
 
-- **Live Link :** https://assi11-fb837.web.app/
+- **Live Link :** https://assi11-fb837.web.app
 
 ## 🛠️ Main Technologies
 
@@ -22,13 +23,12 @@
 
 ## 🔑 Key Features
 
-- **User Authentication**: Users can sign up, log in, and manage their profiles securely.
-- **Service Management**: Users can add new services to the platform and edit existing ones.
-- **Review Management**: Users can post, edit, and delete reviews on services.
-- **Explore Reviews**: Users can view and explore reviews for services added by others.
-- **CRUD Operations**: Full create, read, update, and delete functionality for both services and reviews.
+- **Service Management**: Users can effortlessly add new services to the platform and edit existing ones.
+- **Review Management**: Users can post, edit, and delete reviews on services. Share their honest feedback to help others make informed decisions, and engage with reviews that matter to them.
+- **Explore Reviews**: Users can view and explore reviews for services added by others to find the best experiences and avoid bad ones.
+- **CRUD Operations**: Full Create, Read, Update, and Delete functionality for both services and reviews, giving users complete control over what they contribute and interact with.
 
-- **Search and Filter**: Allows users to search for services and filter by category or rating.
+- **Search and Filter**: Allows users to quickly find services that interest you by searching through service title. Filter reviews to narrow down options based on users preferences.
 
 ## 📦 Dependencies
 
