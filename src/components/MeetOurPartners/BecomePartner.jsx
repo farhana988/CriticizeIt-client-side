@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import Heading from "../shared/Heading";
+import Swal from "sweetalert2";
 
 const BecomePartner = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,14 @@ const BecomePartner = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you for your interest! We will get in touch soon.");
+    
+    Swal.fire({
+      icon: 'success',
+      title: 'Thank you for your interest!',
+      text: 'We will get in touch soon.',
+      confirmButtonText: 'OK',
+    });
+  
     setFormData({
       name: "",
       email: "",

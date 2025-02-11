@@ -1,6 +1,7 @@
 import Countdown from "react-countdown";
 import { FaClock } from "react-icons/fa";
 import Heading from "./shared/Heading";
+import Swal from "sweetalert2";
 
 const deals = [
   {
@@ -10,6 +11,7 @@ const deals = [
       "Enjoy sparkling clean homes with our professional cleaning services.",
     image: "https://i.ibb.co.com/RPn2wDt/Home-Cleaning.jpg",
     endDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    couponCode: "CLEAN30", 
   },
   {
     service: "Personal Training",
@@ -18,6 +20,7 @@ const deals = [
       "Achieve your fitness goals with personalized training sessions.",
     image: "https://i.ibb.co.com/923xCX4/Personal-Training.webp",
     endDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+    couponCode: "TRAIN20", 
   },
   {
     service: "Pet Grooming",
@@ -26,6 +29,7 @@ const deals = [
       "Give your pets the care they deserve with our grooming services.",
     image: "https://i.ibb.co.com/9wR62zC/Pet-Grooming.jpg",
     endDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
+    couponCode: "PET25", 
   },
   {
     service: "Event Planning",
@@ -34,10 +38,20 @@ const deals = [
       "Plan your dream event with our professional event planning services.",
     image: "https://i.ibb.co.com/k84mykT/event.jpg",
     endDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
+    couponCode: "EVENT15", 
   },
 ];
 
 const DealsAndDiscounts = () => {
+  const handleButtonClick = (deal) => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Deal Snagged!',
+      text: `You have successfully grabbed the ${deal.service} deal! Enjoy your discount!`,
+      footer: `<strong>Coupon Code: ${deal.couponCode}</strong>`, 
+      confirmButtonText: 'OK!',
+    });
+  };
   return (
     <section className=" pt-10">
       <div className="container mx-auto px-6 text-center">
@@ -107,6 +121,7 @@ const DealsAndDiscounts = () => {
 
                 {/* Button */}
                 <button
+                 onClick={() => handleButtonClick(deal)} 
                   className="  bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary text-sm lg:text-base
                  text-black lg:py-1 px-6 rounded-full shadow-md 

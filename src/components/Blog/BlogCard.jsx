@@ -33,12 +33,15 @@ const BlogCard = ({ post }) => {
             className="text-xs lg:text-sm mb-2"
             breakpoints={{ lg: 60, md: 55, sm: 39, default: 35 }}
           ></ResponsiveText>
-          <button
-            className="font-semibold hover:underline border px-3 rounded-full
-              text-xs lg:text-base"
+            {/* Button */}
+            <a
+            href={'https://example.com/full-blog-post'} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline border px-3 rounded-full text-xs lg:text-base"
           >
             Read More →
-          </button>
+          </a>
         </div>
       </div>
     </div>
