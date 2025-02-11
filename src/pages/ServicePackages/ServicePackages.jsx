@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Heading from "../../components/shared/Heading";
 import ServicePackagesModal from "./ServicePackagesModal";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const ServicePackages = () => {
   const [packages, setPackages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -21,8 +26,23 @@ const ServicePackages = () => {
 
   // modal
   const handleModalOpen = (pkg) => {
-    setSelectedPackage(pkg);
-    setIsModalOpen(true);
+    if (!user) {
+      Swal.fire({
+        title: "You need to log in!",
+        text: "Please log in to proceed with booking.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Go to Login",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    } else {
+      setSelectedPackage(pkg);
+      setIsModalOpen(true);
+    }
   };
 
   const handleModalClose = () => {
@@ -68,7 +88,7 @@ const ServicePackages = () => {
               </ul>
             </div>
             <button
-             onClick={() => handleModalOpen(pkg)} 
+              onClick={() => handleModalOpen(pkg)}
               className="bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary px-3 py-1 rounded-xl w-20 lg:w-32
              text-xs lg:text-lg text-black font-semibold mt-auto"
@@ -78,11 +98,11 @@ const ServicePackages = () => {
           </div>
         ))}
       </div>
-       {/* Modal for Booking */}
-       <ServicePackagesModal
+      {/* Modal for Booking */}
+      <ServicePackagesModal
         isOpen={isModalOpen}
         closeModal={handleModalClose}
-        packageDetails={selectedPackage}  
+        packageDetails={selectedPackage}
       />
     </div>
   );
