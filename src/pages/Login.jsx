@@ -131,13 +131,15 @@ const Login = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn bg-primary text-white font-bold text-2xl">Login</button>
+                <button className="btn bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary   font-bold 
+             text-lg lg:text-2xl text-black ">Login</button>
               </div>
 
               <h2 className="text-lg mt-3 flex items-center gap-2">
                 No account yet?{" "}
                 <Link to="/register">
-                  <span className=" flex items-center gap-4 
+                  <span className=" flex items-center gap-4  hover:underline
                    text-primary dark:text-ivory active text-2xl font-extrabold">
                     <FaLongArrowAltRight />Register
                   </span>

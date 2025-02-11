@@ -189,7 +189,7 @@ const Registration = () => {
               <h2 className="text-lg mt-3 flex items-center gap-2">
                 Already have an account?
                 <Link to="/login">
-                  <span className="underline flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
+                  <span className="hover:underline flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
                     <FaLongArrowAltRight />
                     Log in
                   </span>
