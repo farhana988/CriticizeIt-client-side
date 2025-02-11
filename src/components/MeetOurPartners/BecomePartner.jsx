@@ -18,8 +18,6 @@ const BecomePartner = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can send formData to your backend/API here
-    console.log("Form submitted:", formData);
     alert("Thank you for your interest! We will get in touch soon.");
     setFormData({
       name: "",

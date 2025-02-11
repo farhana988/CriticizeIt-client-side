@@ -2,9 +2,11 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const ServicePackagesModal = ({ isOpen, closeModal, packageDetails }) => {
-    const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,16 +14,27 @@ const ServicePackagesModal = ({ isOpen, closeModal, packageDetails }) => {
     const name = form.name.value;
     const phone = form.phone.value;
     const address = form.address.value;
-    console.log("Booking Details:", {
-      name,
-      email,
-      phone,
-      address,
-      packageDetails,
-    });
-    closeModal();
-  };
 
+    Swal.fire({
+      title: "Confirm Booking",
+      text: `Are you sure you want to book the service?`,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes, confirm",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        closeModal();
+        Swal.fire(
+          "Booking Confirmed!",
+          "Your booking has been confirmed.",
+          "success"
+        );
+      } else {
+        closeModal();
+      }
+    });
+  };
   if (!isOpen) return null;
   return (
     <div
