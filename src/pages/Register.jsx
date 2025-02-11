@@ -180,14 +180,16 @@ const Registration = () => {
               </div>
               {error && <p className="text-red-900">{error}</p>}
               <div className="form-control mt-6">
-                <button className="btn  bg-primary  text-white  font-bold text-2xl">
+                <button className="btn  bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary   font-bold 
+             text-lg lg:text-2xl text-black ">
                   Register
                 </button>
               </div>
               <h2 className="text-lg mt-3 flex items-center gap-2">
                 Already have an account?
                 <Link to="/login">
-                  <span className=" flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
+                  <span className="underline flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
                     <FaLongArrowAltRight />
                     Log in
                   </span>
