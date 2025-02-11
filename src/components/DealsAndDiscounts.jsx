@@ -81,7 +81,7 @@ const DealsAndDiscounts = () => {
                   className="text-sm md:text-base lg:text-lg font-semibold absolute 
                   rounded-bl-md top-0 z-10 right-0 text-black px-3
                  bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary  transition-all "
+               transition-all "
                 >
                   {deal.discount}
                 </btn>

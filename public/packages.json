@@ -1,39 +1,56 @@
 [
-    {
-      "id": 1,
-      "name": "Basic Bundle",
-      "description": "This package includes a one-time cleaning service and an event consultation session.",
-      "price": 150,
-      "currency": "$",
-      "services": [
-        "One-time cleaning service",
-        "Event consultation session"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Premium Bundle",
-      "description": "This package includes a cleaning service, event management, and one free tutoring session.",
-      "price": 300,
-      "currency": "$",
-      "services": [
-        "Cleaning service",
-        "Event management",
-        "One free tutoring session"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Ultimate Bundle",
-      "description": "The Ultimate Bundle offers all our services at a discounted rate. Includes cleaning, event management, and tutoring sessions plus a free consultation for additional services.",
-      "price": 450,
-      "currency": "$",
-      "services": [
-        "Cleaning service",
-        "Event management",
-        "Tutoring session",
-        "Free consultation for additional services"
-      ]
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Free Starter Bundle",
+    "description": "This introductory package is completely free and includes a basic cleaning service and a brief event consultation session to get you started.",
+    "price": 0,
+    "currency": "$",
+    "services": ["Basic cleaning service", "Brief event consultation session"]
+  },
+  {
+    "id": 2,
+    "name": "Basic Bundle",
+    "description": "This package includes a one-time cleaning service and an event consultation session.",
+    "price": 150,
+    "currency": "$",
+    "services": ["One-time cleaning service", "Event consultation session"]
+  },
+  {
+    "id": 3,
+    "name": "Premium Bundle",
+    "description": "This package includes a cleaning service, event management, and one free tutoring session.",
+    "price": 300,
+    "currency": "$",
+    "services": [
+      "Cleaning service",
+      "Event management",
+      "One free tutoring session"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Ultimate Bundle",
+    "description": "The Ultimate Bundle offers all our services at a discounted rate. Includes cleaning, event management, and tutoring sessions plus a free consultation for additional services.",
+    "price": 450,
+    "currency": "$",
+    "services": [
+      "Cleaning service",
+      "Event management",
+      "Tutoring session",
+      "Free consultation for additional services"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "VIP Bundle",
+    "description": "This all-inclusive package provides cleaning, event management, personalized tutoring sessions, and ongoing consultations for future events and services.",
+    "price": 600,
+    "currency": "$",
+    "services": [
+      "Cleaning service",
+      "Event management",
+      "Personalized tutoring sessions",
+      "Ongoing consultations for future events and services"
+    ]
+  }
+]
