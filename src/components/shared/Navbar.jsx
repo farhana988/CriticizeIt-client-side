@@ -15,7 +15,7 @@ const Navbar = () => {
           ` ${
             isActive
               ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-              : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493]"
+              : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
           }`
         }
       >
@@ -29,7 +29,7 @@ const Navbar = () => {
           ` ${
             isActive
               ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-              : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493]"
+              : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
           }`
         }
       >
@@ -44,7 +44,7 @@ const Navbar = () => {
             ` ${
               isActive
                 ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493]"
+                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
             }`
           }
         >
@@ -60,7 +60,7 @@ const Navbar = () => {
             ` ${
               isActive
                 ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493]"
+                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
             }`
           }
         >
@@ -76,20 +76,35 @@ const Navbar = () => {
             ` ${
               isActive
                 ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493]"
+                : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
             }`
           }
         >
           <i>My Reviews</i>
         </NavLink>
       )}
+
+        {/* service packages */}
+        <NavLink
+        to="/packages"
+        className={({ isActive }) =>
+          ` ${
+            isActive
+              ? "active text-nav dark:text-ivory text-3xl font-extrabold"
+              : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300"
+          }`
+        }
+      >
+        <i>Service Packages</i>
+      </NavLink>
+
     </>
   );
 
   return (
     <div
       className="navbar fixed  backdrop-blur-xl bg-accent/30 z-50 pt-3
-    pr-5 lg:pr-24 lg:px-20"
+    pr-5 lg:pr-24 lg:px-20 2xl:px-44"
     >
       <div className="navbar-start ">
         <div className="dropdown">
@@ -133,7 +148,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-10">{links}</ul>
+        <ul className="menu menu-horizontal px-1 gap-10 items-center">{links}</ul>
       </div>
       <div className="navbar-end items-center">
         {user?.email ? (

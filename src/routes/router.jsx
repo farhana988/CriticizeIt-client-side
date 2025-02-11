@@ -18,6 +18,7 @@ import TermsOfService from "../components/FooterLinks/TermsOfService";
 import AllPartners from "../components/MeetOurPartners/AllPartners";
 import AllBlogs from "../components/Blog/AllBlogs";
 import BecomePartner from "../components/MeetOurPartners/BecomePartner";
+import ServicePackages from "../pages/ServicePackages";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
+      },
+      {
+        path: "/packages",
+        element: <ServicePackages></ServicePackages>,
       },
       {
         path: "/addService",
