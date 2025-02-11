@@ -15,7 +15,7 @@ const Support = () => {
         <div className="space-y-6">
           {/* Email Support */}
           <div className=" bg-lCard dark:bg-dCard  p-6 rounded-xl shadow-md
-           hover:bg-indigo-200 transition-all">
+           hover:bg-indigo-200 transition-all border-b-4 border-primary">
             <h3 className="text-2xl font-semibold ">Email Support</h3>
             <p className="mt-2">
               You can reach us at{" "}
@@ -31,7 +31,7 @@ const Support = () => {
 
           {/* Phone Support */}
           <div className="  bg-lCard dark:bg-dCard    p-6 rounded-xl shadow-md
-            hover:bg-indigo-200 transition-all">
+            hover:bg-indigo-200 transition-all border-b-4 border-primary">
             <h3 className="text-2xl font-semibold ">Phone Support</h3>
             <p className="mt-2">
               Call us at{" "}
@@ -44,7 +44,7 @@ const Support = () => {
 
           {/* Live Chat */}
           <div className="  bg-lCard dark:bg-dCard    p-6 rounded-xl shadow-md
-            hover:bg-indigo-200 transition-all">
+            hover:bg-indigo-200 transition-all border-b-4 border-primary">
             <h3 className="text-2xl font-semibold ">Live Chat</h3>
             <p className="mt-2">
               You can chat with our team directly on our website during business

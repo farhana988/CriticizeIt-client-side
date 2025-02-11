@@ -15,7 +15,7 @@ const Partnercard = ({ partner }) => {
             className="w-20  md:w-24 lg:w-32 h-20  md:h-24 lg:h-32 z-10 mx-auto 
             bg-gradient-to-r from-primary
                    via-secondary to-accent rounded-full p-1
-                 absolute top-2 left-12 md:left-16 lg:left-20 animate-pulse"
+                 absolute top-2 left-12 md:left-16 lg:left-20 2xl:left-28 animate-pulse"
           >
             <img
               src={logo}
