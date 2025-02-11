@@ -18,7 +18,7 @@ import TermsOfService from "../components/FooterLinks/TermsOfService";
 import AllPartners from "../components/MeetOurPartners/AllPartners";
 import AllBlogs from "../components/Blog/AllBlogs";
 import BecomePartner from "../components/MeetOurPartners/BecomePartner";
-import ServicePackages from "../pages/ServicePackages";
+import ServicePackages from "../pages/ServicePackages/ServicePackages";
 
 const router = createBrowserRouter([
   {
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/faq",
-        element:<FAQ></FAQ>,
+        element: <FAQ></FAQ>,
       },
       {
         path: "/terms",

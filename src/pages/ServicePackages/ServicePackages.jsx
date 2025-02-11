@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import Heading from "../components/shared/Heading";
+import Heading from "../../components/shared/Heading";
+import ServicePackagesModal from "./ServicePackagesModal";
 
 const ServicePackages = () => {
   const [packages, setPackages] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -15,6 +18,17 @@ const ServicePackages = () => {
 
     fetchPackages();
   }, []);
+
+  // modal
+  const handleModalOpen = (pkg) => {
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedPackage(null);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
@@ -54,6 +68,7 @@ const ServicePackages = () => {
               </ul>
             </div>
             <button
+             onClick={() => handleModalOpen(pkg)} 
               className="bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary px-3 py-1 rounded-xl w-20 lg:w-32
              text-xs lg:text-lg text-black font-semibold mt-auto"
@@ -63,6 +78,12 @@ const ServicePackages = () => {
           </div>
         ))}
       </div>
+       {/* Modal for Booking */}
+       <ServicePackagesModal
+        isOpen={isModalOpen}
+        closeModal={handleModalClose}
+        packageDetails={selectedPackage}  
+      />
     </div>
   );
 };
