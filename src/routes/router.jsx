@@ -19,6 +19,7 @@ import AllPartners from "../components/MeetOurPartners/AllPartners";
 import AllBlogs from "../components/Blog/AllBlogs";
 import BecomePartner from "../components/MeetOurPartners/BecomePartner";
 import ServicePackages from "../pages/ServicePackages/ServicePackages";
+import AboutUs from "../components/FooterLinks/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/faq",

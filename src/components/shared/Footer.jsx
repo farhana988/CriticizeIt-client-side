@@ -22,7 +22,7 @@ const Footer = () => {
            
             <div className="flex items-center gap-2 border-2 mr-36 md:mr-12 lg:mr-48 
             rounded-full px-4 dark:opacity-80">
-              <a href="">Learn More About Us </a>
+              <Link to={'/about'}>Learn More About Us </Link>
               <FaLongArrowAltRight />
             </div>
           </div>
