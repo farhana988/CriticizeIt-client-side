@@ -53,11 +53,11 @@ const MeetOurPartners = () => {
 
         {/* become a partner */}
         <div className="">
-          <p className="text-sm md:text-lg lg:text-xl  mb-4">
+          <p className="text-sm md:text-lg xl:text-xl  mb-4">
             Want to partner with us and make a difference together?
           </p>
           <div
-            className="btn lg:btn-lg text-sm lg:text-lg py-3
+            className="btn text-sm xl:text-lg py-1
            px-6 rounded-full text-black
             bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary

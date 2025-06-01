@@ -12,10 +12,10 @@ const Partnercard = ({ partner }) => {
         <div className="pt-16 ">
           {/*  Logo */}
           <div
-            className="w-20  md:w-24 lg:w-32 h-20  md:h-24 lg:h-32 z-10 mx-auto 
+            className="w-20  md:w-24 xl:w-32 h-20  md:h-24 xl:h-32 z-10 mx-auto 
             bg-gradient-to-r from-primary
                    via-secondary to-accent rounded-full p-1
-                 absolute top-2 left-12 md:left-16 lg:left-20 2xl:left-28 animate-pulse"
+                 absolute top-2 left-12 md:left-16 xl:left-20 2xl:left-28 animate-pulse"
           >
             <img
               src={logo}
@@ -26,13 +26,13 @@ const Partnercard = ({ partner }) => {
 
           {/*card Details */}
           <div
-            className="card pt-9 md:pt-14 lg:pt-24 pb-4 md:pb-6 lg:pb-8 px-3 
+            className="card pt-9 md:pt-14 xl:pt-24 pb-4 md:pb-6 lg:pb-8 px-3 
                   rounded-2xl bg-[#ffffffb4] dark:bg-dCard 
                "
           >
             {/* partner name */}
             <h3
-              className="font-semibold  text-sm md:text-lg lg:text-2xl 
+              className="font-semibold  text-sm md:text-lg xl:text-2xl 
                 "
             >
               {name}
@@ -40,7 +40,7 @@ const Partnercard = ({ partner }) => {
             {/* description  */}
             <p
               className=" mt-1 
-                  text-xs lg:text-sm"
+                  text-xs xl:text-sm"
               title={description}
             >
               {description.substring(0, 60)}...

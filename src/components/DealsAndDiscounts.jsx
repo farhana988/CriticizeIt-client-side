@@ -81,18 +81,18 @@ const DealsAndDiscounts = () => {
 
               {/* Content */}
               <div className="px-2 pt-2 pb-3 lg:pb-5 ">
-                <h3 className="text-sm md:text-lg lg:text-2xl  font-semibold ">
+                <h3 className="text-sm md:text-lg xl:text-2xl  font-semibold ">
                   {deal.service}
                 </h3>
                 <p
-                  className=" text-xs lg:text-sm mb-2"
+                  className=" text-xs xl:text-sm mb-2"
                   title={deal.description}
                 >
                   {deal.description.substring(0, 60)}...
                 </p>
                 {/* discount badge */}
                 <btn
-                  className="text-sm md:text-base lg:text-lg font-semibold absolute 
+                  className="text-sm md:text-base xl:text-lg font-semibold absolute 
                   rounded-bl-md top-0 z-10 right-0 text-black px-3
                  bg-gradient-to-r from-primary via-secondary to-accent
                transition-all "
@@ -103,7 +103,7 @@ const DealsAndDiscounts = () => {
                 {/* Timer */}
                 <div
                   className="flex items-center justify-center text-primary dark:text-ivory 
-                 text-sm lg:text-lg my-2"
+                 text-sm xl:text-lg my-2"
                 >
                   <FaClock className="mr-2 text-primary dark:text-ivory" />
                   <Countdown
@@ -123,7 +123,7 @@ const DealsAndDiscounts = () => {
                 <button
                  onClick={() => handleButtonClick(deal)} 
                   className="  bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary text-sm lg:text-base
+             hover:from-primary hover:to-primary text-sm xl:text-base
                  text-black lg:py-1 px-6 rounded-full shadow-md 
                   transition-all font-semibold"
                 >

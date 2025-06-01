@@ -11,21 +11,22 @@ const ServicesCard = ({ service }) => {
       <div
         className="group relative bg-lCard dark:bg-dCard rounded-xl shadow-xl 
         overflow-hidden flex flex-col
-          shadow-primary hover:shadow-2xl h-[245px] md:h-[252px] lg:h-[335px] "
+          shadow-primary hover:shadow-2xl h-[245px] md:h-[252px] lg:h-[290px] xl:h-[335px] 
+         "
       >
         {/* Image */}
         <div className="relative w-full p-3">
           <img
             src={serviceImage}
             alt={serviceTitle}
-            className="object-cover w-full h-24 md:h-24 lg:h-36  
+            className="object-cover w-full h-24 md:h-24 lg:h-32 xl:h-36  
                rounded-xl  "
                referrerPolicy="no-referrer"
           />
         </div>
   
         {/* Card Content */}
-        <div className="px-3 lg:px-6 pb-3 lg:pb-4 flex flex-col flex-grow">
+        <div className="px-3 xl:px-6 pb-3 lg:pb-4 flex flex-col flex-grow">
           {/* title */}
           <div
             className="  max-w-full sm:max-w-md 
@@ -34,7 +35,7 @@ const ServicesCard = ({ service }) => {
             <div className="relative group">
               <div className="tooltip tooltip-top" data-tip={serviceTitle}>
                 <p className="truncate  max-w-full sm:max-w-xs 
-                text-sm md:text-base lg:text-xl 
+                text-sm md:text-base xl:text-xl 
                 font-bold">
               
                  
@@ -47,7 +48,7 @@ const ServicesCard = ({ service }) => {
           </div>
   
            {/* category */}
-        <div className="text-xs lg:text-base mb-2">
+        <div className="text-xs xl:text-base mb-2">
        
 
           {category}
@@ -57,7 +58,7 @@ const ServicesCard = ({ service }) => {
           
               <ResponsiveText
               text={description}
-              className="text-xs lg:text-sm "
+              className="text-xs xl:text-sm "
               breakpoints={{lg: 50,md: 52, sm: 30, default: 35}}></ResponsiveText>
                
                
@@ -69,7 +70,7 @@ const ServicesCard = ({ service }) => {
            {/* Price and See Details */}
         <div className="flex justify-between items-center mt-auto">
           {/* price */}
-          <span className="font-semibold text-sm lg:font-bold lg:text-lg">
+          <span className="font-semibold text-sm xl:text-lg">
             ${price}
           </span>
           {/* "See Details" Button */}
@@ -77,7 +78,7 @@ const ServicesCard = ({ service }) => {
             to={`/serviceDetails/${_id}`}
             className="bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary px-3 py-1 rounded-xl 
-             text-xs lg:text-lg text-black font-semibold"
+             text-xs xl:text-lg text-black font-semibold"
           >
             See Details
           </Link>

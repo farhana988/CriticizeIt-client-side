@@ -18,7 +18,7 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="carousel w-full  bg-green-50 mt-[72px] ">
+    <div className="carousel w-full  bg-green-50 mt-16 lg:mt-[68px] ">
       {/* slide 1 */}
       <div
         id="slide1"

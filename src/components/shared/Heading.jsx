@@ -1,47 +1,17 @@
 /* eslint-disable react/prop-types */
 import "animate.css";
-import { motion } from "framer-motion";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Heading = ({ title, subtitle }) => {
   return (
-    <div className="flex flex-col w-full justify-center items-center my-12">
-      <motion.h1
-        animate={{ color: 
-          [
-            '#80eb80', 
-            '#FFDAB9', 
-            '#87CEEB', 
-            '#74ad90', 
-            '#FFB6C1', 
-            '#6e6e5e', 
-            '#d1add1',
-            '#F08080', 
-            '#d4c85b',
-            '#5d9fb6', 
-            '#D2B48C', 
-            '#e9a6b6', 
-            '#B0C4DE', 
-            '#969165', 
-            '#DAA520', 
-            '#a09e9e', 
-            '#4C585B',
-            '#8EB486',
-            '#997C70',
-            '#a64d7ad3'
-          ]
-        }}
-        transition={{
-          duration: 20, 
-          repeat: Infinity,
-          repeatDelay: 5,
-          ease: "easeInOut"
-        }}
-        className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 "
+    <div className="flex flex-col w-full container mx-auto px-5 xl:px-0 my-12 opacity-90">
+      <div className="flex items-center gap-3 text-2xl md:text-3xl xl:text-4xl ">
+        <FaRegArrowAltCircleRight />
+        <h1 className="font-bold  ">{title}</h1>
+      </div>
+      <p
+        className="text-xs lg:text-lg mt-4 text-start font-thin"
       >
-        {title}
-      </motion.h1>
-      <p className="text-xs lg:text-lg md:px-20 lg:px-80  text-center 
-      font-thin">
         {subtitle}
       </p>
     </div>

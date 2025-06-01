@@ -11,21 +11,21 @@ const FeaturedServicesCard = ({ service }) => {
     <div
       className="group relative bg-lCard dark:bg-dCard rounded-xl shadow-xl 
       overflow-hidden 
-        shadow-primary hover:shadow-2xl h-[220px] md:h-[226px] lg:h-[305px] "
+        shadow-primary hover:shadow-2xl h-[220px] md:h-[226px] lg:h-[265px] xl:h-[305px] "
     >
       {/* Image */}
       <div className="relative w-full p-3">
         <img
           src={serviceImage}
           alt={serviceTitle}
-          className="object-cover w-full h-24 md:h-24 lg:h-36  
+          className="object-cover w-full h-24 md:h-24 lg:h-32 xl:h-36  
              rounded-xl  "
              referrerPolicy="no-referrer"
         />
       </div>
 
       {/* Card Content */}
-      <div className="px-3 lg:px-6">
+      <div className="px-3 xl:px-6">
         {/* title */}
         <div
           className="  max-w-full sm:max-w-md 
@@ -33,8 +33,9 @@ const FeaturedServicesCard = ({ service }) => {
         >
           <div className="relative group">
             <div className="tooltip tooltip-top" data-tip={serviceTitle}>
-              <p className="truncate  max-w-full sm:max-w-xs text-sm md:text-base lg:text-xl 
-              font-bold">
+              <p className="truncate  max-w-full sm:max-w-xs font-bold
+               text-sm md:text-base lg:text-lg xl:text-xl 
+              ">
             
                
                 {/*title */}
@@ -51,7 +52,7 @@ const FeaturedServicesCard = ({ service }) => {
         
             <ResponsiveText
             text={description}
-            className="text-xs lg:text-sm mb-2"
+            className="text-xs xl:text-sm mb-2"
             breakpoints={{lg: 50,md: 52, sm: 30, default: 35}}></ResponsiveText>
              
              
@@ -73,7 +74,7 @@ const FeaturedServicesCard = ({ service }) => {
             to={`/serviceDetails/${_id}`}
             className=" bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary  px-3 py-1 rounded-xl 
-             text-xs lg:text-lg text-black font-semibold"
+             text-xs xl:text-lg text-black font-semibold"
           >
             See Details
           </Link>

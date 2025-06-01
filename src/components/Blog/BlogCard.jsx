@@ -22,23 +22,24 @@ const BlogCard = ({ post }) => {
 
           <ResponsiveText
             text={title}
-            className="text-sm md:text-base lg:text-xl  font-semibold mb-2"
-            breakpoints={{ lg: 45, md: 45, sm: 30, default: 35 }}
+            className="text-sm md:text-base xl:text-xl  font-semibold mb-2"
+            breakpoints={{ lg: 35, md: 45, sm: 30, default: 35 }}
           ></ResponsiveText>
           <p className="text-sm mb-2">{date}</p>
           {/* description */}
 
           <ResponsiveText
             text={description}
-            className="text-xs lg:text-sm mb-2"
-            breakpoints={{ lg: 60, md: 55, sm: 39, default: 35 }}
+            className="text-xs xl:text-sm mb-2"
+            breakpoints={{ lg: 55, md: 55, sm: 39, default: 35 }}
           ></ResponsiveText>
             {/* Button */}
             <a
             href={'https://example.com/full-blog-post'} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="font-semibold hover:underline border px-3 rounded-full text-xs lg:text-base"
+            className="font-semibold hover:underline border px-3 rounded-full text-xs 
+            xl:text-base"
           >
             Read More →
           </a>
