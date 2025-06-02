@@ -66,11 +66,11 @@ const ServicePackages = () => {
               <h2 className="text-xl lg;text-2xl font-semibold my-2">
                 {pkg.name}
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm lg:text-base">
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm xl:text-base">
                 {pkg.description}
               </p>
               <p
-                className=" text-sm md:text-base lg:text-lg font-semibold absolute 
+                className=" text-sm md:text-base xl:text-lg font-semibold absolute 
                   rounded-bl-md -top-6 z-10 -right-5 text-black px-3
                  bg-gradient-to-r from-primary via-secondary to-accent
                transition-all"
@@ -79,7 +79,7 @@ const ServicePackages = () => {
                 {pkg.price}
               </p>
               <h2 className="font-semibold lg:text-lg mb-2">Services</h2>
-              <ul className="text-gray-600 dark:text-gray-300 mb-4 pl-5 text-sm lg:text-base">
+              <ul className="text-gray-600 dark:text-gray-300 mb-4 pl-5 text-sm xl:text-base">
                 {pkg.services.map((service, index) => (
                   <li key={index} className="list-disc ">
                     {service}
@@ -91,7 +91,7 @@ const ServicePackages = () => {
               onClick={() => handleModalOpen(pkg)}
               className="bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary px-3 py-1 rounded-xl w-20 lg:w-32
-             text-xs lg:text-lg text-black font-semibold mt-auto"
+             text-xs xl:text-lg text-black font-semibold mt-auto"
             >
               Book Now
             </button>

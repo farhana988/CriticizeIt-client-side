@@ -8,8 +8,8 @@ const NavLinks = () => {
 
   const linkClass = ({ isActive }) =>
     isActive
-      ? "active text-nav dark:text-ivory text-3xl font-extrabold"
-      : "font-medium text-xl text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300";
+      ? "active text-nav dark:text-ivory text-2xl xl:text-3xl font-extrabold"
+      : "font-medium xl:text-lg text-nav dark:text-ivory hover:text-[#536493] dark:hover:text-base-300";
 
   return (
     <>

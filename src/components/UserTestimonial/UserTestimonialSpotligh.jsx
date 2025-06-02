@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Heading from "../shared/Heading";
-import TestimonialCard from "./TestimonialCard";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TestimonialCard from "../cards/TestimonialCard";
 
 const UserTestimonialSpotlight = () => {
   const [testimonials, setTestimonials] = useState([]);

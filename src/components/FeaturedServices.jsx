@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "../shared/Heading";
-import FeaturedServicesCard from "./FeaturedServicesCard";
+import Heading from "./shared/Heading";
 import Swal from "sweetalert2";
+import ServiceCard from "./cards/ServiceCard";
 
 const FeaturedServices = () => {
   const [services, setServices] = useState([]);
@@ -30,7 +30,12 @@ const FeaturedServices = () => {
             mx-5"
       >
         {services.map((service) => (
-          <FeaturedServicesCard key={service._id} service={service} />
+          <ServiceCard
+            key={service._id}
+            service={service}
+            showCategory={false}
+            cardHeight="h-[220px] md:h-[226px] lg:h-[265px] xl:h-[305px]"
+          />
         ))}
       </div>
     </div>

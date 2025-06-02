@@ -2,7 +2,7 @@
 import Swal from "sweetalert2";
 import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import UpdateReviewModal from "./UpdateReviewModal";
+import UpdateReviewModal from "../../pages/MyReviews/UpdateReviewModal";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 

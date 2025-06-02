@@ -1,4 +1,4 @@
-// import React from 'react';
+
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -6,8 +6,8 @@ import { useLocation, useParams } from "react-router-dom";
 import ServiceDetailsCard from "./ServiceDetailsCard";
 import Heading from "../../components/shared/Heading";
 import ReviewForm from "../../components/Review/ReviewForm";
-import ReviewCard from "../../components/Review/ReviewCard";
 import Swal from "sweetalert2";
+import ReviewCard from "../../components/cards/ReviewCard";
 
 const ServiceDetails = () => {
   const [details, setDetails] = useState([]);

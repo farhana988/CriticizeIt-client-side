@@ -1,9 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/shared/ErrorPage";
-
 import PageLayout from "../layout/PageLayout";
 import Home from "../pages/Home";
-import Services from "../pages/services/Services";
+import Services from "../pages/Services";
 import AddService from "../pages/AddService";
 import MyReviews from "../pages/MyReviews/MyReviews";
 import Login from "../pages/Login";
@@ -15,11 +14,11 @@ import PrivacyPolicy from "../components/FooterLinks/PrivacyPolicy";
 import FAQ from "../components/FooterLinks/FAQ";
 import Support from "../components/FooterLinks/Support";
 import TermsOfService from "../components/FooterLinks/TermsOfService";
-import AllPartners from "../components/MeetOurPartners/AllPartners";
-import AllBlogs from "../components/Blog/AllBlogs";
 import BecomePartner from "../components/MeetOurPartners/BecomePartner";
 import ServicePackages from "../pages/ServicePackages/ServicePackages";
 import AboutUs from "../components/FooterLinks/AboutUs";
+import Blogs from "../pages/Blogs";
+import MeetOurPartners from "../components/MeetOurPartners/MeetOurPartners";
 
 const router = createBrowserRouter([
   {
@@ -99,11 +98,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/partners",
-        element: <AllPartners></AllPartners>,
+        element: <MeetOurPartners></MeetOurPartners>,
       },
       {
         path: "/blogs",
-        element: <AllBlogs></AllBlogs>,
+        element: <Blogs />,
       },
       {
         path: "/become-partner",

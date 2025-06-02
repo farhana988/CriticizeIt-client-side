@@ -1,14 +1,12 @@
-// import React from 'react';
-
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import MyServicesCard from "./MyServicesCard";
 import Heading from "../../components/shared/Heading";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import NoData from "../../components/shared/NoData";
+import MyServicesCard from "../../components/cards/MyServicesCard";
 
 const MyServices = () => {
   const axiosSecure = useAxiosSecure();
@@ -78,8 +76,10 @@ const MyServices = () => {
               className=" 
               table table-xs"
             >
-              <thead className="lg:text-xl text-black dark:text-ivory 
-              opacity-70 dark:opacity-90">
+              <thead
+                className="lg:text-xl text-black dark:text-ivory 
+              opacity-70 dark:opacity-90"
+              >
                 <tr>
                   <th className="   py-3">Service Image</th>
                   <th className="  py-3">Service Title</th>

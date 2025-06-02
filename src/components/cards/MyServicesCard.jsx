@@ -5,7 +5,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import UpdateServiceModal from "./UpdateServiceModal";
+import UpdateServiceModal from "../../pages/MyServices/UpdateServiceModal";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 
