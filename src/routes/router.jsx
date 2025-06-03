@@ -14,11 +14,11 @@ import PrivacyPolicy from "../components/FooterLinks/PrivacyPolicy";
 import FAQ from "../components/FooterLinks/FAQ";
 import Support from "../components/FooterLinks/Support";
 import TermsOfService from "../components/FooterLinks/TermsOfService";
-import BecomePartner from "../components/MeetOurPartners/BecomePartner";
+import BecomePartner from "../components/Home/MeetOurPartners/BecomePartner";
 import ServicePackages from "../pages/ServicePackages/ServicePackages";
 import AboutUs from "../components/FooterLinks/AboutUs";
 import Blogs from "../pages/Blogs";
-import MeetOurPartners from "../components/MeetOurPartners/MeetOurPartners";
+import MeetOurPartners from "../components/Home/MeetOurPartners/MeetOurPartners";
 
 const router = createBrowserRouter([
   {

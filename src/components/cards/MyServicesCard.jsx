@@ -71,19 +71,19 @@ const MyServicesCard = ({ service, setServices }) => {
             alt=""
           />
         </td>
-        <td className="lg:text-lg break-words border-2">
+        <td className="xl:text-lg break-words border-2">
           {serviceTitle.substring(0, 20)}...
         </td>
 
-        <td className="lg:text-lg text-blue-600 hover:underline break-words border-2">
+        <td className="xl:text-lg text-blue-600 hover:underline break-words border-2">
           <a href={website}>{companyName.substring(0, 20)}...</a>
         </td>
 
-        <td className="lg:text-lg border-2">{category}</td>
+        <td className="xl:text-lg border-2">{category}</td>
 
-        <td className="lg:text-lg border-2">${price}</td>
+        <td className="xl:text-lg border-2">${price}</td>
 
-        <td className="lg:text-lg break-words border-2">
+        <td className="xl:text-lg break-words border-2">
           {description.substring(0, 70)}...
         </td>
 
@@ -95,7 +95,7 @@ const MyServicesCard = ({ service, setServices }) => {
           <button
             onClick={() => handleDelete(_id)}
             className="  font-semibold
-              py-2 rounded-full  text-xl lg:text-3xl"
+              py-2 rounded-full  text-xl xl:text-3xl"
           >
            <MdDelete />
           </button>
@@ -103,7 +103,7 @@ const MyServicesCard = ({ service, setServices }) => {
           <button
             onClick={handleUpdateClick}
             className=" font-semibold
-              py-2 rounded-full text-xl lg:text-3xl"
+              py-2 rounded-full text-xl xl:text-3xl"
           >
               <CiEdit />
           </button>

@@ -49,13 +49,13 @@ const MyServices = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search by service title"
-          className="w-11/12 md:w-6/12 lg:w-5/12 px-4 py-2 border
+          className="w-11/12 md:w-6/12 xl:w-5/12 px-4 py-2 border
            border-gray-300 bg-[#ffffffb4] dark:bg-dCard
            rounded-lg pl-10"
         />
         <FaSearch
-          className="absolute left-8 md:left-52 lg:left-[435px]  
-        top-1/2 transform -translate-y-1/2 "
+          className="absolute top-1/2 transform -translate-y-1/2 
+          left-8 md:left-52 lg:left-[270px] xl:left-[435px] 2xl:left-[480px]"
         />
       </div>
 
@@ -77,7 +77,7 @@ const MyServices = () => {
               table table-xs"
             >
               <thead
-                className="lg:text-xl text-black dark:text-ivory 
+                className="lg:text-base xl:text-xl text-black dark:text-ivory 
               opacity-70 dark:opacity-90"
               >
                 <tr>

@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-10 items-center">
+          <ul className="menu menu-horizontal px-1 gap-6 items-center">
             <NavLinks />
           </ul>
         </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
                   src={user.photoURL}
                   alt=""
                   className="ring-2 ring-offset-4 ring-primary w-7 h-7 
-                  lg:w-10 lg:h-10 rounded-full"
+                  lg:w-8 xl:w-10 lg:h-8 xl:h-10 rounded-full"
                 />
                 <div
                   className="user-name absolute bottom--10 left-0 w-full text-xs  text-center

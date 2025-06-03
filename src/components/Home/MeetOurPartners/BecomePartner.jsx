@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 
-import Heading from "../shared/Heading";
 import Swal from "sweetalert2";
+import Heading from "../../shared/Heading";
 
 const BecomePartner = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +18,14 @@ const BecomePartner = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     Swal.fire({
-      icon: 'success',
-      title: 'Thank you for your interest!',
-      text: 'We will get in touch soon.',
-      confirmButtonText: 'OK',
+      icon: "success",
+      title: "Thank you for your interest!",
+      text: "We will get in touch soon.",
+      confirmButtonText: "OK",
     });
-  
+
     setFormData({
       name: "",
       email: "",
@@ -124,8 +123,6 @@ const BecomePartner = () => {
             {/* Submit Button */}
             <div className="text-center">
               <button
-               
-          
                 type="submit"
                 className="px-3 md:px-6 py-1 md:py-2 text-black bg-gradient-to-r
                  from-primary via-secondary to-accent hover:from-primary
@@ -133,7 +130,7 @@ const BecomePartner = () => {
                   items-center justify-center gap-2
                   text-sm  lg:text-lg"
               >
-                Submit 
+                Submit
               </button>
             </div>
           </form>

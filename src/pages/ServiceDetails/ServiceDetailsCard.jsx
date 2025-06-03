@@ -33,13 +33,13 @@ const ServiceDetailsCard = ({ details }) => {
           {/* image side */}
           <div className="flex flex-col gap-1 justify-center px-6 md:px-0 ">
             {/* service title */}
-            <h2 className="text-sm lg:text-xl font-bold  break-words">
+            <h2 className="text-sm lg:text-lg xl:text-xl font-bold  break-words">
               {serviceTitle?.substring(0, 20)}
             </h2>
               {/* Category */}
               <p className="text-xs md:text-base font-semibold ">{category}</p>
             {/* company name */}
-            <p className="text-sm  ">
+            <p className="text-sm ">
               <a
                 className="text-blue-500 text-xs md:text-base font-medium
                  hover:underline break-words"
@@ -61,7 +61,7 @@ const ServiceDetailsCard = ({ details }) => {
         </section>
 
         {/* Service Info */}
-        <div className="px-6 pt-3 text-sm lg:text-lg md:mr-6">
+        <div className="px-6 pt-3 text-sm xl:text-lg md:mr-6">
           {/* Description */}
           <div className="mt-1">
             <p className=" break-words">
@@ -71,7 +71,8 @@ const ServiceDetailsCard = ({ details }) => {
             </p>
             <button
               onClick={toggle}
-              className="border-2 border-primary px-3 rounded-full mt-2 text-xs lg:text-base"
+              className="border-2 border-primary px-3 rounded-full mt-2 text-xs 
+              xl:text-base"
             >
               {isExpanded ? "Show Less" : "Read More"}
             </button>

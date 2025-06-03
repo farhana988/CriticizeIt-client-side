@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
-import Banner from "../components/Banner";
-import DealsAndDiscounts from "../components/DealsAndDiscounts";
-import MeetOurPartners from "../components/MeetOurPartners/MeetOurPartners";
-import UserTestimonialSpotlight from "../components/UserTestimonial/UserTestimonialSpotligh";
-import Newsletter from "../components/Newsletter";
-import FeaturedServices from "../components/FeaturedServices";
+import Banner from "../components/Home/Banner";
+import FeaturedServices from "../components/Home/FeaturedServices";
+import MeetOurPartners from "../components/Home/MeetOurPartners/MeetOurPartners";
+import UserTestimonialSpotlight from "../components/Home/UserTestimonialSpotligh";
+import DealsAndDiscounts from "../components/Home/DealsAndDiscounts";
 import Blogs from "./Blogs";
+import Newsletter from "../components/Home/Newsletter";
 
 const Home = () => {
   const location = useLocation();
@@ -14,13 +14,13 @@ const Home = () => {
   }
   return (
     <>
-      <Banner></Banner>
-      <FeaturedServices></FeaturedServices>
-      <MeetOurPartners></MeetOurPartners>
-      <UserTestimonialSpotlight></UserTestimonialSpotlight>
-      <DealsAndDiscounts></DealsAndDiscounts>
-      <Blogs></Blogs>
-      <Newsletter></Newsletter>
+      <Banner />
+      <FeaturedServices />
+      <MeetOurPartners />
+      <UserTestimonialSpotlight />
+      <DealsAndDiscounts/>
+      <Blogs/>
+      <Newsletter/>
     </>
   );
 };

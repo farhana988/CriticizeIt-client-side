@@ -71,14 +71,14 @@ const MyReviewsCard = ({ review, setReviews }) => {
             <img
               src={serviceImage || "https://via.placeholder.com/300"}
               alt={serviceTitle}
-              className="w-20 h-20 md:w-32 lg:w-40 lg:h-24 object-cover rounded-full md:rounded-xl "
+              className="w-20 h-20 md:w-32 xl:w-40 xl:h-24 object-cover rounded-full md:rounded-xl "
             />
           </div>
 
           {/* card content */}
           <section className=" flex-1">
             {/* Service title */}
-            <h2 className="text-lg lg:text-2xl font-bold  break-words">
+            <h2 className="text-lg xl:text-2xl font-bold  break-words">
               {serviceTitle?.slice(0, 20)}
             </h2>
 
@@ -88,7 +88,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
                 <svg
                   key={index}
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 lg:w-7 lg:h-7 text-yellow-400"
+                  className="w-5 h-5 xl:w-7 xl:h-7 text-yellow-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
@@ -103,7 +103,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
             </div>
             {/* Review Date */}
 
-            <p className="text-sm lg:text-lg font-semibold ">
+            <p className="text-sm xl:text-lg font-semibold ">
               {new Date(addedDate).toLocaleDateString()}
             </p>
           </section>
@@ -116,7 +116,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
               {/* Delete Button */}
               <button
                 onClick={() => handleDelete(_id)}
-                className="  font-semibold md:text-xl lg:text-3xl"
+                className="  font-semibold md:text-xl xl:text-3xl"
               >
               <MdDelete />
               </button>
@@ -124,7 +124,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
               {/* Update Button */}
               <button
                 onClick={handleUpdateClick}
-                className=" font-semibold md:text-xl lg:text-3xl"
+                className=" font-semibold md:text-xl xl:text-3xl"
               >
                 <CiEdit />
               </button>
@@ -135,11 +135,11 @@ const MyReviewsCard = ({ review, setReviews }) => {
       {/* Review Text */}
 
       <div className="mt-3  mr-10">
-        <p className="text-xs lg:text-base font-semibold  break-words">
+        <p className="text-xs xl:text-base font-semibold  break-words">
           {isExpanded ? reviewText : `${reviewText?.substring(0, 206)}...`}
         </p>
         <button onClick={toggle} 
-        className="border px-3 rounded-full text-xs lg:text-base  mt-2">
+        className="border px-3 rounded-full text-xs xl:text-base  mt-2">
           {isExpanded ? "Show Less" : "Read More"}
         </button>
       </div>

@@ -1,7 +1,6 @@
 import { useState } from "react";
-
-import newsletter from "../assets/newsletter.webp";
-import Heading from "./shared/Heading";
+import newsletter from "../../assets/newsletter.webp";
+import Heading from "../shared/Heading";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");

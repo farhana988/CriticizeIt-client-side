@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "./shared/Heading";
 import Swal from "sweetalert2";
-import ServiceCard from "./cards/ServiceCard";
+import Heading from "../shared/Heading";
+import ServiceCard from "../cards/ServiceCard";
 
 const FeaturedServices = () => {
   const [services, setServices] = useState([]);

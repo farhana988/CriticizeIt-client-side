@@ -1,10 +1,10 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Heading from "../shared/Heading";
+import Heading from "../../shared/Heading";
 import { useEffect, useState } from "react";
 import "animate.css";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import Partnercard from "../cards/Partnercard";
+import Partnercard from "../../cards/Partnercard";
 
 const MeetOurPartners = () => {
   const [partners, setPartners] = useState([]);
