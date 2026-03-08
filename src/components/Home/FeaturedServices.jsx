@@ -11,7 +11,7 @@ const FeaturedServices = () => {
     const fetchAllServices = async () => {
       try {
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/services`
+          `${import.meta.env.VITE_API_URL}/services`,
         );
         setServices(data);
       } catch {
@@ -23,7 +23,7 @@ const FeaturedServices = () => {
   }, []);
 
   return (
-    <div className="container mx-auto ">
+    <div className="mt-16">
       <Heading title={"Featured Services"} />
       <div
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6

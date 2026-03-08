@@ -12,15 +12,14 @@ const Home = () => {
     document.title = "CriticizeIt | Home";
   }
   return (
-    <>
- 
+    <div className="space-y-10 xl:space-y-16">
       <FeaturedServices />
       <MeetOurPartners />
       <UserTestimonialSpotlight />
-      <DealsAndDiscounts/>
-      <Blogs/>
-      <Newsletter/>
-    </>
+      <DealsAndDiscounts />
+      <Blogs />
+      <Newsletter />
+    </div>
   );
 };
 
