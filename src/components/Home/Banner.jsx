@@ -49,7 +49,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="carousel w-full bg-green-50 mt-16 lg:mt-[68px]">
+    <div className="carousel w-full  bg-green-50 mt-16 lg:mt-[68px]">
       {slidesData.map((slide, index) => (
         <Slide
           key={index}

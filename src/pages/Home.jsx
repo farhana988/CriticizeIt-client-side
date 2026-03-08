@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import Banner from "../components/Home/Banner";
 import FeaturedServices from "../components/Home/FeaturedServices";
 import MeetOurPartners from "../components/Home/MeetOurPartners/MeetOurPartners";
 import UserTestimonialSpotlight from "../components/Home/UserTestimonialSpotligh";
@@ -14,7 +13,7 @@ const Home = () => {
   }
   return (
     <>
-      <Banner />
+ 
       <FeaturedServices />
       <MeetOurPartners />
       <UserTestimonialSpotlight />

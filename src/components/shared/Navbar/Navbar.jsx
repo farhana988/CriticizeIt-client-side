@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link
               to="/"
               className="font-bold text-primary text-2xl md:text-3xl lg:text-5xl
-           lg:ml-5 z-10
+            z-10
          "
             >
               <img
