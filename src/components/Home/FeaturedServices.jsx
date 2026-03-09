@@ -26,15 +26,15 @@ const FeaturedServices = () => {
     <div className="mt-16">
       <Heading title={"Featured Services"} />
       <div
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6
-            mx-5"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-6
+           "
       >
         {services.map((service) => (
           <ServiceCard
             key={service._id}
             service={service}
             showCategory={false}
-            cardHeight="h-[220px] md:h-[226px] lg:h-[265px] xl:h-[305px]"
+            cardHeight="h-[260px] md:h-[270px] xl:h-[315px]"
           />
         ))}
       </div>
