@@ -13,7 +13,7 @@ const PageLayout = () => {
           <Banner />
         </div>
       )}
-      <div className="min-h-screen max-w-7xl mx-auto px-5 ">
+      <div className="min-h-screen max-w-7xl mx-auto px-5 pt-20">
         <Outlet></Outlet>
         <Footer></Footer>
       </div>

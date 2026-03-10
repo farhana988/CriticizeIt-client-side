@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "../components/shared/Heading";
 import { FaSearch } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-import CountUp from "react-countup";
 import Swal from "sweetalert2";
 import ServiceCard from "../components/cards/ServiceCard";
 
@@ -33,7 +31,7 @@ const Services = () => {
         const { data } = await axios.get(
           `${
             import.meta.env.VITE_API_URL
-          }/all-services?filter=${filter}&search=${search}&sort=${sort}`
+          }/all-services?filter=${filter}&search=${search}&sort=${sort}`,
         );
         setServices(data);
       } catch {
@@ -51,36 +49,17 @@ const Services = () => {
   }
 
   return (
-    <div className="container mx-auto py-10 min-h-screen">
-      <Heading title={"All Services"} />
-
+    <div>
       {/* search and filter btns */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-5">
-        {/* filter */}
-        <select
-          name="category"
-          id="category"
-          onChange={(e) => setFilter(e.target.value)}
-          value={filter}
-          className="border p-4 rounded-lg border-gray-300 bg-lCard dark:bg-dCard
-            "
-        >
-          <option value="">Filter By Category</option>
-          {categoryOptions.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
         {/* search */}
         <div
           className="flex justify-center relative 
-        items-center "
+        items-center w-full"
         >
           <input
-            className=" p-4 border border-gray-300 bg-lCard dark:bg-dCard lg:w-96
-           rounded-lg pl-10 "
+            className="px-4 py-1 border border-gray-300 bg-lCard dark:bg-dCard
+             w-full rounded-lg pl-10 "
             type="text"
             name="search"
             onChange={(e) => setSearch(e.target.value)}
@@ -95,6 +74,23 @@ const Services = () => {
           />
         </div>
 
+        {/* filter */}
+        <select
+          name="category"
+          id="category"
+          onChange={(e) => setFilter(e.target.value)}
+          value={filter}
+          className="w-full md:w-80 border px-4 py-1 rounded-lg border-gray-300 bg-lCard dark:bg-dCard
+            "
+        >
+          <option value="">Filter By Category</option>
+          {categoryOptions.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+
         {/* Sort */}
         <select
           placeholder="filter"
@@ -102,7 +98,7 @@ const Services = () => {
           id="sort"
           onChange={(e) => setSort(e.target.value)}
           value={sort}
-          className="border p-4 rounded-lg border-gray-300 bg-lCard dark:bg-dCard"
+          className="w-full md:w-60 border px-4 py-1 rounded-lg border-gray-300 bg-lCard dark:bg-dCard"
         >
           <option>Sort By Price</option>
           <option value="asc">Low to High</option>
@@ -110,20 +106,8 @@ const Services = () => {
         </select>
       </div>
 
-      {/* total services */}
-      <p
-        className="active text-primary  text-2xl md:text-4xl lg:text-5xl 
-       font-extrabold px-5 my-6"
-      >
-        Total Services :{" "}
-        <CountUp start={0} end={services.length} duration={3} separator="," />
-      </p>
-
       {/* main card section */}
-      <div
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6
-        mx-5"
-      >
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-10">
         {services.map((service) => (
           <ServiceCard
             key={service._id}
