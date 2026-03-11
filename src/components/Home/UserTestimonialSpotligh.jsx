@@ -56,8 +56,8 @@ const UserTestimonialSpotlight = () => {
   };
 
   return (
-    <section className="pt-10">
-      <div className="container mx-auto text-center px-5 ">
+    <section>
+      <div className=" text-center  ">
         <Heading title={"What Our Users Are Saying"} />
 
         {/* React Slick Carousel */}

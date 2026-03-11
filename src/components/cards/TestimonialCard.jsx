@@ -10,7 +10,7 @@ const TestimonialCard = ({testimonial}) => {
               className="rounded-xl "
             >
               {/*  Image */}
-              <div className="absolute w-14 lg:w-20">
+              <div className="absolute w-14 ">
                 <Lottie animationData={quote}></Lottie>
               </div>
               {/*card details */}
@@ -18,14 +18,14 @@ const TestimonialCard = ({testimonial}) => {
                 className="py-6 md:py-3 lg:py-6 px-3 lg:px-4 rounded-2xl bg-lCard
                  dark:bg-dCard "
               >
-                <h3 className="text-sm md:text-lg lg:text-xl  font-semibold ">
+                <h3 className="text-sm md:text-lg font-semibold ">
                   {testimonial.name}
                 </h3>
-                <p className="text-xs lg:text-base mb-2">
+                <p className="text-xs  mb-2">
                   {testimonial.service}
                 </p>
                 <p
-                  className="italic mb-2 text-xs lg:text-sm"
+                  className="italic mb-2 text-xs"
                   title={testimonial.quote}
                 >
                   {testimonial.quote.substring(0, 60)}...
