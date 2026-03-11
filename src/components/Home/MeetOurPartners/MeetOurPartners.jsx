@@ -19,8 +19,8 @@ const MeetOurPartners = () => {
   }, []);
 
   return (
-    <section className="relative pt-14">
-      <div className="container mx-auto px-6 text-center">
+    <section className="relative">
+   
         {/*  Title */}
         <Heading
           title={"Meet Our Partners"}
@@ -30,8 +30,8 @@ const MeetOurPartners = () => {
         ></Heading>
 
         {/* Partner cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
-          {(isHomePage ? partners.slice(0, 4) : partners).map(
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          {(isHomePage ? partners.slice(0, 5) : partners).map(
             (partner, index) => (
               <Partnercard key={index} partner={partner} />
             )
@@ -49,7 +49,7 @@ const MeetOurPartners = () => {
              transition-all flex items-center gap-1 md:gap-2 lg:gap-3 
             px-3 md:px-5  border-2 border-primary"
               >
-                <Link className="flex items-center gap-2" to="/partners">
+                <Link className="flex items-center text-base gap-2" to="/partners">
                   Peep In <FaLongArrowAltRight />
                 </Link>
               </button>
@@ -57,11 +57,11 @@ const MeetOurPartners = () => {
 
             {/* become a partner */}
             <div>
-              <p className="text-sm md:text-lg xl:text-xl  mb-4">
+              <p className="text-sm  mb-4">
                 Want to partner with us and make a difference together?
               </p>
               <div
-                className="btn text-sm xl:text-lg py-1
+                className="btn btn-sm text-sm py-1
            px-6 rounded-full text-black
             bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary
@@ -83,7 +83,7 @@ const MeetOurPartners = () => {
             </div>
           </>
         )}
-      </div>
+     
     </section>
   );
 };
