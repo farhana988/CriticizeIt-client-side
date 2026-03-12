@@ -9,32 +9,39 @@ const Footer = () => {
       <footer className="footer   p-10  container mx-auto">
         <nav>
           <div className=" w-full md:w-60 lg:w-96 space-y-2">
-            <h4 className="text-2xl  font-bold">
-            CriticizeIt
-            </h4>
-            <p className="dark:opacity-60">
+            <h4 className="text-2xl  font-bold">CriticizeIt</h4>
+            <p className="dark:opacity-60 text-xs">
               We are a platform dedicated to helping users discover, review, and
               recommend services. Our mission is to provide reliable feedback,
-              empowering users to make informed decisions.
-              Trust, transparency, and user-driven insights are at the heart of
-              everything we do.
+              empowering users to make informed decisions. Trust, transparency,
+              and user-driven insights are at the heart of everything we do.
             </p>
-           
-            <div className="flex items-center gap-2 border-2 mr-36 md:mr-12 lg:mr-48 
-            rounded-full px-4 dark:opacity-80">
-              <Link to={'/about'}>Learn More About Us </Link>
+
+            <div
+              className="flex items-center gap-2 border-2 mr-36 md:mr-12 lg:mr-48 
+            rounded-full px-4 dark:opacity-80 text-xs"
+            >
+              <Link to={"/about"}>Learn More About Us </Link>
               <FaLongArrowAltRight />
             </div>
           </div>
         </nav>
         <nav>
           <h4 className="text-2xl font-bold ">Quick Links</h4>
-          <Link to={"/privacy"} className="dark:opacity-80" >Privacy Policy</Link>
-          <Link to={"/faq"} className="dark:opacity-80" >FAQ</Link>
-          <Link to={"/terms"} className="dark:opacity-80" >Terms of Service</Link>
-          <Link to={"/support"} className="dark:opacity-80" >Support</Link>
+          <Link to={"/privacy"} className="dark:opacity-80">
+            Privacy Policy
+          </Link>
+          <Link to={"/faq"} className="dark:opacity-80">
+            FAQ
+          </Link>
+          <Link to={"/terms"} className="dark:opacity-80">
+            Terms of Service
+          </Link>
+          <Link to={"/support"} className="dark:opacity-80">
+            Support
+          </Link>
         </nav>
-        <nav >
+        <nav>
           <h6 className="text-2xl font-bold ">Social</h6>
           <div className="grid grid-flow-col gap-4 dark:opacity-80">
             <a href="https://twitter.com">
@@ -74,7 +81,7 @@ const Footer = () => {
         </nav>
       </footer>
       <div className="divider"></div>
-      <aside className="text-center text-xl ">
+      <aside className="text-center text-sm ">
         <p>
           Copyright © {new Date().getFullYear()} - All right reserved by{" "}
           <i>CriticizeIt</i>

@@ -51,54 +51,63 @@ const ServicePackages = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 min-h-screen">
-      <Heading title={"     Service Packages"}></Heading>
-      {/* Package Bundles */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 lg:gap-6">
+    <div>
+      <Heading title={"Service Packages"} />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {packages.map((pkg) => (
           <div
             key={pkg.id}
-            className="bg-lCard dark:bg-dCard rounded-xl shadow-xl p-6
-             shadow-primary hover:shadow-2xl h-[285px] md:h-[352px] lg:h-[405px] 
-             flex flex-col justify-between overflow-y-scroll"
+            className="relative bg-lCard dark:bg-dCard border border-gray-200 
+            dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl 
+            transition duration-300 p-6 flex flex-col justify-between"
           >
-            <div className="relative">
-              <h2 className="text-xl lg;text-2xl font-semibold my-2">
-                {pkg.name}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm xl:text-base">
+            {/* Price Badge */}
+            <div
+              className="absolute top-4 right-4 bg-gradient-to-r from-primary
+             via-secondary to-accent text-black font-bold px-4 py-1 
+             rounded-full text-xs shadow"
+            >
+              {pkg.currency}
+              {pkg.price}
+            </div>
+
+            {/* Package Info */}
+            <div>
+              <h2 className="text-xl font-semibold mb-2">{pkg.name}</h2>
+
+              <p className="text-gray-600 dark:text-gray-300 text-xs mb-4">
                 {pkg.description}
               </p>
-              <p
-                className=" text-sm md:text-base xl:text-lg font-semibold absolute 
-                  rounded-bl-md -top-6 z-10 -right-5 text-black px-3
-                 bg-gradient-to-r from-primary via-secondary to-accent
-               transition-all"
-              >
-                {pkg.currency}
-                {pkg.price}
-              </p>
-              <h2 className="font-semibold lg:text-lg mb-2">Services</h2>
-              <ul className="text-gray-600 dark:text-gray-300 mb-4 pl-5 text-sm xl:text-base">
+
+              <h3 className="font-semibold mb-2 text-sm uppercase tracking-wide text-gray-500">
+                Services Included
+              </h3>
+
+              <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
                 {pkg.services.map((service, index) => (
-                  <li key={index} className="list-disc ">
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
                     {service}
                   </li>
                 ))}
               </ul>
             </div>
+
+            {/* Button */}
             <button
               onClick={() => handleModalOpen(pkg)}
-              className="bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary px-3 py-1 rounded-xl w-20 lg:w-32
-             text-xs xl:text-lg text-black font-semibold mt-auto"
+              className="mt-6 w-full bg-gradient-to-r from-primary via-secondary to-accent 
+              hover:opacity-90 text-black font-semibold py-0.5 rounded-lg 
+              transition duration-200"
             >
               Book Now
             </button>
           </div>
         ))}
       </div>
-      {/* Modal for Booking */}
+
+      {/* Modal */}
       <ServicePackagesModal
         isOpen={isModalOpen}
         closeModal={handleModalClose}
