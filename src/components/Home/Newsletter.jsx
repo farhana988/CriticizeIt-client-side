@@ -21,14 +21,14 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="container mx-auto px-5">
+    <div >
       <Heading
         title={"Newsletter"}
         subtitle={"If you haven't subscribed yet, please subscribe now."}
       ></Heading>
       <div
-        className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between
-       relative rounded-2xl"
+        className="flex flex-col lg:flex-row items-center justify-between
+       relative rounded-xl"
         style={{
           backgroundImage: `url(${newsletter})`,
           backgroundSize: "cover",
