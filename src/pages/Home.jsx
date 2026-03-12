@@ -12,7 +12,7 @@ const Home = () => {
     document.title = "CriticizeIt | Home";
   }
   return (
-    <div className="space-y-10 xl:space-y-16">
+    <div className="flex flex-col gap-16 xl:gap-20">
       <FeaturedServices />
       <MeetOurPartners />
       <UserTestimonialSpotlight />

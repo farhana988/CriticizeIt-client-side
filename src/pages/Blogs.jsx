@@ -23,14 +23,14 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="pt-10 container mx-auto px-6">
+    <div>
       <Heading
         title="Community & Blog"
         subtitle="Stay informed with our latest articles, updates, and inspiring stories from our community."
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
-        {(isHomePage ? blogs.slice(0, 4) : blogs).map((post) => (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        {(isHomePage ? blogs.slice(0, 5) : blogs).map((post) => (
           <BlogCard key={post.id} post={post} />
         ))}
       </div>
@@ -44,7 +44,7 @@ const Blogs = () => {
               transition-all flex items-center gap-1 md:gap-2 lg:gap-3 
               px-3 md:px-5  border-2 border-primary"
           >
-            <Link className="flex items-center gap-2" to="/blogs">
+            <Link className="flex text-base items-center gap-2" to="/blogs">
               Peep In <FaLongArrowAltRight />
             </Link>
           </button>

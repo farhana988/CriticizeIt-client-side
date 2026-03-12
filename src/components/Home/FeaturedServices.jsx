@@ -23,7 +23,7 @@ const FeaturedServices = () => {
   }, []);
 
   return (
-    <div className="mt-16">
+    <div>
       <Heading title={"Featured Services"} />
       <div
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-6
