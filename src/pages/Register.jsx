@@ -39,23 +39,17 @@ const Registration = () => {
     try {
       // User Registration
       const result = await createUser(email, pass);
-    
+
       await updateUserProfile(name, photo);
       setUser({ ...result.user, photoURL: photo, displayName: name });
-
 
       const userData = {
         email: email,
         name: name,
       };
 
-      await axios.post(
-        ` ${import.meta.env.VITE_API_URL}/users`,
-        userData
-      );
-    
+      await axios.post(` ${import.meta.env.VITE_API_URL}/users`, userData);
 
-      
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -103,28 +97,32 @@ const Registration = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div>
       <h2
-        className="text-3xl md:text-5xl lg:text-7xl font-bold mb-14
+        className="text-3xl md:text-5xl font-bold mb-14 
        text-primary dark:text-ivory  active text-center"
       >
         Registration Form
       </h2>
-      <div className="hero flex flex-col md:flex-row lg:flex-row justify-center
-      ">
-        <div className="w-96">
+      <div
+        className="hero flex flex-col md:flex-row lg:flex-row justify-center
+      "
+      >
+        <div className="w-96 ">
           <Lottie animationData={reg}></Lottie>
         </div>
         <div className="hero-content flex-col ">
           <div className="card bg-lCard dark:bg-dCard  w-full max-w-5xl shrink-0 shadow-2xl">
             <form
               onSubmit={handleSignUp}
-              className="card-body w-96 lg:w-[500px]"
+              className="card-body w-96 lg:w-[500px] "
             >
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text  font-bold text-2xl text-gray-600
-                  dark:text-ivory">
+                  <span
+                    className="label-text  font-semibold text-base text-gray-600
+                  dark:text-ivory"
+                  >
                     Name
                   </span>
                 </label>
@@ -138,7 +136,7 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600 dark:text-ivory  font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory  font-semibold text-base">
                     Email
                   </span>
                 </label>
@@ -152,7 +150,7 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600 dark:text-ivory  font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory  font-semibold text-base">
                     Photo Url
                   </span>
                 </label>
@@ -166,7 +164,7 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-gray-600 dark:text-ivory font-bold text-2xl">
+                  <span className="label-text text-gray-600 dark:text-ivory font-semibold text-base">
                     Password
                   </span>
                 </label>
@@ -180,23 +178,30 @@ const Registration = () => {
               </div>
               {error && <p className="text-red-900">{error}</p>}
               <div className="form-control mt-6">
-                <button className="btn  bg-gradient-to-r from-primary via-secondary to-accent
+                <button
+                  className="btn btn-sm bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary   font-bold 
-             text-lg lg:text-2xl text-black ">
+             text-base text-black "
+                >
                   Register
                 </button>
               </div>
-              <h2 className="text-lg mt-3 flex items-center gap-2">
+              <h2 className="text-sm mt-3 flex items-center gap-2">
                 Already have an account?
                 <Link to="/login">
-                  <span className="hover:underline flex items-center gap-4 dark:text-ivory text-primary active text-2xl font-extrabold">
+                  <span
+                    className="hover:underline flex items-center gap-4 dark:text-ivory
+                   text-primary active text-base font-extrabold"
+                  >
                     <FaLongArrowAltRight />
                     Log in
                   </span>
                 </Link>
               </h2>
             </form>
-            <div className="divider text-primary dark:text-ivory font-bold text-xl">OR</div>
+            <div className="divider text-primary dark:text-ivory font-bold text-base">
+              OR
+            </div>
             <div className="space-y-4">
               <button
                 onClick={handleGoogleSignIn}
