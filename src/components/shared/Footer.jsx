@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className=" mt-20 py-10">
-      <footer className="footer   p-10  container mx-auto">
+      <footer className="footer">
         <nav>
           <div className=" w-full md:w-60 lg:w-96 space-y-2">
             <h4 className="text-2xl  font-bold">CriticizeIt</h4>
