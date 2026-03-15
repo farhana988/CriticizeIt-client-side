@@ -66,19 +66,17 @@ const AddService = () => {
   }
 
   return (
-    <div className=" py-10 container mx-auto px-6 md:px-10">
+    <div className="">
       <Heading title={"  Add New Service"}></Heading>
       <section
-        className="p-6 lg:p-10 rounded-xl bg-[#dce4c98f] dark:bg-dCard shadow-2xl
+        className="rounded bg-[#dce4c98f] dark:bg-dCard shadow-md p-4
       shadow-primary w-full"
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Service Image */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Service Image
-              </label>
+              <label className="font-semibold block mb-1">Service Image</label>
               <input
                 type="url"
                 id="service_image"
@@ -93,9 +91,7 @@ const AddService = () => {
 
             {/* Service Title */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Service Title
-              </label>
+              <label className="font-semibold block mb-1">Service Title</label>
               <input
                 type="text"
                 id="service_title"
@@ -112,9 +108,7 @@ const AddService = () => {
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Company Name */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Company Name
-              </label>
+              <label className="font-semibold block mb-1">Company Name</label>
               <input
                 type="text"
                 id="company_name"
@@ -129,9 +123,7 @@ const AddService = () => {
 
             {/* Website */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Website
-              </label>
+              <label className="font-semibold block mb-1">Website</label>
               <input
                 type="url"
                 id="website"
@@ -147,9 +139,7 @@ const AddService = () => {
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
             {/* Category */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Category
-              </label>
+              <label className="font-semibold block mb-1">Category</label>
               <select
                 id="category"
                 name="category"
@@ -159,35 +149,29 @@ const AddService = () => {
                 <option value="" disabled selected>
                   Pick a category{" "}
                 </option>
-                <option value="Home Services">Home Services</option>
-                <option value="Health and Wellness">Health and Wellness</option>
-                <option value="Education and Tutoring">
-                  Education and Tutoring
-                </option>
-                <option value="Business and Marketing">
-                  Business and Marketing
-                </option>
-                <option value="Technology Services">Technology Services</option>
-                <option value="Travel and Transportation">
-                  Travel and Transportation
-                </option>
-                <option value="Pet Cares">Pet Cares</option>
-                <option value="Event Planning">Event Planning</option>
-                <option value="Beauty and Personal Care">
-                  Beauty and Personal Care
-                </option>
-                <option value="Eco-Friendly Services">
-                  Eco-Friendly Services
-                </option>
-                <option value="Emergency Services">Emergency Services</option>
+                {[
+                  "Home Services",
+                  "Health and Wellness",
+                  "Education and Tutoring",
+                  "Business and Marketing",
+                  "Technology Services",
+                  "Travel and Transportation",
+                  "Pet Cares",
+                  "Event Planning",
+                  "Beauty and Personal Care",
+                  "Eco-Friendly Services",
+                  "Emergency Services",
+                ].map((category, index) => (
+                  <option key={index} value={category}>
+                    {category}
+                  </option>
+                ))}
               </select>
             </div>
 
             {/* Price */}
             <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Price
-              </label>
+              <label className="font-semibold block mb-1">Price</label>
               <input
                 type="number"
                 id="price"
@@ -201,45 +185,9 @@ const AddService = () => {
             </div>
           </section>
 
-          <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
-            {/* Added date */}
-            <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Added Date
-              </label>
-              <input
-                type="text"
-                id="added_date"
-                name="added_date"
-                value={addedDate}
-               readOnly
-                className="w-full px-4 py-2  border dark:bg-dCard
-                 border-gray-200 rounded-md focus:outline-none"
-              />
-            </div>
-
-            {/* Email  */}
-            <div className="">
-              <label className=" md:text-xl font-semibold block mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={user?.email || ""}
-                readOnly
-                className="w-full px-4 py-2  dark:bg-dCard
-                border border-gray-200 rounded-md focus:outline-none"
-              />
-            </div>
-          </section>
-
           {/* Description */}
           <div className="">
-            <label className=" md:text-xl font-semibold block mb-1">
-              Description
-            </label>
+            <label className="font-semibold block mb-1">Description</label>
             <textarea
               id="description"
               name="description"
@@ -256,8 +204,8 @@ const AddService = () => {
           <div className="flex justify-end mt-4">
             <button
               type="submit"
-              className={`px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary text-base lg:text-lg
+              className={`px-6 py-0.5 bg-gradient-to-r from-primary via-secondary to-accent
+             hover:from-primary hover:to-primary
                  text-black  rounded-md font-semibold
                 focus:outline-none focus:ring ${
                   loading ? "cursor-not-allowed opacity-50" : "hover:bg-primary"
