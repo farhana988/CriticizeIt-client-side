@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 const ReviewForm = ({ details, onNewReview }) => {
   const axiosSecure = useAxiosSecure();
@@ -72,7 +73,6 @@ const ReviewForm = ({ details, onNewReview }) => {
         serviceTitle,
         companyName,
         website,
-
         category,
       };
 
@@ -100,82 +100,43 @@ const ReviewForm = ({ details, onNewReview }) => {
   };
 
   return (
-    <div className="">
+    <div className="mt-6">
       {/* review section */}
-      <form onSubmit={handleReviewSubmit} className=" px-6">
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
-          {/* Added date */}
-          <div className="form-control">
-            <label className="label">
-              <span className="text-xl font-semibold ">
-                Review Added Date{" "}
-              </span>
-            </label>
-            <input
-              type="text"
-              id="added_date"
-              name="added_date"
-              value={addedDate}
-              readOnly
-              className="input input-bordered   bg-gray-100 dark:bg-dCard border
-                 border-gray-200 rounded-md focus:outline-none"
-            />
-          </div>
-
-          {/* rating */}
-          <div className="form-control">
-            <label className="label">
-              <span className={`text-xl font-semibold `}>
-                Rating{" "}
-              </span>
-            </label>
-
-            <div
-              className={`rating-container flex justify-between input input-bordered
-                dark:bg-dCard
-                 `}
-            >
-              <Rating
-                onClick={handleRating}
-                ratingValue={rating}
-                type="text"
-                placeholder="rating "
+      <form onSubmit={handleReviewSubmit}>
+        <section className="relative">
+          {/* Add Review */}
+          <div>
+            <h4 className=" font-semibold my-2">Leave a Review</h4>
+            <div className="relative">
+              <textarea
+                className="w-full p-2 pr-10 rounded-md mb-4 dark:bg-dCard h-10 text-sm"
+                placeholder="Share your experience or provide a helpful tip for others!"
+                value={newReview}
+                onChange={(e) => setNewReview(e.target.value)}
                 required
-              />
+              ></textarea>
 
-              <div name="rating" className="p-3">
-                {rating}
-              </div>
+              {/* btn */}
+              <button
+                type="submit"
+                className="absolute right-2 bottom-7 bg-black/40 p-1 rounded-full text-xl"
+              >
+                <CiLocationArrow1 />
+              </button>
             </div>
           </div>
+          {/* rating */}
+          <div className="form-control absolute top-0 right-0">
+            <Rating
+              onClick={handleRating}
+              ratingValue={rating}
+              type="text"
+              size={20}
+              placeholder="rating "
+              required
+            />
+          </div>
         </section>
-
-        {/* Add Review */}
-
-        <div>
-          <h4 className="text-xl font-semibold my-2">Add a Review</h4>
-
-          <textarea
-            className="w-full p-4 border rounded-lg mb-4 dark:bg-dCard"
-            placeholder="Write your review..."
-            value={newReview}
-            onChange={(e) => setNewReview(e.target.value)}
-            required
-          ></textarea>
-        </div>
-
-        {/* btn */}
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            className="px-3 py-2 lg:px-5 rounded-xl bg-gradient-to-r from-primary via-secondary to-accent
-             hover:from-primary hover:to-primary text-sm lg:text-lg
-                 text-black font-semibold
-             shadow-md hover:bg-indigo-500"
-          >
-            Post Review
-          </button>
-        </div>
       </form>
     </div>
   );

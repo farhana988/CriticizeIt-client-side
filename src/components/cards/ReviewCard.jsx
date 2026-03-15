@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Heading from "../shared/Heading";
-import CountUp from "react-countup";
 import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import NoData from "../shared/NoData";
@@ -12,14 +9,12 @@ import NoData from "../shared/NoData";
 const ReviewCard = ({ triggerFetch }) => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggle = () => setIsExpanded(!isExpanded);
 
   useEffect(() => {
     const fetchAllReviews = async () => {
       try {
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/reviews/${id}`
+          `${import.meta.env.VITE_API_URL}/reviews/${id}`,
         );
         setReviews(data);
       } catch {
@@ -30,23 +25,16 @@ const ReviewCard = ({ triggerFetch }) => {
     fetchAllReviews();
   }, [id, triggerFetch]);
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
+  };
+
   return (
-    <div className=" mx-6 lg:mx-14  lg:px-0">
-      <Heading title={"All Reviews"} />
-
-      {/* total reviews */}
-      <p
-        className="active text-primary text-2xl md:text-4xl lg:text-5xl 
-      font-extrabold pb-6
-      "
-      >
-        Total Reviews :{" "}
-        <CountUp start={0} end={reviews.length} duration={3} separator="," />
-      </p>
-
+    <>
       {/* Reviews grid */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6
+        className="space-y-3
      "
       >
         {reviews.length === 0 ? (
@@ -63,89 +51,59 @@ const ReviewCard = ({ triggerFetch }) => {
             return (
               <div
                 key={review._id}
-                className="flex flex-col bg-lCard dark:bg-dCard shadow-xl
-                   shadow-primary
-                 rounded-xl p-6 space-y-4 h-36 md:h-44 xl:h-52
-                 relative hover:shadow-2xl"
+                className="flex flex-col bg-lCard dark:bg-dCard rounded-md p-2 space-y-2 relative "
               >
-                <div
-                  className="flex items-center space-x-4
-                
-                "
-                >
+                <div className="flex items-center space-x-3">
                   <img
                     referrerPolicy="no-referrer"
                     src={review.userPhoto || "no photo"}
                     alt={review.userName}
-                    className="w-10 md:w-12 xl:w-16  h-10 md:h-12 xl:h-16
-                    rounded-full object-cover
-                    ring-2 ring-offset-4 ring-primary"
+                    className="w-8 h-8 rounded-full object-cover"
                   />
-                  <div className="">
-                    {/* username */}
-                    <div className="font-semibold text-sm md:text-base xl:text-xl break-words   ">
-                      {review.userName?.slice(0, 20)}
-                    </div>
-                    {/* Rating */}
-                    <div
-                      className="flex items-center font-semibold text-xs
-                        md:text-sm lg:font-bold xl:text-lg"
-                    >
-                      {[...Array(validRating)].map((_, index) => (
-                        <svg
-                          key={index}
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4  xl:w-7 xl:h-7 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 15.27l-6.18 3.63 1.64-7.03L.46 6.93l7.19-.61L10 0l2.35 6.31 7.19.61-5.99 4.94 1.64 7.03L10 15.27z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      ))}
-                    </div>
+
+                  {/* username */}
+                  <div className="font-semibold break-words">
+                    {review.userName}
                   </div>
                 </div>
 
-                {/* Review Text */}
-                <div
-                  className="mt-3 flex flex-col justify-between flex-grow
-                overflow-y-scroll"
-                >
-                  <p className=" break-words text-xs xl:text-base">
-                    {isExpanded
-                      ? review.reviewText
-                      : `${review.reviewText?.substring(0, 90)}...`}
+                <div className="space-y-0.5">
+                  {/* Review Text */}
+                  <p className="break-words text-xs">{review.reviewText}</p>
+                  {/* Review Date */}
+                  <p className="text-[10px] text-primary dark:text-ivory">
+                    {formatDate(review.addedDate)}
                   </p>
-
-                  {/* See More Button */}
-                  <button
-                    onClick={toggle}
-                    className="border px-3 text-xs xl:text-base rounded-full mt-2
-                       border-primary self-start"
-                  >
-                    {isExpanded ? "Show Less" : "Read More"}
-                  </button>
                 </div>
 
-                {/* Review Date */}
-                <p
-                  className="text-sm xl:text-lg  px-3 py-1 rounded-xl text-primary dark:text-ivory
-                     font-semibold absolute
-                right-0 -top-4"
+                {/* Rating */}
+                <div
+                  className="flex items-center font-semibold text-xs
+                        md:text-sm lg:font-bold xl:text-lg absolute right-2 top-0"
                 >
-                  {new Date(review.addedDate).toLocaleDateString()}
-                </p>
+                  {[...Array(validRating)].map((_, index) => (
+                    <svg
+                      key={index}
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4  xl:w-7 xl:h-7 text-yellow-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 15.27l-6.18 3.63 1.64-7.03L.46 6.93l7.19-.61L10 0l2.35 6.31 7.19.61-5.99 4.94 1.64 7.03L10 15.27z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  ))}
+                </div>
               </div>
             );
           })
         )}
       </div>
-    </div>
+    </>
   );
 };
 
