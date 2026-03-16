@@ -10,8 +10,6 @@ const MyReviewsCard = ({ review, setReviews }) => {
   const axiosSecure = useAxiosSecure();
   const [selectedReview, setSelectedReview] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggle = () => setIsExpanded(!isExpanded);
   const { _id, reviewText, rating, serviceImage, serviceTitle, addedDate } =
     review || {};
 
@@ -35,7 +33,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
         await axiosSecure.delete(`/review/${id}`);
 
         setReviews((prevReviews) =>
-          prevReviews.filter((review) => review._id !== id)
+          prevReviews.filter((review) => review._id !== id),
         );
 
         Swal.fire("Deleted!", "Your review has been deleted.", "success");
@@ -44,7 +42,7 @@ const MyReviewsCard = ({ review, setReviews }) => {
       Swal.fire(
         "Error",
         "An error occurred while deleting the review.",
-        "error"
+        "error",
       );
     }
   };
@@ -56,102 +54,54 @@ const MyReviewsCard = ({ review, setReviews }) => {
   };
 
   return (
-    <div
-      className="flex flex-col bg-[#dce4c98f] dark:bg-dCard shadow-lg hover:shadow-xl
-     shadow-primary rounded-xl p-4 lg:p-8 space-y-4"
-    >
-      <div className="flex gap-5  justify-between flex-row">
-        <section
-          className="flex lg:items-center gap-3 lg:gap-9  flex-row 
-        
-        "
-        >
-          {/* Service Image */}
-          <div className="rounded-full">
-            <img
-              src={serviceImage || "https://via.placeholder.com/300"}
-              alt={serviceTitle}
-              className="w-20 h-20 md:w-32 xl:w-40 xl:h-24 object-cover rounded-full md:rounded-xl "
-            />
-          </div>
+    <>
+      <tr className="bg-[#ffffffb4] dark:bg-dCard ">
+        <td className="border border-gray-300 p-1">
+          <img
+            src={serviceImage}
+            alt={serviceTitle}
+            className="h-10 w-10 object-cover rounded"
+          />
+        </td>
 
-          {/* card content */}
-          <section className=" flex-1">
-            {/* Service title */}
-            <h2 className="text-lg xl:text-2xl font-bold  break-words">
-              {serviceTitle?.slice(0, 20)}
-            </h2>
+        <td className="border border-gray-300 p-1 font-semibold">
+          {serviceTitle}
+        </td>
 
-            {/* Rating */}
-            <div className="flex items-center font-semibold text-sm lg:font-bold lg:text-lg">
-              {[...Array(validRating)].map((_, index) => (
-                <svg
-                  key={index}
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 xl:w-7 xl:h-7 text-yellow-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 15.27l-6.18 3.63 1.64-7.03L.46 6.93l7.19-.61L10 0l2.35 6.31 7.19.61-5.99 4.94 1.64 7.03L10 15.27z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              ))}
-            </div>
-            {/* Review Date */}
+        <td className="border border-gray-300 p-1">
+          {[...Array(validRating)].map((_, i) => (
+            <span key={i} className="text-yellow-400">
+              ★
+            </span>
+          ))}
+        </td>
 
-            <p className="text-sm xl:text-lg font-semibold ">
-              {new Date(addedDate).toLocaleDateString()}
-            </p>
-          </section>
-          {/* Buttons */}
-          <section className="absolute right-10 lg:right-32 flex flex-col">
-            <div
-              className="flex flex-col  
-          gap-5   py-1 "
-            >
-              {/* Delete Button */}
-              <button
-                onClick={() => handleDelete(_id)}
-                className="  font-semibold md:text-xl xl:text-3xl"
-              >
-              <MdDelete />
-              </button>
+        <td className="border border-gray-300 p-1 max-w-xs">
+          {reviewText?.substring(0, 120)}...
+        </td>
 
-              {/* Update Button */}
-              <button
-                onClick={handleUpdateClick}
-                className=" font-semibold md:text-xl xl:text-3xl"
-              >
-                <CiEdit />
-              </button>
-            </div>
-          </section>
-        </section>
-      </div>
-      {/* Review Text */}
+        <td className="border border-gray-300 p-1">
+          {new Date(addedDate).toLocaleDateString()}
+        </td>
 
-      <div className="mt-3  mr-10">
-        <p className="text-xs xl:text-base font-semibold  break-words">
-          {isExpanded ? reviewText : `${reviewText?.substring(0, 206)}...`}
-        </p>
-        <button onClick={toggle} 
-        className="border px-3 rounded-full text-xs xl:text-base  mt-2">
-          {isExpanded ? "Show Less" : "Read More"}
-        </button>
-      </div>
+        <td className=" border-gray-300 py-3 flex gap-6 justify-center text-xl">
+          <button onClick={() => handleDelete(_id)}>
+            <MdDelete />
+          </button>
 
-      {/* Update Review Modal */}
+          <button onClick={handleUpdateClick}>
+            <CiEdit />
+          </button>
+        </td>
+      </tr>
+
       <UpdateReviewModal
         review={selectedReview}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         setReviews={setReviews}
       />
-    </div>
+    </>
   );
 };
 

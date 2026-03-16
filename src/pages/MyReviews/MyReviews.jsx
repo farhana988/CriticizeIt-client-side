@@ -31,7 +31,7 @@ const MyReviews = () => {
   }
 
   return (
-    <div className="pt-10  container mx-auto min-h-screen">
+    <div className=" min-h-screen">
       <Heading title={"My reviews"}></Heading>
 
       {reviews.length === 0 ? (
@@ -40,17 +40,31 @@ const MyReviews = () => {
           subtitle="Start adding some reviews to your list!"
         ></NoData>
       ) : (
-        <div
-          className="grid grid-cols-1 gap-6
-                mx-5 "
-        >
-          {reviews.map((review) => (
-            <MyReviewsCard
-              key={review._id}
-              review={review}
-              setReviews={setReviews}
-            ></MyReviewsCard>
-          ))}
+        <div className="overflow-x-auto">
+          <table className="w-full border border-gray-300 border-collapse">
+            <thead className="bg-gray-200 dark:bg-gray-700 text-left">
+              <tr>
+                <th className="border border-gray-300 p-1">Image</th>
+                <th className="border border-gray-300 p-1">Service</th>
+                <th className="border border-gray-300 p-1">Rating</th>
+                <th className="border border-gray-300 p-1">Review</th>
+                <th className="border border-gray-300 p-1">Date</th>
+                <th className="border border-gray-300 p-1 text-center">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {reviews.map((review) => (
+                <MyReviewsCard
+                  key={review._id}
+                  review={review}
+                  setReviews={setReviews}
+                />
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>

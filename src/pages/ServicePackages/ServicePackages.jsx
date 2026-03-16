@@ -134,7 +134,7 @@ const ServicePackages = () => {
             <button
               onClick={() => handleModalOpen(pkg)}
               className="mt-6 w-full bg-gradient-to-r from-primary via-secondary to-accent 
-              hover:opacity-90 text-black font-semibold py-0.5 rounded-lg 
+              hover:from-primary hover:to-primary text-black font-semibold py-0.5 rounded-lg 
               transition duration-200"
             >
               Book Now
