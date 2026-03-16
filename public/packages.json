@@ -2,55 +2,116 @@
   {
     "id": 1,
     "name": "Free Starter Bundle",
-    "description": "This introductory package is completely free and includes a basic cleaning service and a brief event consultation session to get you started.",
+    "description": "An introductory package designed for first-time customers. It provides a basic cleaning service along with a short consultation to help you understand how our services work.",
     "price": 0,
     "currency": "$",
-    "services": ["Basic cleaning service", "Brief event consultation session"]
+    "duration": "1 Hour",
+    "bookingType": "One-time",
+    "deliveryTime": "Within 48 Hours",
+    "support": "Email Support",
+    "rating": 4.5,
+    "recommended": false,
+    "starter": true,
+    "services": ["Basic cleaning service", "Brief event consultation session"],
+    "features": [
+      "Perfect for first-time customers",
+      "No hidden charges",
+      "Quick consultation session",
+      "Access to basic support"
+    ]
   },
   {
     "id": 2,
     "name": "Basic Bundle",
-    "description": "This package includes a one-time cleaning service and an event consultation session.",
+    "description": "A great starting package for customers who want reliable service at an affordable price. Includes a full cleaning session and event consultation.",
     "price": 150,
     "currency": "$",
-    "services": ["One-time cleaning service", "Event consultation session"]
+    "duration": "2 Hours",
+    "bookingType": "One-time",
+    "deliveryTime": "Within 24 Hours",
+    "support": "Standard Support",
+    "rating": 4.6,
+    "recommended": false,
+    "services": ["One-time cleaning service", "Event consultation session"],
+    "features": [
+      "Affordable starter package",
+      "Professional cleaning team",
+      "Planning advice for events",
+      "Standard customer support"
+    ]
   },
   {
     "id": 3,
     "name": "Premium Bundle",
-    "description": "This package includes a cleaning service, event management, and one free tutoring session.",
+    "description": "A balanced package offering multiple services including professional cleaning, event management support, and a complimentary tutoring session.",
     "price": 300,
     "currency": "$",
+    "duration": "4 Hours",
+    "bookingType": "One-time",
+    "deliveryTime": "Within 24 Hours",
+    "support": "Priority Support",
+    "rating": 4.8,
+    "recommended": true,
     "services": [
       "Cleaning service",
       "Event management",
       "One free tutoring session"
+    ],
+    "features": [
+      "Most popular bundle",
+      "Experienced service professionals",
+      "Flexible scheduling",
+      "Priority customer support"
     ]
   },
   {
     "id": 4,
     "name": "Ultimate Bundle",
-    "description": "The Ultimate Bundle offers all our services at a discounted rate. Includes cleaning, event management, and tutoring sessions plus a free consultation for additional services.",
+    "description": "Our most comprehensive package for customers who need multiple services. Includes cleaning, event management, tutoring, and an expert consultation.",
     "price": 450,
     "currency": "$",
+    "duration": "6 Hours",
+    "bookingType": "One-time",
+    "deliveryTime": "Same Day Availability",
+    "support": "Priority Support",
+    "rating": 4.9,
+    "recommended": false,
     "services": [
       "Cleaning service",
       "Event management",
       "Tutoring session",
       "Free consultation for additional services"
+    ],
+    "features": [
+      "Full service bundle",
+      "Expert consultants included",
+      "Flexible scheduling",
+      "Priority customer assistance"
     ]
   },
   {
     "id": 5,
     "name": "VIP Bundle",
-    "description": "This all-inclusive package provides cleaning, event management, personalized tutoring sessions, and ongoing consultations for future events and services.",
+    "description": "A premium all-inclusive service package for customers who want the best experience. Includes advanced cleaning, event management, tutoring sessions, and ongoing consultations.",
     "price": 600,
     "currency": "$",
+    "duration": "Full Day Service",
+    "bookingType": "Premium Package",
+    "deliveryTime": "Priority Scheduling",
+    "support": "24/7 VIP Support",
+    "rating": 5.0,
+    "recommended": false,
     "services": [
       "Cleaning service",
       "Event management",
       "Personalized tutoring sessions",
       "Ongoing consultations for future events and services"
+    ],
+    "features": [
+      "All-in-one premium package",
+      "Dedicated service professionals",
+      "VIP priority scheduling",
+      "24/7 customer support"
     ]
   }
 ]
