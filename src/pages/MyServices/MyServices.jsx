@@ -65,29 +65,22 @@ const MyServices = () => {
           subtitle={"Start adding some services tol your ist!"}
         ></NoData>
       ) : (
-        <div
-          className="group relative bg-[#dce4c98f]] dark:bg-dCard rounded-xl 
-          shadow-xl shadow-primary
-         overflow-hidden hover:shadow-2xl mx-5 lg:mx-10"
-        >
+        <div className="group relative bg-[#ffffffb4] dark:bg-dCard rounded p-2 overflow-hidden">
           {/* Table */}
-          <div className="overflow-x-auto py-6">
-            <table
-              className=" 
-              table table-xs"
-            >
+          <div className="overflow-x-auto">
+            <table className="table table-xs">
               <thead
-                className="lg:text-base xl:text-xl text-black dark:text-ivory 
+                className="text-base text-black dark:text-ivory 
               opacity-70 dark:opacity-90"
               >
                 <tr>
-                  <th className="   py-3">Service Image</th>
-                  <th className="  py-3">Service Title</th>
-                  <th className=" text-left  py-3">Company Name</th>
-                  <th className=" text-left py-3">Category</th>
-                  <th className=" text-left  py-3">Price</th>
-                  <th className=" text-left  py-3">Description</th>
-                  <th className=" text-center py-3">Actions</th>
+                  <th className="py-3">Service Image</th>
+                  <th className="py-3">Service Title</th>
+                  <th className="text-left  py-3">Company Name</th>
+                  <th className="text-left py-3">Category</th>
+                  <th className="text-left  py-3">Price</th>
+                  <th className="text-left  py-3">Description</th>
+                  <th className="text-center py-3">Actions</th>
                 </tr>
               </thead>
               <tbody>

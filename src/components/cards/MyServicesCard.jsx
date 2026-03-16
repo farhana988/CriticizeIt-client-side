@@ -63,34 +63,32 @@ const MyServicesCard = ({ service, setServices }) => {
 
   return (
     <>
-      <tr className=" border-b  ">
-        <td className="border-2">
+      <tr className=" ">
+        <td className="border">
           <img
-            className="h-24 w-32 object-cover rounded-xl "
+            className="h-10 w-10 object-cover rounded-full "
             src={serviceImage}
             alt=""
           />
         </td>
-        <td className="xl:text-lg break-words border-2">
+        <td className=" break-words border">
           {serviceTitle.substring(0, 20)}...
         </td>
 
-        <td className="xl:text-lg text-blue-600 hover:underline break-words border-2">
+        <td className=" text-blue-600 hover:underline break-words border">
           <a href={website}>{companyName.substring(0, 20)}...</a>
         </td>
 
-        <td className="xl:text-lg border-2">{category}</td>
+        <td className=" border">{category}</td>
 
-        <td className="xl:text-lg border-2">${price}</td>
+        <td className=" border">${price}</td>
 
-        <td className="xl:text-lg break-words border-2">
+        <td className=" break-words border">
           {description.substring(0, 70)}...
         </td>
 
         <td
-          className="flex flex-col  gap-2 
-      items-center justify-center py-5 md:py-3 lg:py-8  border-2 "
-        >
+          className="flex  gap-5 items-center justify-center">
           {/* delete btn */}
           <button
             onClick={() => handleDelete(_id)}
