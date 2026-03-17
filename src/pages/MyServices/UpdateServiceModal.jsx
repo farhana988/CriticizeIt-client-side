@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
-
 const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const [formData, setFormData] = useState({
     serviceImage: "",
     serviceTitle: "",
@@ -14,13 +13,12 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
     description: "",
     category: "",
     price: "",
-    addedDate: "", 
+    addedDate: "",
     userEmail: "",
   });
 
   const [loading, setLoading] = useState(false);
 
- 
   useEffect(() => {
     if (service) {
       setFormData({
@@ -31,12 +29,11 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
         description: service.description || "",
         category: service.category || "",
         price: service.price || "",
-        addedDate: new Date().toISOString().split("T")[0], 
+        addedDate: new Date().toISOString().split("T")[0],
         userEmail: service.userEmail || "",
       });
     }
   }, [service]);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,7 +43,6 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
     }));
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -54,17 +50,17 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
     try {
       const response = await axiosSecure.put(
         `/update-service/${service._id}`,
-        formData
+        formData,
       );
 
       if (response.data) {
         setServices((prevServices) =>
           prevServices.map((s) =>
-            s._id === service._id ? { ...s, ...formData } : s
-          )
+            s._id === service._id ? { ...s, ...formData } : s,
+          ),
         );
         Swal.fire("Success!", "Service updated successfully.", "success");
-        onClose(); 
+        onClose();
       }
     } catch {
       Swal.fire("Error", "Failed to update service.", "error");
@@ -80,18 +76,27 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
       className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center 
     justify-center z-50"
     >
-      <div className="bg-white dark:bg-[#1f1e1e] p-6 rounded-lg w-11/12 lg:w-9/12
-      h-5/6 md:h-4/5 lg:h-4/6 overflow-y-scroll   ">
-        <h2 className="text-primary dark:text-ivory font-semibold mb-6 text-center
-        text-4xl  lg:text-7xl active">
-          Update Service</h2>
+      <div
+        className="bg-white dark:bg-[#1f1e1e] p-6 rounded-lg w-11/12 lg:w-9/12
+      2xl:w-1/3  overflow-y-scroll relative"
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-4 text-xl font-bold text-gray-500 hover:text-red-500"
+        >
+          ✕
+        </button>
+        <h2
+          className="text-primary dark:text-ivory font-semibold mb-6 text-center
+        text-4xl  active"
+        >
+          Update Service
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Service Image */}
             <div>
-              <label className="lg:text-lg font-semibold ">
-                Service Image
-              </label>
+              <label className=" font-semibold ">Service Image</label>
               <input
                 type="url"
                 name="serviceImage"
@@ -105,9 +110,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
 
             {/* Service Title */}
             <div>
-              <label className="lg:text-lg font-semibold">
-                Service Title
-              </label>
+              <label className=" font-semibold">Service Title</label>
               <input
                 type="text"
                 name="serviceTitle"
@@ -122,9 +125,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Company Name */}
             <div>
-              <label className="lg:text-lg  font-semibold">
-                Company Name
-              </label>
+              <label className=" font-semibold">Company Name</label>
               <input
                 type="text"
                 name="companyName"
@@ -137,7 +138,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
 
             {/* Website */}
             <div>
-              <label className="lg:text-lg  font-semibold">Website</label>
+              <label className=" font-semibold">Website</label>
               <input
                 type="url"
                 name="website"
@@ -152,7 +153,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Category */}
             <div>
-              <label className="lg:text-lg  font-semibold">Category</label>
+              <label className=" font-semibold">Category</label>
               <select
                 name="category"
                 value={formData.category}
@@ -189,7 +190,7 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
 
             {/* Price */}
             <div>
-              <label className="lg:text-lg  font-semibold">Price</label>
+              <label className=" font-semibold">Price</label>
               <input
                 type="number"
                 name="price"
@@ -201,40 +202,9 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
             </div>
           </section>
 
-          <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
-            {/* Updated Date */}
-            <div>
-              <label className="lg:text-lg  font-semibold">
-                Updated Date
-              </label>
-              <input
-                type="date"
-                name="addedDate"
-                value={formData.addedDate} 
-                disabled
-                className="px-4 py-2 border border-gray-200 rounded-md w-full
-                 dark:bg-dCard bg-gray-100"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="lg:text-lg  font-semibold">Email</label>
-              <input
-                type="email"
-                name="userEmail"
-                value={formData.userEmail}
-                disabled
-                className="px-4 py-2 border border-gray-200 rounded-md w-full
-                 dark:bg-dCard bg-gray-100"
-               
-              />
-            </div>
-          </section>
-
           {/* Description */}
           <div>
-            <label className="lg:text-lg  font-semibold">Description</label>
+            <label className=" font-semibold">Description</label>
             <textarea
               name="description"
               value={formData.description}
@@ -249,9 +219,9 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           <div className="flex justify-end gap-4 mt-6">
             <button
               type="submit"
-              className={`px-3 lg:px-6 py-2  bg-gradient-to-r from-primary via-secondary to-accent
+              className={`px-6 py-0.5 bg-gradient-to-r from-primary via-secondary to-accent
              hover:from-primary hover:to-primary text-black  font-semibold 
-             text-sm lg:text-lg  rounded-md ${
+              rounded-md ${
                 loading ? "cursor-not-allowed opacity-50" : "hover:bg-primary"
               }`}
               disabled={loading}
