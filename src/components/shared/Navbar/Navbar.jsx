@@ -58,38 +58,31 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end items-center">
+          <ThemeToggle></ThemeToggle>
           {user?.email ? (
-            <div className="flex  justify-center items-center">
-              <div className="user-info relative ">
-                <img
-                  referrerPolicy="no-referrer"
-                  src={user.photoURL}
-                  alt=""
-                  className="ring-2 ring-offset-4 ring-primary w-7 h-7 
-                  lg:w-8 xl:w-10 lg:h-8 xl:h-10 rounded-full"
-                />
-                <div
-                  className="user-name absolute bottom--10 left-0 w-full text-xs  text-center
-            font-semibold p-2 rounded opacity-0 transition-opacity duration-300"
-                >
-                  {user.displayName}
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    referrerPolicy="no-referrer"
+                    src={user.photoURL}
+                    alt=""
+                  />
                 </div>
               </div>
-              <button className="mx-4" onClick={logOut}>
-                {/* logout svg */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  className="log-svg"
-                >
-                  <g fill="currentColor">
-                    <path d="M13 4.009a1 1 0 1 0-2 0l-.003 8.003a1 1 0 0 0 2 0z" />
-                    <path d="M4 12.992c0-2.21.895-4.21 2.343-5.657l1.414 1.414a6 6 0 1 0 8.485 0l1.415-1.414A8 8 0 1 1 4 12.992" />
-                  </g>
-                </svg>
-              </button>
+              <ul
+                tabIndex="-1"
+                className="menu menu-sm dropdown-content bg-base-100 dark:bg-gray-900 
+                rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a onClick={logOut}>Logout</a>
+                </li>
+              </ul>
             </div>
           ) : (
             <div>
@@ -122,7 +115,6 @@ const Navbar = () => {
               </NavLink>
             </div>
           )}
-          <ThemeToggle></ThemeToggle>
         </div>
       </div>
     </div>

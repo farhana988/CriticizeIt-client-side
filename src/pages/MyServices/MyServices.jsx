@@ -36,7 +36,7 @@ const MyServices = () => {
   }
 
   return (
-    <div className="pt-10  min-h-screen">
+    <div className="min-h-screen">
       <Heading title={"My Services"}></Heading>
 
       {/* Search Input Field */}
