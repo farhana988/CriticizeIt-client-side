@@ -1,19 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext, useState } from "react";
-
-import logo from "../assets/google-logo.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import reg from "../assets/lottie/reg.json";
 import axios from "axios";
+import GoogleSignIn from "../components/shared/GoogleSignIn";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Registration = () => {
   const navigate = useNavigate();
-  const { signInWithGoogle, createUser, updateUserProfile, setUser } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -63,29 +63,6 @@ const Registration = () => {
         icon: "error",
         title: "Registration Failed",
         text: "Something went wrong. Please try again!",
-        confirmButtonText: "Try Again",
-      });
-    }
-  };
-
-  // Google Signin
-  const handleGoogleSignIn = async () => {
-    try {
-      await signInWithGoogle();
-
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Login Successful",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      navigate("/");
-    } catch {
-      Swal.fire({
-        icon: "error",
-        title: "Google Login Failed",
-        text: "Something went wrong with Google login. Please try again!",
         confirmButtonText: "Try Again",
       });
     }
@@ -162,19 +139,28 @@ const Registration = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text text-gray-600 dark:text-ivory font-semibold text-base">
                     Password
                   </span>
                 </label>
+
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered bg-lCard dark:bg-dCard "
+                  className="input input-bordered bg-lCard dark:bg-dCard pr-10"
                   required
                 />
+
+                {/* Eye Icon */}
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-14 cursor-pointer text-gray-500"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
               </div>
               {error && <p className="text-red-900">{error}</p>}
               <div className="form-control mt-6">
@@ -202,15 +188,7 @@ const Registration = () => {
             <div className="divider text-primary dark:text-ivory font-bold text-base">
               OR
             </div>
-            <div className="space-y-4">
-              <button
-                onClick={handleGoogleSignIn}
-                className="pb-8 w-full flex items-center justify-center gap-2"
-              >
-                <img src={logo} alt="Google" className="w-6 h-6" />
-                Continue with Google
-              </button>
-            </div>
+            <GoogleSignIn />
           </div>
         </div>
       </div>
