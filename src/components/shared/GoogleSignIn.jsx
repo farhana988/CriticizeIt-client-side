@@ -1,9 +1,8 @@
 import { useContext } from "react";
-
-import Swal from "sweetalert2";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/google-logo.png";
 import { AuthContext } from "../../providers/AuthProvider";
+import { errorToast, successToast } from "../../utils/toast";
 
 const GoogleSignIn = () => {
   const { signInWithGoogle } = useContext(AuthContext);
@@ -16,21 +15,13 @@ const GoogleSignIn = () => {
     try {
       await signInWithGoogle();
 
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Login Successful",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      successToast("Login Successful");
       navigate(from, { replace: true });
     } catch {
-      Swal.fire({
-        icon: "error",
-        title: "Google Login Failed",
-        text: "Something went wrong with Google login. Please try again!",
-        confirmButtonText: "Try Again",
-      });
+      errorToast(
+        "Google Login Failed",
+        "Something went wrong with Google login. Please try again!",
+      );
     }
   };
   return (

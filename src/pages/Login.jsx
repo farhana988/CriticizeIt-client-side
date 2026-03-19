@@ -2,11 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import log from "../assets/lottie/login.json";
 import GoogleSignIn from "../components/shared/GoogleSignIn";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { errorToast, successToast } from "../utils/toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,21 +25,10 @@ const Login = () => {
     try {
       //User Login
       await signIn(email, pass);
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Login Successful",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      successToast("Login Successful");
       navigate(from, { replace: true });
     } catch {
-      Swal.fire({
-        icon: "error",
-        title: "Login Failed",
-        text: "Something went wrong. Please try again!",
-        confirmButtonText: "Try Again",
-      });
+      errorToast("Login Failed", "Something went wrong. Please try again!");
     }
   };
 

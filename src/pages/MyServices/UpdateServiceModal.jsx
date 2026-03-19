@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { errorToast, successToast } from "../../utils/toast";
 
 const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
   const axiosSecure = useAxiosSecure();
@@ -59,11 +59,11 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
             s._id === service._id ? { ...s, ...formData } : s,
           ),
         );
-        Swal.fire("Success!", "Service updated successfully.", "success");
+        successToast("Service updated successfully");
         onClose();
       }
     } catch {
-      Swal.fire("Error", "Failed to update service.", "error");
+      errorToast("Update Failed", "Failed to update service.");
     } finally {
       setLoading(false);
     }

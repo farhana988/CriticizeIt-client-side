@@ -2,12 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext, useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import reg from "../assets/lottie/reg.json";
 import axios from "axios";
 import GoogleSignIn from "../components/shared/GoogleSignIn";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { errorToast, successToast } from "../utils/toast";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -50,21 +50,13 @@ const Registration = () => {
 
       await axios.post(` ${import.meta.env.VITE_API_URL}/users`, userData);
 
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Registration Successful",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      successToast("Registration Successful");
       navigate("/");
     } catch {
-      Swal.fire({
-        icon: "error",
-        title: "Registration Failed",
-        text: "Something went wrong. Please try again!",
-        confirmButtonText: "Try Again",
-      });
+      errorToast(
+        "Registration Failed",
+        "Something went wrong. Please try again!",
+      );
     }
   };
 

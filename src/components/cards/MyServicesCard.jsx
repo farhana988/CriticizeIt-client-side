@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
 
 import { useState } from "react";
-import Swal from "sweetalert2";
-
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import UpdateServiceModal from "../../pages/MyServices/UpdateServiceModal";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { confirmDialog, errorToast, successToast } from "../../utils/toast";
 
 const MyServicesCard = ({ service, setServices }) => {
   const axiosSecure = useAxiosSecure();
@@ -27,30 +25,21 @@ const MyServicesCard = ({ service, setServices }) => {
   // Delete function
   const handleDelete = async (id) => {
     try {
-      const result = await Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-      });
+      const confirmed = await confirmDialog();
 
-      if (result.isConfirmed) {
-        await axiosSecure.delete(`/service/${id}`);
+      if (!confirmed) return;
 
-        setServices((prevServices) =>
-          prevServices.filter((service) => service._id !== id)
-        );
+      await axiosSecure.delete(`/service/${id}`);
 
-        Swal.fire("Deleted!", "Your service has been deleted.", "success");
-      }
+      setServices((prevServices) =>
+        prevServices.filter((service) => service._id !== id),
+      );
+
+      successToast("Service deleted successfully");
     } catch {
-      Swal.fire(
-        "Error",
+      errorToast(
+        "Delete Failed",
         "An error occurred while deleting the service.",
-        "error"
       );
     }
   };
@@ -87,15 +76,14 @@ const MyServicesCard = ({ service, setServices }) => {
           {description.substring(0, 70)}...
         </td>
 
-        <td
-          className="flex  gap-5 items-center justify-center">
+        <td className="flex  gap-5 items-center justify-center">
           {/* delete btn */}
           <button
             onClick={() => handleDelete(_id)}
             className="  font-semibold
               py-2 rounded-full  text-xl xl:text-3xl"
           >
-           <MdDelete />
+            <MdDelete />
           </button>
           {/* update btn */}
           <button
@@ -103,7 +91,7 @@ const MyServicesCard = ({ service, setServices }) => {
             className=" font-semibold
               py-2 rounded-full text-xl xl:text-3xl"
           >
-              <CiEdit />
+            <CiEdit />
           </button>
         </td>
       </tr>

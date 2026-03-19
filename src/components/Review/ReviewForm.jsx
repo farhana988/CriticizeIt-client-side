@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
-import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { CiLocationArrow1 } from "react-icons/ci";
+import { errorToast, successToast } from "../../utils/toast";
 
 const ReviewForm = ({ details, onNewReview }) => {
   const axiosSecure = useAxiosSecure();
@@ -37,25 +36,11 @@ const ReviewForm = ({ details, onNewReview }) => {
     e.preventDefault();
 
     if (!newReview || rating === 0) {
-      Swal.fire({
-        position: "top-end",
-        width: 220,
-        color: "#d82222",
-        title: "rating field  is empty",
-        showConfirmButton: false,
-        timer: 1000,
-      });
+      errorToast("Missing Fields", "Please add review and rating");
       return;
     }
     if (!user) {
-      Swal.fire({
-        position: "top-end",
-        width: 250,
-        color: "#d82222",
-        title: "please login to review",
-        showConfirmButton: false,
-        timer: 1000,
-      });
+      errorToast("Login Required", "Please login to add a review");
       navigate("/login");
       return;
     }
@@ -78,24 +63,14 @@ const ReviewForm = ({ details, onNewReview }) => {
 
       const { data } = await axiosSecure.post(`/add-review`, reviewData);
 
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Review Added Successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      successToast("Review Added Successfully");
 
       onNewReview();
       setReviews([data, ...reviews]);
       setNewReview("");
       setRating(0);
     } catch {
-      Swal.fire({
-        icon: "error",
-        text: "Something went wrong. Please try again!",
-        confirmButtonText: "Try Again",
-      });
+      errorToast("Failed", "Something went wrong. Please try again!");
     }
   };
 

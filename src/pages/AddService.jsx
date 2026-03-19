@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Heading from "../components/shared/Heading";
-import Swal from "sweetalert2";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { errorToast, successToast } from "../utils/toast";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -40,20 +40,12 @@ const AddService = () => {
     try {
       await axiosSecure.post(`/add-service`, formData);
       form.reset();
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Added Successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      successToast("Service Added Successfully");
     } catch {
-      Swal.fire({
-        icon: "error",
-        title: "Service adding failed",
-        text: "Something went wrong. Please try again!",
-        confirmButtonText: "Try Again",
-      });
+      errorToast(
+        "Service Adding Failed",
+        "Something went wrong. Please try again!",
+      );
     } finally {
       setLoading(false);
     }

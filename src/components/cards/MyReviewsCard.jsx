@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import Swal from "sweetalert2";
+
 import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import UpdateReviewModal from "../../pages/MyReviews/UpdateReviewModal";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { confirmDialog, errorToast, successToast } from "../../utils/toast";
 
 const MyReviewsCard = ({ review, setReviews }) => {
   const axiosSecure = useAxiosSecure();
@@ -19,30 +20,23 @@ const MyReviewsCard = ({ review, setReviews }) => {
   // Delete function
   const handleDelete = async (id) => {
     try {
-      const result = await Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-      });
+      const confirmed = await confirmDialog(
+        "Delete Review?",
+        "You won't be able to revert this!",
+      );
 
-      if (result.isConfirmed) {
-        await axiosSecure.delete(`/review/${id}`);
+      if (!confirmed) return;
+      await axiosSecure.delete(`/review/${id}`);
 
-        setReviews((prevReviews) =>
-          prevReviews.filter((review) => review._id !== id),
-        );
+      setReviews((prevReviews) =>
+        prevReviews.filter((review) => review._id !== id),
+      );
 
-        Swal.fire("Deleted!", "Your review has been deleted.", "success");
-      }
+      successToast("Review deleted successfully");
     } catch {
-      Swal.fire(
-        "Error",
+      errorToast(
+        "Delete Failed",
         "An error occurred while deleting the review.",
-        "error",
       );
     }
   };
