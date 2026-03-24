@@ -1,7 +1,8 @@
 import { useState } from "react";
-
-import Swal from "sweetalert2";
 import Heading from "../../shared/Heading";
+import TextAreaField from "../../shared/TextAreaField";
+import InputField from "../../shared/InputField";
+import { successToast } from "../../../utils/toast";
 
 const BecomePartner = () => {
   const [formData, setFormData] = useState({
@@ -19,13 +20,7 @@ const BecomePartner = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    Swal.fire({
-      icon: "success",
-      title: "Thank you for your interest!",
-      text: "We will get in touch soon.",
-      confirmButtonText: "OK",
-    });
-
+    successToast("Thank you for your interest! We'll contact you soon.");
     setFormData({
       name: "",
       email: "",
@@ -48,74 +43,41 @@ const BecomePartner = () => {
       <div className="bg-lCard dark:bg-dCard shadow-md rounded-lg p-6 mx-auto max-w-3xl">
         <form onSubmit={handleSubmit}>
           {/* Name */}
-          <div className="mb-6">
-            <label className="block text-left font-medium mb-2">
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2
-                bg-lCard dark:bg-dCard 
-                focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Enter your full name"
-            />
-          </div>
+          <InputField
+            label="Full Name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your full name"
+          />
 
           {/* Email */}
-          <div className="mb-6">
-            <label className="block text-left font-medium mb-2">
-              Email Address
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2
-                bg-lCard dark:bg-dCard 
-                 focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Enter your email address"
-            />
-          </div>
+          <InputField
+            label="Email Address"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email address"
+          />
 
           {/* Company */}
-          <div className="mb-6">
-            <label className="block text-left font-medium mb-2">
-              Company Name
-            </label>
-            <input
-              type="text"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2
-                bg-lCard dark:bg-dCard 
-                 focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Enter your company name"
-            />
-          </div>
+          <InputField
+            label="Company Name"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            placeholder="Enter your company name"
+          />
 
           {/* Message */}
-          <div className="mb-6">
-            <label className="block text-left font-medium mb-2">Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2
-                bg-lCard dark:bg-dCard 
-                 focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Tell us about your goals or any specific ideas..."
-              rows="4"
-            ></textarea>
-          </div>
+          <TextAreaField
+            label="Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Tell us about your goals or any specific ideas..."
+          />
 
           {/* Submit Button */}
           <div className="text-center flex justify-end">

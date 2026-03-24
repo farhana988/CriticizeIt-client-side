@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
 
 import { TfiFaceSad } from "react-icons/tfi";
 
@@ -8,7 +7,7 @@ const NoData = ({ title, subtitle }) => {
     <div>
       <div
         className="flex flex-col justify-center items-center gap-3 my-40 active
-                                   text-xl font-bold"
+         text-xl font-bold"
       >
         <TfiFaceSad className="text-7xl " />
         <p className="opacity-50">{title}</p>
