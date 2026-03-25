@@ -18,7 +18,7 @@ const DealsAndDiscounts = () => {
     <section>
       <div className="text-center">
         <Heading
-          title={"   Deals & Discounts"}
+          title={"Deals & Discounts"}
           subtitle={
             "Dont miss out on these amazing offers! Grab the best deals on our services."
           }

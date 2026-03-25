@@ -4,6 +4,8 @@ import Heading from "../components/shared/Heading";
 import { useLocation } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { errorToast, successToast } from "../utils/toast";
+import InputField from "../components/shared/InputField";
+import TextAreaField from "../components/shared/TextAreaField";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -65,67 +67,38 @@ const AddService = () => {
       shadow-primary w-full"
       >
         <form onSubmit={handleSubmit} className="space-y-4">
-          <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
+          <section className="grid gap-6 lg:grid-cols-2">
             {/* Service Image */}
-            <div className="">
-              <label className="font-semibold block mb-1">Service Image</label>
-              <input
-                type="url"
-                id="service_image"
-                name="service_image"
-                placeholder={"service image URL"}
-                className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
-                 border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-primary"
-                required
-              />
-            </div>
+            <InputField
+              label="Service Image"
+              type="url"
+              name="service_image"
+              placeholder="Service image URL"
+            />
 
             {/* Service Title */}
-            <div className="">
-              <label className="font-semibold block mb-1">Service Title</label>
-              <input
-                type="text"
-                id="service_title"
-                name="service_title"
-                placeholder={"service title"}
-                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
-                 border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-primary"
-                required
-              />
-            </div>
+            <InputField
+              label="Service Title"
+              name="service_title"
+              placeholder="Service title"
+            />
           </section>
 
-          <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
+          <section className="grid gap-6 lg:grid-cols-2">
             {/* Company Name */}
-            <div className="">
-              <label className="font-semibold block mb-1">Company Name</label>
-              <input
-                type="text"
-                id="company_name"
-                name="company_name"
-                placeholder={"Company Name"}
-                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
-                 border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-primary"
-                required
-              />
-            </div>
+            <InputField
+              label="Company Name"
+              name="company_name"
+              placeholder="Company Name"
+            />
 
             {/* Website */}
-            <div className="">
-              <label className="font-semibold block mb-1">Website</label>
-              <input
-                type="url"
-                id="website"
-                name="website"
-                placeholder={"Website URL"}
-                className="w-full px-4 py-2 bg-ivory dark:bg-[#212121] border
-                 border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-primary"
-              />
-            </div>
+            <InputField
+              label="Website"
+              type="url"
+              name="website"
+              placeholder="Website URL"
+            />
           </section>
 
           <section className="grid gap-4 lg:gap-10 lg:grid-cols-2">
@@ -162,35 +135,20 @@ const AddService = () => {
             </div>
 
             {/* Price */}
-            <div className="">
-              <label className="font-semibold block mb-1">Price</label>
-              <input
-                type="number"
-                id="price"
-                name="price"
-                placeholder={"price"}
-                className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
-                 border-gray-200 rounded-md focus:outline-none focus:ring
-                  focus:ring-primary"
-                required
-              />
-            </div>
+            <InputField
+              label="Price"
+              type="number"
+              name="price"
+              placeholder="Price"
+            />
           </section>
 
           {/* Description */}
-          <div className="">
-            <label className="font-semibold block mb-1">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              placeholder={"Short Description of the service"}
-              rows="4"
-              className="w-full px-4 py-2  bg-ivory dark:bg-[#212121] border
-               border-gray-200 rounded-md focus:outline-none focus:ring
-                focus:ring-primary break-words"
-              required
-            ></textarea>
-          </div>
+          <TextAreaField
+            label="Description"
+            name="description"
+            placeholder="Short Description of the service"
+          />
 
           {/*  Button */}
           <div className="flex justify-end mt-4">

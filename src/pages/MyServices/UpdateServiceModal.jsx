@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { errorToast, successToast } from "../../utils/toast";
+import InputField from "../../components/shared/InputField";
+import TextAreaField from "../../components/shared/TextAreaField";
 
 const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
   const axiosSecure = useAxiosSecure();
@@ -93,63 +95,41 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
           Update Service
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
-            {/* Service Image */}
-            <div>
-              <label className=" font-semibold ">Service Image</label>
-              <input
-                type="url"
-                name="serviceImage"
-                value={formData.serviceImage}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-                placeholder="Service Image URL"
-                required
-              />
-            </div>
+          <section className="grid gap-6 md:grid-cols-2">
+            <InputField
+              label="Service Image"
+              type="url"
+              name="serviceImage"
+              value={formData.serviceImage}
+              onChange={handleChange}
+              placeholder="Service Image URL"
+            />
 
-            {/* Service Title */}
-            <div>
-              <label className=" font-semibold">Service Title</label>
-              <input
-                type="text"
-                name="serviceTitle"
-                value={formData.serviceTitle}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-                required
-              />
-            </div>
+            <InputField
+              label="Service Title"
+              name="serviceTitle"
+              value={formData.serviceTitle}
+              onChange={handleChange}
+            />
           </section>
 
-          <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
-            {/* Company Name */}
-            <div>
-              <label className=" font-semibold">Company Name</label>
-              <input
-                type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-                required
-              />
-            </div>
+          <section className="grid gap-6 md:grid-cols-2">
+            <InputField
+              label="Company Name"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+            />
 
-            {/* Website */}
-            <div>
-              <label className=" font-semibold">Website</label>
-              <input
-                type="url"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-                placeholder="Website URL"
-              />
-            </div>
+            <InputField
+              label="Website"
+              type="url"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              placeholder="Website URL"
+            />
           </section>
-
           <section className="grid gap-4 lg:gap-10 md:grid-cols-2">
             {/* Category */}
             <div>
@@ -161,60 +141,46 @@ const UpdateServiceModal = ({ service, isOpen, onClose, setServices }) => {
                 className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
                 required
               >
-                <option value="" disabled>
-                  Select a category
+                <option value="" disabled selected>
+                  Pick a category{" "}
                 </option>
-                <option value="Home Services">Home Services</option>
-                <option value="Health and Wellness">Health and Wellness</option>
-                <option value="Education and Tutoring">
-                  Education and Tutoring
-                </option>
-                <option value="Business and Marketing">
-                  Business and Marketing
-                </option>
-                <option value="Technology Services">Technology Services</option>
-                <option value="Travel and Transportation">
-                  Travel and Transportation
-                </option>
-                <option value="Pet Cares">Pet Cares</option>
-                <option value="Event Planning">Event Planning</option>
-                <option value="Beauty and Personal Care">
-                  Beauty and Personal Care
-                </option>
-                <option value="Eco-Friendly Services">
-                  Eco-Friendly Services
-                </option>
-                <option value="Emergency Services">Emergency Services</option>
+                {[
+                  "Home Services",
+                  "Health and Wellness",
+                  "Education and Tutoring",
+                  "Business and Marketing",
+                  "Technology Services",
+                  "Travel and Transportation",
+                  "Pet Cares",
+                  "Event Planning",
+                  "Beauty and Personal Care",
+                  "Eco-Friendly Services",
+                  "Emergency Services",
+                ].map((category, index) => (
+                  <option key={index} value={category}>
+                    {category}
+                  </option>
+                ))}
               </select>
             </div>
 
             {/* Price */}
-            <div>
-              <label className=" font-semibold">Price</label>
-              <input
-                type="number"
-                name="price"
-                value={formData.price}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-                required
-              />
-            </div>
+            <InputField
+              label="Price"
+              type="number"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+            />
           </section>
 
           {/* Description */}
-          <div>
-            <label className=" font-semibold">Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              className="px-4 py-2 border border-gray-200 dark:bg-dCard rounded-md w-full"
-              rows="4"
-              required
-            />
-          </div>
-
+          <TextAreaField
+            label="Description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+          />
           {/* Buttons */}
           <div className="flex justify-end gap-4 mt-6">
             <button

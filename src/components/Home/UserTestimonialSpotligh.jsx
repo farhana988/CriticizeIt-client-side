@@ -56,20 +56,18 @@ const UserTestimonialSpotlight = () => {
   };
 
   return (
-    <section>
-      <div className=" text-center  ">
-        <Heading title={"What Our Users Are Saying"} />
+    <div className=" text-center  ">
+      <Heading title={"What Our Users Are Saying"} />
 
-        {/* React Slick Carousel */}
-        <Slider {...sliderSettings}>
-          {testimonials.map((testimonial, index) => (
-            <div className="px-1 lg:px-3 " key={index}>
-              <TestimonialCard testimonial={testimonial} />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+      {/* React Slick Carousel */}
+      <Slider {...sliderSettings}>
+        {testimonials.map((testimonial, index) => (
+          <div className="px-1 lg:px-3 " key={index}>
+            <TestimonialCard testimonial={testimonial} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
